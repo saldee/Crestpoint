@@ -1,89 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Industries - Crest Point Management</title>
-<link rel="icon" href="favicon.ico">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<meta name="description" content="Industries served by Crest Point Management, delivering expert project and contracts management.">
-<meta name="author" content="Crest Point Management">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Industries We Serve | Crestpoint</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {font-family: 'Open Sans', sans-serif; color: #333; margin:0;}
+    a {text-decoration: none; color: inherit;}
+
+    /* Header */
+    header {
+      background-color: #0b2f5a; color: white; padding: 20px 50px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    header nav a {margin-left: 25px; font-weight: 600; transition: color 0.3s;}
+    header nav a:hover {color: #f5a623;}
+
+    /* Hero Section */
+    .hero {
+      background-color: #eef1f5;
+      padding: 80px 50px;
+      text-align: center;
+    }
+    .hero h1 {font-family: 'Montserrat', sans-serif; font-size: 2.8rem; margin-bottom: 20px; color: #0b2f5a;}
+    .hero p {font-size: 1.2rem; max-width: 700px; margin: 0 auto; line-height: 1.6;}
+
+    /* Industries Section */
+    .industries {padding: 80px 50px; text-align: center;}
+    .industries h2 {font-family: 'Montserrat', sans-serif; font-size: 2.5rem; margin-bottom: 50px;}
+    .industry-grid {display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;}
+    .industry-card {
+      flex: 1 1 250px;
+      background-color: #f7f7f7;
+      padding: 30px 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      text-align: center;
+    }
+    .industry-card:hover {transform: translateY(-10px);}
+    .industry-card img {width: 60px; height: 60px; margin-bottom: 15px;}
+    .industry-card h3 {font-family: 'Montserrat', sans-serif; color: #0b2f5a; margin-bottom: 15px;}
+    .industry-card p {font-size: 0.95rem; line-height: 1.6;}
+
+    /* Footer */
+    footer {
+      background-color: #1c1c1c; color: #ccc; text-align: center; padding: 30px 50px; font-size: 0.9rem;
+    }
+
+    @media(max-width: 768px){
+      .industry-grid {flex-direction: column; align-items: center;}
+      .hero h1 {font-size: 2.2rem;}
+      .hero p {font-size: 1rem;}
+    }
+  </style>
 </head>
 <body>
 
-<header class="header">
-  <div class="container">
-    <a href="index.html" class="logo"><img src="assets/logo.png" alt="Crest Point Management"></a>
-    <nav class="nav">
+  <!-- Header -->
+  <header>
+    <div class="logo"><img src="images/logo.png" alt="Crestpoint Logo" height="50"></div>
+    <nav>
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
+      <a href="about.html">About Us</a>
       <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
       <a href="industries.html">Industries</a>
-      <a href="case-studies.html">Case Studies</a>
-      <a href="team.html">Team</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
-  </div>
-  <div class="mobile-nav" id="mobileNav">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="industries.html">Industries</a>
-    <a href="case-studies.html">Case Studies</a>
-    <a href="team.html">Team</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</header>
+  </header>
 
-<section class="hero">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
+  <!-- Hero Section -->
+  <section class="hero">
     <h1>Industries We Serve</h1>
-    <p>Providing professional project and contracts management solutions across diverse sectors in Africa.</p>
-  </div>
-</section>
+    <p>Crestpoint provides expert solutions to a diverse range of sectors, ensuring excellence, compliance, and measurable results in every project.</p>
+  </section>
 
-<section class="section">
-  <div class="container">
-    <h2>Our Industry Expertise</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>Construction & Infrastructure</h3>
-        <p>Supporting major construction and infrastructure projects with end-to-end project management.</p>
+  <!-- Industries Grid -->
+  <section class="industries">
+    <h2>Our Expertise Across Sectors</h2>
+    <div class="industry-grid">
+      <div class="industry-card">
+        <img src="images/icons/construction.png" alt="Construction Icon">
+        <h3>Construction</h3>
+        <p>Comprehensive project management and advisory services for residential, commercial, and industrial construction projects.</p>
       </div>
-      <div class="service-card">
-        <h3>Energy & Utilities</h3>
-        <p>Managing contracts and projects for sustainable energy and utility projects across Africa.</p>
+      <div class="industry-card">
+        <img src="images/icons/real-estate.png" alt="Real Estate Icon">
+        <h3>Real Estate</h3>
+        <p>Supporting property developers with project supervision, contracts management, and timely delivery.</p>
       </div>
-      <div class="service-card">
-        <h3>Mining & Resources</h3>
-        <p>Delivering precision in project execution, compliance, and risk management for mining initiatives.</p>
+      <div class="industry-card">
+        <img src="images/icons/public-sector.png" alt="Public Sector Icon">
+        <h3>Public Sector</h3>
+        <p>Delivering large-scale infrastructure and public projects with transparency, efficiency, and compliance.</p>
       </div>
-      <div class="service-card">
-        <h3>Industrial & Manufacturing</h3>
-        <p>Providing advisory and supervision services to streamline industrial expansion and operations.</p>
+      <div class="industry-card">
+        <img src="images/icons/private-sector.png" alt="Private Sector Icon">
+        <h3>Private Sector</h3>
+        <p>Partnering with businesses to execute private projects across industries with high-quality standards.</p>
       </div>
-      <div class="service-card">
-        <h3>Transport & Logistics</h3>
-        <p>Ensuring successful delivery of complex transport and logistics projects across regions.</p>
-      </div>
-      <div class="service-card">
+      <div class="industry-card">
+        <img src="images/icons/renewable-energy.png" alt="Renewable Energy Icon">
         <h3>Renewable Energy</h3>
-        <p>Managing projects and contracts for solar, wind, and hydro energy initiatives.</p>
+        <p>Providing advisory and supervision services for sustainable energy projects, ensuring safety and compliance.</p>
+      </div>
+      <div class="industry-card">
+        <img src="images/icons/industrial.png" alt="Industrial Icon">
+        <h3>Industrial</h3>
+        <p>Managing large-scale industrial projects with precision in planning, execution, and contracts management.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer class="footer">
-  <div class="container">
-    <p>© Crest Point Management — Delivering precision in project and contracts management.</p>
-    <p><a href="https://saldee.github.io/Crestpoint/">saldee.github.io/Crestpoint/</a></p>
-  </div>
-</footer>
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Crestpoint. All Rights Reserved.
+  </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
