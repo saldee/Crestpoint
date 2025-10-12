@@ -132,11 +132,81 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 Crestpoint. All Rights Reserved.
-  </footer>
 
+  <!-- Footer -->
+<footer>
+  <div style="display:flex; flex-direction:column; align-items:center; gap:15px;">
+    <p>&copy; 2025 Crestpoint. All Rights Reserved.</p>
+    
+    <!-- Social Links -->
+    <div style="display:flex; gap:20px;">
+      <a href="https://www.facebook.com/crestpoint" target="_blank" aria-label="Facebook">
+        <img src="images/icons/facebook.svg" alt="Facebook" width="24">
+      </a>
+      <a href="https://wa.me/256700123456" target="_blank" aria-label="WhatsApp">
+        <img src="images/icons/whatsapp.svg" alt="WhatsApp" width="24">
+      </a>
+      <a href="https://www.linkedin.com/company/crestpoint" target="_blank" aria-label="LinkedIn">
+        <img src="images/icons/linkedin.svg" alt="LinkedIn" width="24">
+      </a>
+      <a href="https://twitter.com/crestpoint" target="_blank" aria-label="X / Twitter">
+        <img src="images/icons/twitter.svg" alt="X / Twitter" width="24">
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/256700123456" target="_blank" class="whatsapp-float" aria-label="Chat with us on WhatsApp">
+  <img src="images/icons/whatsapp.svg" alt="WhatsApp" width="40">
+</a>
+
+<style>
+  footer {
+    background:#1c1c1c;
+    color:#ccc;
+    text-align:center;
+    padding:30px 50px;
+    font-size:0.9rem;
+  }
+
+  footer a img {
+    transition: transform 0.3s, filter 0.3s;
+  }
+
+  footer a img:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+  }
+
+  .whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+    background: #25D366;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .whatsapp-float:hover {
+    transform: scale(1.2);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  }
+
+  @media(max-width:768px){
+    footer div {flex-direction:column;}
+  }
+
+  @media(max-width:480px){
+    .whatsapp-float img {width:35px;}
+    .whatsapp-float {padding:8px; bottom:15px; right:15px;}
+  }
+</style>
+
+  </footer>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({duration:1000, once:true});
