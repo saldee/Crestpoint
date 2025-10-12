@@ -8,11 +8,11 @@
   <meta name="description" content="Crestpoint is a leading construction and project management company in Uganda, providing services across construction, real estate, and public/private sectors.">
   <meta name="keywords" content="Crestpoint, Construction, Project Management, Real Estate, Supervision, EHS, Uganda">
   <meta name="author" content="Crestpoint Company Ltd">
-  <link rel="canonical" href="https://saldee.github.io/Crestpoint/index.html">
+  <link rel="canonical" href="https://saldee.github.io/Crestpoint-New/index.html">
   <meta property="og:title" content="Crestpoint | Construction & Project Management">
   <meta property="og:description" content="Delivering excellence in construction, project management, and advisory services across Uganda.">
-  <meta property="og:image" content="https://saldee.github.io/Crestpoint/assets/home-hero.jpg">
-  <meta property="og:url" content="https://saldee.github.io/Crestpoint/index.html">
+  <meta property="og:image" content="https://saldee.github.io/Crestpoint-New/images/home-hero.jpg">
+  <meta property="og:url" content="https://saldee.github.io/Crestpoint-New/index.html">
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Fonts & AOS -->
@@ -34,7 +34,7 @@
 
     /* Hero */
     .hero {
-      background:url('assets/home-hero.jpg') center/cover no-repeat;
+      background:url('images/home-hero.jpg') center/cover no-repeat;
       height:60vh; display:flex; align-items:center; justify-content:center;
       color:white; text-align:center; position:relative;
     }
@@ -74,6 +74,28 @@
     /* Footer */
     footer {background:#1c1c1c; color:#ccc; text-align:center; padding:30px 50px; font-size:0.9rem;}
 
+    /* Floating WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      width: 45px;
+      height: 45px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: float 2.5s infinite ease-in-out;
+    }
+    .whatsapp-float img { width: 22px; transition: transform 0.3s; }
+    .whatsapp-float:hover { transform: scale(1.2); box-shadow: 0 8px 20px rgba(0,0,0,0.35); }
+    @keyframes float { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-5px);} }
+    @media(max-width:480px){ .whatsapp-float { width: 40px; height: 40px; bottom: 15px; right: 15px;} .whatsapp-float img {width:20px;} }
+
     /* Responsive */
     @media(max-width:768px){
       header nav {display:none;}
@@ -85,7 +107,7 @@
 
   <!-- Header -->
   <header>
-    <div class="logo"><img src="assets/logo.png" alt="Crestpoint Logo" height="50"></div>
+    <div class="logo"><img src="images/logo.png" alt="Crestpoint Logo" height="50"></div>
     <div class="mobile-menu-toggle">&#9776;</div>
     <nav class="nav-links">
       <a href="index.html" style="color:#f5a623;">Home</a>
@@ -196,88 +218,54 @@
   </section>
 
   <!-- Footer -->
-<footer>
-  <div style="display:flex; flex-direction:column; align-items:center; gap:15px;">
-    <p>&copy; 2025 Crestpoint. All Rights Reserved.</p>
-    
-    <!-- Social Links -->
-    <div style="display:flex; gap:20px;">
-      <a href="https://www.facebook.com/crestpoint" target="_blank" aria-label="Facebook">
-        <img src="images/icons/facebook.svg" alt="Facebook" width="24">
-      </a>
-      <a href="https://wa.me/256700123456" target="_blank" aria-label="WhatsApp">
-        <img src="images/icons/whatsapp.svg" alt="WhatsApp" width="24">
-      </a>
-      <a href="https://www.linkedin.com/company/crestpoint" target="_blank" aria-label="LinkedIn">
-        <img src="images/icons/linkedin.svg" alt="LinkedIn" width="24">
-      </a>
-      <a href="https://twitter.com/crestpoint" target="_blank" aria-label="X / Twitter">
-        <img src="images/icons/twitter.svg" alt="X / Twitter" width="24">
-      </a>
+  <footer>
+    <div style="display:flex; flex-direction:column; align-items:center; gap:15px;">
+      <p>&copy; 2025 Crestpoint. All Rights Reserved.</p>
+      <div style="display:flex; gap:20px;">
+        <a href="https://www.facebook.com/crestpoint" target="_blank" aria-label="Facebook">
+          <img src="images/icons/facebook.svg" alt="Facebook" width="24">
+        </a>
+        <a href="https://wa.me/256700123456" target="_blank" aria-label="WhatsApp">
+          <img src="images/icons/whatsapp.svg" alt="WhatsApp" width="24">
+        </a>
+        <a href="https://www.linkedin.com/company/crestpoint" target="_blank" aria-label="LinkedIn">
+          <img src="images/icons/linkedin.svg" alt="LinkedIn" width="24">
+        </a>
+        <a href="https://twitter.com/crestpoint" target="_blank" aria-label="X / Twitter">
+          <img src="images/icons/twitter.svg" alt="X / Twitter" width="24">
+        </a>
+      </div>
     </div>
-  </div>
-</footer>
-
-<!-- Floating WhatsApp Button -->
-<a href="https://wa.me/256700123456" target="_blank" class="whatsapp-float" aria-label="Chat with us on WhatsApp">
-  <img src="images/icons/whatsapp.svg" alt="WhatsApp" width="40">
-</a>
-
-<style>
-  footer {
-    background:#1c1c1c;
-    color:#ccc;
-    text-align:center;
-    padding:30px 50px;
-    font-size:0.9rem;
-  }
-
-  footer a img {
-    transition: transform 0.3s, filter 0.3s;
-  }
-
-  footer a img:hover {
-    transform: scale(1.2);
-    filter: brightness(1.2);
-  }
-
-  .whatsapp-float {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    z-index: 1000;
-    background: #25D366;
-    border-radius: 50%;
-    padding: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .whatsapp-float:hover {
-    transform: scale(1.2);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-  }
-
-  @media(max-width:768px){
-    footer div {flex-direction:column;}
-  }
-
-  @media(max-width:480px){
-    .whatsapp-float img {width:35px;}
-    .whatsapp-float {padding:8px; bottom:15px; right:15px;}
-  }
-</style>
-
   </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/256700123456" target="_blank" class="whatsapp-float" aria-label="Chat with us on WhatsApp">
+    <img src="images/icons/whatsapp.svg" alt="WhatsApp">
+  </a>
 
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({duration:1000, once:true});
+
+    // Mobile menu toggle
     const toggle = document.querySelector('.mobile-menu-toggle');
     const mobileNav = document.querySelector('.nav-links-mobile');
+
     toggle.addEventListener('click', () => {
-      mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+      mobileNav.classList.toggle('show');
+    });
+
+    // Hide mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!toggle.contains(e.target) && !mobileNav.contains(e.target)) {
+        mobileNav.classList.remove('show');
+      }
     });
   </script>
+
+  <style>
+    .nav-links-mobile.show { display: flex !important; }
+  </style>
+
 </body>
 </html>
