@@ -30,7 +30,7 @@
     header nav a {margin-left:25px; font-weight:600; transition:color 0.3s;}
     header nav a:hover {color:#f5a623;}
     .mobile-menu-toggle {display:none; font-size:2rem; cursor:pointer; position:absolute; top:20px; right:30px;}
-    .nav-links-mobile {display:none; flex-direction:column; background:#0b2f5a; position:absolute; top:70px; right:0; width:200px; border-radius:0 0 5px 5px; padding:20px; z-index:999;}
+    .nav-links-mobile {display:none; flex-direction:column; background:#0b2f5a; position:absolute; top:70px; right:0; width:200px; border-radius:0 0 5px 5px; padding:20px;}
     .nav-links-mobile a {margin:10px 0; font-weight:600; color:white;}
 
     /* Hero */
@@ -69,25 +69,34 @@
 
     /* Footer */
     footer {background:#1c1c1c; color:#ccc; text-align:center; padding:30px 50px; font-size:0.9rem;}
+    footer a img {transition: transform 0.3s, filter 0.3s;}
+    footer a img:hover {transform: scale(1.2); filter: brightness(1.2);}
 
     /* Floating WhatsApp */
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      width: 45px;
-      height: 45px;
+      width: 42px;
+      height: 42px;
       background: #25D366;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       z-index: 1000;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      transition: all 0.3s ease;
     }
-    .whatsapp-float img {width:22px;}
-    .whatsapp-float:hover {transform: scale(1.2); box-shadow:0 8px 20px rgba(0,0,0,0.4);}
+    .whatsapp-float img {
+      width: 22px;
+      height: 22px;
+    }
+    .whatsapp-float:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+      background: #20b358;
+    }
 
     /* Responsive */
     @media(max-width:768px){
@@ -95,6 +104,10 @@
       .mobile-menu-toggle {display:block;}
       .contact-info {flex-direction:column; align-items:center;}
       footer div {flex-direction:column;}
+    }
+    @media(max-width:480px){
+      .whatsapp-float {width:38px; height:38px; bottom:15px; right:15px;}
+      .whatsapp-float img {width:20px; height:20px;}
     }
   </style>
 </head>
@@ -152,7 +165,7 @@
 
     <!-- Contact Form -->
     <div class="contact-form" data-aos="fade-up" data-aos-delay="100">
-      <form action="mailto:info@crestpoint.ug" method="POST" enctype="text/plain">
+      <form action="#" method="POST">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" placeholder="Your Name" required>
         <label for="email">Email</label>
@@ -170,40 +183,41 @@
   </section>
 
   <!-- Footer -->
-  <footer>
-    <div style="display:flex; flex-direction:column; align-items:center; gap:15px;">
-      <p>&copy; 2025 Crestpoint. All Rights Reserved.</p>
-      <div style="display:flex; gap:20px;">
-        <a href="https://www.facebook.com/crestpoint" target="_blank" aria-label="Facebook">
-          <img src="images/icons/facebook.svg" alt="Facebook" width="24">
-        </a>
-        <a href="https://wa.me/256700123456" target="_blank" aria-label="WhatsApp">
-          <img src="images/icons/whatsapp.svg" alt="WhatsApp" width="24">
-        </a>
-        <a href="https://www.linkedin.com/company/crestpoint" target="_blank" aria-label="LinkedIn">
-          <img src="images/icons/linkedin.svg" alt="LinkedIn" width="24">
-        </a>
-        <a href="https://twitter.com/crestpoint" target="_blank" aria-label="X / Twitter">
-          <img src="images/icons/twitter.svg" alt="X / Twitter" width="24">
-        </a>
-      </div>
+<footer>
+  <div style="display:flex; flex-direction:column; align-items:center; gap:15px;">
+    <p>&copy; 2025 Crestpoint. All Rights Reserved.</p>
+    
+    <!-- Social Links -->
+    <div style="display:flex; gap:20px;">
+      <a href="https://www.facebook.com/crestpoint" target="_blank" aria-label="Facebook">
+        <img src="images/icons/facebook.svg" alt="Facebook" width="24">
+      </a>
+      <a href="https://wa.me/256700123456" target="_blank" aria-label="WhatsApp">
+        <img src="images/icons/whatsapp.svg" alt="WhatsApp" width="24">
+      </a>
+      <a href="https://www.linkedin.com/company/crestpoint" target="_blank" aria-label="LinkedIn">
+        <img src="images/icons/linkedin.svg" alt="LinkedIn" width="24">
+      </a>
+      <a href="https://twitter.com/crestpoint" target="_blank" aria-label="X / Twitter">
+        <img src="images/icons/twitter.svg" alt="X / Twitter" width="24">
+      </a>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/256700123456" target="_blank" class="whatsapp-float" aria-label="Chat with us on WhatsApp">
-    <img src="images/icons/whatsapp.svg" alt="WhatsApp">
-  </a>
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/256700123456" target="_blank" class="whatsapp-float" aria-label="Chat with us on WhatsApp">
+  <img src="images/icons/whatsapp.svg" alt="WhatsApp">
+</a>
 
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({duration:1000, once:true});
-
-    const toggle = document.querySelector('.mobile-menu-toggle');
-    const mobileNav = document.querySelector('.nav-links-mobile');
-    toggle.addEventListener('click', () => {
-      mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
-    });
-  </script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({duration:1000, once:true});
+  const toggle = document.querySelector('.mobile-menu-toggle');
+  const mobileNav = document.querySelector('.nav-links-mobile');
+  toggle.addEventListener('click', () => {
+    mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+  });
+</script>
 </body>
 </html>
