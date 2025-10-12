@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crestpoint | Building Excellence Across Africa</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
     * {margin:0; padding:0; box-sizing:border-box;}
     body {font-family:'Open Sans',sans-serif; color:#333;}
@@ -22,27 +23,29 @@
     .hero {
       background:url('images/construction-hero.jpg') center/cover no-repeat;
       height:90vh; display:flex; flex-direction:column; justify-content:center; align-items:center; color:white; text-align:center;
-      position:relative;
+      position:relative; overflow:hidden;
     }
     .hero::after {
       content:''; position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5);
     }
-    .hero-content {position:relative; z-index:1;}
+    .hero-content {position:relative; z-index:1; opacity:0; transform:translateY(20px); animation:fadeInUp 1s forwards 0.3s;}
+    @keyframes fadeInUp {to {opacity:1; transform:translateY(0);}}
     .hero h1 {font-family:'Montserrat',sans-serif; font-size:3rem; margin-bottom:20px;}
     .hero p {font-size:1.3rem; margin-bottom:30px;}
     .hero button {
-      background-color:#f5a623; border:none; padding:15px 35px; font-size:1rem; font-weight:bold; cursor:pointer; border-radius:5px; transition:background 0.3s;
+      background-color:#f5a623; border:none; padding:15px 35px; font-size:1rem; font-weight:bold; cursor:pointer; border-radius:5px; transition: transform 0.3s, box-shadow 0.3s;
     }
-    .hero button:hover {background-color:#e6951f;}
+    .hero button:hover {transform:scale(1.05); box-shadow:0 5px 15px rgba(0,0,0,0.3);}
 
     /* Services Section */
     .services {padding:80px 50px; text-align:center;}
     .services h2 {font-family:'Montserrat',sans-serif; font-size:2.5rem; margin-bottom:50px;}
     .service-cards {display:flex; flex-wrap:wrap; gap:30px; justify-content:center;}
     .card {
-      flex:1 1 250px; background:#f7f7f7; padding:30px 20px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:transform 0.3s;
+      flex:1 1 250px; background:#f7f7f7; padding:30px 20px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      transition:transform 0.3s, box-shadow 0.3s; opacity:0;
     }
-    .card:hover {transform:translateY(-10px);}
+    .card:hover {transform:translateY(-10px); box-shadow:0 10px 20px rgba(0,0,0,0.2);}
     .card h3 {font-family:'Montserrat',sans-serif; margin-bottom:15px; color:#0b2f5a;}
     .card p {font-size:1rem; line-height:1.6;}
 
@@ -51,9 +54,10 @@
     .industries-home h2 {font-family:'Montserrat',sans-serif; font-size:2.5rem; margin-bottom:50px;}
     .industry-cards {display:flex; flex-wrap:wrap; gap:30px; justify-content:center;}
     .industry-card {
-      flex:1 1 250px; background:#fff; padding:30px 20px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:transform 0.3s; text-align:center;
+      flex:1 1 250px; background:#fff; padding:30px 20px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      transition:transform 0.3s, box-shadow 0.3s; text-align:center; opacity:0;
     }
-    .industry-card:hover {transform:translateY(-10px);}
+    .industry-card:hover {transform:translateY(-10px); box-shadow:0 10px 20px rgba(0,0,0,0.2);}
     .industry-card img {width:60px; height:60px; margin-bottom:15px;}
     .industry-card h3 {font-family:'Montserrat',sans-serif; color:#0b2f5a; margin-bottom:10px;}
     .industry-card p {font-size:0.95rem; line-height:1.5;}
@@ -63,10 +67,12 @@
     .projects h2 {text-align:center; font-family:'Montserrat',sans-serif; font-size:2.5rem; margin-bottom:50px;}
     .project-grid {display:flex; flex-wrap:wrap; gap:30px; justify-content:center;}
     .project-card {
-      flex:1 1 300px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:transform 0.3s;
+      flex:1 1 300px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      transition:transform 0.3s, box-shadow 0.3s; opacity:0;
     }
-    .project-card:hover {transform:translateY(-10px);}
-    .project-card img {width:100%; height:200px; object-fit:cover;}
+    .project-card:hover {transform:translateY(-10px); box-shadow:0 10px 20px rgba(0,0,0,0.2);}
+    .project-card img {width:100%; height:200px; object-fit:cover; transition: transform 0.3s;}
+    .project-card:hover img {transform:scale(1.05);}
     .project-card .content {padding:20px;}
     .project-card h3 {font-family:'Montserrat',sans-serif; color:#0b2f5a; margin-bottom:10px;}
     .project-card p {font-size:0.95rem; line-height:1.5;}
@@ -115,19 +121,19 @@
   <section class="services">
     <h2>Our Services</h2>
     <div class="service-cards">
-      <div class="card">
+      <div class="card" data-aos="fade-up">
         <h3>Project Management</h3>
         <p>We plan, execute, and deliver projects on time, ensuring quality and efficiency across all stages.</p>
       </div>
-      <div class="card">
+      <div class="card" data-aos="fade-up" data-aos-delay="100">
         <h3>Contracts Management</h3>
         <p>Our experts handle contracts with precision, mitigating risks and maximizing value for clients.</p>
       </div>
-      <div class="card">
+      <div class="card" data-aos="fade-up" data-aos-delay="200">
         <h3>Advisory & Supervision</h3>
         <p>We provide expert supervision and advisory services to ensure your projects meet industry standards.</p>
       </div>
-      <div class="card">
+      <div class="card" data-aos="fade-up" data-aos-delay="300">
         <h3>Environmental Health & Safety</h3>
         <p>Ensuring compliance and safety across all operations, protecting both people and the environment.</p>
       </div>
@@ -138,22 +144,22 @@
   <section class="industries-home">
     <h2>Industries We Serve</h2>
     <div class="industry-cards">
-      <div class="industry-card">
+      <div class="industry-card" data-aos="fade-up">
         <img src="images/icons/construction.png" alt="Construction Icon">
         <h3>Construction</h3>
         <p>Residential, commercial, and industrial projects.</p>
       </div>
-      <div class="industry-card">
+      <div class="industry-card" data-aos="fade-up" data-aos-delay="100">
         <img src="images/icons/real-estate.png" alt="Real Estate Icon">
         <h3>Real Estate</h3>
         <p>Supporting property development and delivery.</p>
       </div>
-      <div class="industry-card">
+      <div class="industry-card" data-aos="fade-up" data-aos-delay="200">
         <img src="images/icons/public-sector.png" alt="Public Sector Icon">
         <h3>Public Sector</h3>
         <p>Large-scale infrastructure projects with transparency.</p>
       </div>
-      <div class="industry-card">
+      <div class="industry-card" data-aos="fade-up" data-aos-delay="300">
         <img src="images/icons/private-sector.png" alt="Private Sector Icon">
         <h3>Private Sector</h3>
         <p>High-quality private sector project execution.</p>
@@ -166,14 +172,14 @@
   <section class="projects">
     <h2>Our Projects</h2>
     <div class="project-grid">
-      <div class="project-card">
+      <div class="project-card" data-aos="fade-up">
         <img src="images/project1.jpg" alt="Project Alpha">
         <div class="content">
           <h3>Project Alpha</h3>
           <p>Urban infrastructure delivered on time and within budget.</p>
         </div>
       </div>
-      <div class="project-card">
+      <div class="project-card" data-aos="fade-up" data-aos-delay="100">
         <img src="images/project2.jpg" alt="Project Beta">
         <div class="content">
           <h3>Project Beta</h3>
@@ -194,5 +200,9 @@
     &copy; 2025 Crestpoint. All Rights Reserved.
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({duration:1000, once:true});
+  </script>
 </body>
 </html>
