@@ -5,54 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Industries We Serve | Crestpoint</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
-    body {font-family: 'Open Sans', sans-serif; color: #333; margin:0;}
-    a {text-decoration: none; color: inherit;}
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {font-family:'Open Sans',sans-serif; color:#333;}
+    a {text-decoration:none; color:inherit;}
 
     /* Header */
     header {
-      background-color: #0b2f5a; color: white; padding: 20px 50px;
-      display: flex; justify-content: space-between; align-items: center;
+      background-color:#0b2f5a; color:white; padding:20px 50px;
+      display:flex; justify-content:space-between; align-items:center;
     }
-    header nav a {margin-left: 25px; font-weight: 600; transition: color 0.3s;}
-    header nav a:hover {color: #f5a623;}
+    header nav a {margin-left:25px; font-weight:600; transition: color 0.3s;}
+    header nav a:hover {color:#f5a623;}
 
     /* Hero Section */
     .hero {
-      background-color: #eef1f5;
-      padding: 80px 50px;
-      text-align: center;
+      background:url('images/industries-hero.jpg') center/cover no-repeat;
+      height:60vh; display:flex; align-items:center; justify-content:center; color:white; text-align:center;
+      position:relative; overflow:hidden;
     }
-    .hero h1 {font-family: 'Montserrat', sans-serif; font-size: 2.8rem; margin-bottom: 20px; color: #0b2f5a;}
-    .hero p {font-size: 1.2rem; max-width: 700px; margin: 0 auto; line-height: 1.6;}
+    .hero::after {content:''; position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5);}
+    .hero-content {position:relative; z-index:1; opacity:0; transform:translateY(20px); animation:fadeInUp 1s forwards 0.3s;}
+    @keyframes fadeInUp {to {opacity:1; transform:translateY(0);}}
+    .hero h1 {font-family:'Montserrat',sans-serif; font-size:2.8rem;}
+    .hero p {font-size:1.2rem; margin-top:15px;}
 
     /* Industries Section */
-    .industries {padding: 80px 50px; text-align: center;}
-    .industries h2 {font-family: 'Montserrat', sans-serif; font-size: 2.5rem; margin-bottom: 50px;}
-    .industry-grid {display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;}
+    .industries-section {padding:80px 50px; max-width:1200px; margin:0 auto; text-align:center;}
+    .industries-section h2 {font-family:'Montserrat',sans-serif; font-size:2.5rem; margin-bottom:50px;}
+    .industry-cards {display:flex; flex-wrap:wrap; gap:30px; justify-content:center;}
     .industry-card {
-      flex: 1 1 250px;
-      background-color: #f7f7f7;
-      padding: 30px 20px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-      text-align: center;
+      flex:1 1 250px; background:#fff; padding:30px 20px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      transition:transform 0.3s, box-shadow 0.3s; text-align:center; opacity:0;
     }
-    .industry-card:hover {transform: translateY(-10px);}
-    .industry-card img {width: 60px; height: 60px; margin-bottom: 15px;}
-    .industry-card h3 {font-family: 'Montserrat', sans-serif; color: #0b2f5a; margin-bottom: 15px;}
-    .industry-card p {font-size: 0.95rem; line-height: 1.6;}
+    .industry-card:hover {transform:translateY(-10px); box-shadow:0 10px 20px rgba(0,0,0,0.2);}
+    .industry-card img {width:60px; height:60px; margin-bottom:15px;}
+    .industry-card h3 {font-family:'Montserrat',sans-serif; color:#0b2f5a; margin-bottom:10px;}
+    .industry-card p {font-size:0.95rem; line-height:1.5;}
 
     /* Footer */
-    footer {
-      background-color: #1c1c1c; color: #ccc; text-align: center; padding: 30px 50px; font-size: 0.9rem;
-    }
+    footer {background:#1c1c1c; color:#ccc; text-align:center; padding:30px 50px; font-size:0.9rem;}
 
-    @media(max-width: 768px){
-      .industry-grid {flex-direction: column; align-items: center;}
-      .hero h1 {font-size: 2.2rem;}
-      .hero p {font-size: 1rem;}
+    @media(max-width:768px){
+      .industry-cards {flex-direction:column; align-items:center;}
+      .hero h1 {font-size:2.2rem;}
+      .hero p {font-size:1rem;}
     }
   </style>
 </head>
@@ -73,43 +71,45 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <h1>Industries We Serve</h1>
-    <p>Crestpoint provides expert solutions to a diverse range of sectors, ensuring excellence, compliance, and measurable results in every project.</p>
+    <div class="hero-content">
+      <h1>Industries We Serve</h1>
+      <p>Expert Solutions Across Various Sectors</p>
+    </div>
   </section>
 
-  <!-- Industries Grid -->
-  <section class="industries">
-    <h2>Our Expertise Across Sectors</h2>
-    <div class="industry-grid">
-      <div class="industry-card">
+  <!-- Industries Section -->
+  <section class="industries-section">
+    <h2>Our Industry Expertise</h2>
+    <div class="industry-cards">
+      <div class="industry-card" data-aos="fade-up">
         <img src="images/icons/construction.png" alt="Construction Icon">
         <h3>Construction</h3>
-        <p>Comprehensive project management and advisory services for residential, commercial, and industrial construction projects.</p>
+        <p>Residential, commercial, and industrial construction projects executed efficiently.</p>
       </div>
-      <div class="industry-card">
+      <div class="industry-card" data-aos="fade-up" data-aos-delay="100">
         <img src="images/icons/real-estate.png" alt="Real Estate Icon">
         <h3>Real Estate</h3>
-        <p>Supporting property developers with project supervision, contracts management, and timely delivery.</p>
+        <p>Supporting property development, sales, and management with industry expertise.</p>
       </div>
-      <div class="industry-card">
+      <div class="industry-card" data-aos="fade-up" data-aos-delay="200">
         <img src="images/icons/public-sector.png" alt="Public Sector Icon">
         <h3>Public Sector</h3>
-        <p>Delivering large-scale infrastructure and public projects with transparency, efficiency, and compliance.</p>
+        <p>Infrastructure, roads, and government projects with transparency and compliance.</p>
       </div>
-      <div class="industry-card">
+      <div class="industry-card" data-aos="fade-up" data-aos-delay="300">
         <img src="images/icons/private-sector.png" alt="Private Sector Icon">
         <h3>Private Sector</h3>
-        <p>Partnering with businesses to execute private projects across industries with high-quality standards.</p>
+        <p>Corporate and industrial clients receive end-to-end project management and advisory.</p>
       </div>
-      <div class="industry-card">
-        <img src="images/icons/renewable-energy.png" alt="Renewable Energy Icon">
-        <h3>Renewable Energy</h3>
-        <p>Providing advisory and supervision services for sustainable energy projects, ensuring safety and compliance.</p>
+      <div class="industry-card" data-aos="fade-up" data-aos-delay="400">
+        <img src="images/icons/energy.png" alt="Energy Icon">
+        <h3>Energy</h3>
+        <p>Support for renewable and traditional energy projects, including planning and supervision.</p>
       </div>
-      <div class="industry-card">
-        <img src="images/icons/industrial.png" alt="Industrial Icon">
-        <h3>Industrial</h3>
-        <p>Managing large-scale industrial projects with precision in planning, execution, and contracts management.</p>
+      <div class="industry-card" data-aos="fade-up" data-aos-delay="500">
+        <img src="images/icons/infrastructure.png" alt="Infrastructure Icon">
+        <h3>Infrastructure</h3>
+        <p>Roads, bridges, and public utilities executed with precision and efficiency.</p>
       </div>
     </div>
   </section>
@@ -119,5 +119,9 @@
     &copy; 2025 Crestpoint. All Rights Reserved.
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({duration:1000, once:true});
+  </script>
 </body>
 </html>
