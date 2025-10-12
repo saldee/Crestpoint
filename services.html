@@ -3,82 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services | Crestpoint</title>
+  <title>Our Services | Crestpoint</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
-    body {font-family: 'Open Sans', sans-serif; color: #333; margin:0;}
-    a {text-decoration: none; color: inherit;}
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {font-family:'Open Sans',sans-serif; color:#333;}
+    a {text-decoration:none; color:inherit;}
 
     /* Header */
     header {
-      background-color: #0b2f5a; color: white; padding: 20px 50px;
-      display: flex; justify-content: space-between; align-items: center;
+      background-color:#0b2f5a; color:white; padding:20px 50px;
+      display:flex; justify-content:space-between; align-items:center;
     }
-    header nav a {margin-left: 25px; font-weight: 600; transition: color 0.3s;}
-    header nav a:hover {color: #f5a623;}
+    header nav a {margin-left:25px; font-weight:600; transition: color 0.3s;}
+    header nav a:hover {color:#f5a623;}
 
     /* Hero Section */
     .hero {
-      background-color: #eef1f5;
-      padding: 80px 50px;
-      text-align: center;
+      background:url('images/services-hero.jpg') center/cover no-repeat;
+      height:60vh; display:flex; align-items:center; justify-content:center; color:white; text-align:center;
+      position:relative; overflow:hidden;
     }
-    .hero h1 {font-family: 'Montserrat', sans-serif; font-size: 2.8rem; margin-bottom: 20px; color: #0b2f5a;}
-    .hero p {font-size: 1.2rem; max-width: 700px; margin: 0 auto; line-height: 1.6;}
+    .hero::after {content:''; position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5);}
+    .hero-content {position:relative; z-index:1; opacity:0; transform:translateY(20px); animation:fadeInUp 1s forwards 0.3s;}
+    @keyframes fadeInUp {to {opacity:1; transform:translateY(0);}}
+    .hero h1 {font-family:'Montserrat',sans-serif; font-size:2.8rem;}
+    .hero p {font-size:1.2rem; margin-top:15px;}
 
-    /* Services Grid */
-    .services {padding: 80px 50px; text-align: center;}
-    .services h2 {font-family: 'Montserrat', sans-serif; font-size: 2.5rem; margin-bottom: 50px;}
-    .service-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
-    }
+    /* Services Section */
+    .services-section {padding:80px 50px; max-width:1100px; margin:0 auto; text-align:center;}
+    .services-section h2 {font-family:'Montserrat',sans-serif; font-size:2.5rem; margin-bottom:50px;}
+    .service-cards {display:flex; flex-wrap:wrap; gap:30px; justify-content:center;}
     .service-card {
-      flex: 1 1 250px;
-      background-color: #f7f7f7;
-      padding: 30px 20px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-      text-align: left;
+      flex:1 1 250px; background:#f7f7f7; padding:30px 20px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      transition:transform 0.3s, box-shadow 0.3s; opacity:0;
     }
-    .service-card:hover {transform: translateY(-10px);}
-    .service-card h3 {font-family: 'Montserrat', sans-serif; margin-bottom: 15px; color: #0b2f5a;}
-    .service-card p {line-height: 1.6; font-size: 0.95rem;}
-
-    /* Process Section */
-    .process {padding: 80px 50px; background-color: #eef1f5;}
-    .process h2 {text-align: center; font-family: 'Montserrat', sans-serif; font-size: 2.5rem; margin-bottom: 50px;}
-    .steps {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-    }
-    .step {
-      flex: 1 1 250px;
-      background-color: white;
-      padding: 30px 20px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.3s;
-    }
-    .step:hover {transform: translateY(-10px);}
-    .step h4 {font-family: 'Montserrat', sans-serif; margin-bottom: 15px; color: #0b2f5a;}
-    .step p {line-height: 1.6; font-size: 0.95rem;}
+    .service-card:hover {transform:translateY(-10px); box-shadow:0 10px 20px rgba(0,0,0,0.2);}
+    .service-card img {width:60px; height:60px; margin-bottom:15px;}
+    .service-card h3 {font-family:'Montserrat',sans-serif; color:#0b2f5a; margin-bottom:10px;}
+    .service-card p {font-size:0.95rem; line-height:1.6;}
 
     /* Footer */
-    footer {
-      background-color: #1c1c1c; color: #ccc; text-align: center; padding: 30px 50px; font-size: 0.9rem;
-    }
+    footer {background:#1c1c1c; color:#ccc; text-align:center; padding:30px 50px; font-size:0.9rem;}
 
-    @media(max-width: 768px){
-      .service-grid, .steps {flex-direction: column; align-items: center;}
-      .hero h1 {font-size: 2.2rem;}
-      .hero p {font-size: 1rem;}
+    @media(max-width:768px){
+      .service-cards {flex-direction:column; align-items:center;}
+      .hero h1 {font-size:2.2rem;}
+      .hero p {font-size:1rem;}
     }
   </style>
 </head>
@@ -92,54 +64,42 @@
       <a href="about.html">About Us</a>
       <a href="services.html">Services</a>
       <a href="projects.html">Projects</a>
+      <a href="industries.html">Industries</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
-    <h1>Our Services</h1>
-    <p>We provide expert solutions in project management, contracts, advisory, supervision, and environmental health & safety for construction projects across Africa.</p>
-  </section>
-
-  <!-- Services Cards -->
-  <section class="services">
-    <h2>What We Offer</h2>
-    <div class="service-grid">
-      <div class="service-card">
-        <h3>Project Management</h3>
-        <p>End-to-end project management ensuring timely delivery, resource optimization, and quality control for every project we undertake.</p>
-      </div>
-      <div class="service-card">
-        <h3>Contracts Management</h3>
-        <p>Meticulous contracts management to mitigate risks, ensure compliance, and maximize value for clients and stakeholders.</p>
-      </div>
-      <div class="service-card">
-        <h3>Advisory & Supervision</h3>
-        <p>Expert supervision and advisory services ensuring projects meet technical, regulatory, and quality standards.</p>
-      </div>
-      <div class="service-card">
-        <h3>Environmental Health & Safety</h3>
-        <p>We prioritize safety and environmental compliance, protecting workers, communities, and the surrounding environment.</p>
-      </div>
+    <div class="hero-content">
+      <h1>Our Services</h1>
+      <p>Delivering Project Management, Advisory, and Supervision Services Across Africa</p>
     </div>
   </section>
 
-  <!-- Process Section -->
-  <section class="process">
-    <h2>Our Process</h2>
-    <div class="steps">
-      <div class="step">
-        <h4>Planning</h4>
-        <p>Detailed project planning and strategy development to ensure clarity, feasibility, and alignment with client goals.</p>
+  <!-- Services Section -->
+  <section class="services-section">
+    <h2>What We Offer</h2>
+    <div class="service-cards">
+      <div class="service-card" data-aos="fade-up">
+        <img src="images/icons/project-management.png" alt="Project Management Icon">
+        <h3>Project Management</h3>
+        <p>Planning, execution, and delivery of projects with efficiency, quality, and timeliness.</p>
       </div>
-      <div class="step">
-        <h4>Execution</h4>
-        <p>Efficient implementation of plans with regular monitoring, quality checks, and risk management.</p>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <img src="images/icons/contracts.png" alt="Contracts Management Icon">
+        <h3>Contracts Management</h3>
+        <p>Expert handling of contracts, risk mitigation, and maximizing client value.</p>
       </div>
-      <div class="step">
-        <h4>Delivery</h4>
-        <p>Timely project completion with thorough inspections, client approvals, and post-project support.</p>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <img src="images/icons/advisory.png" alt="Advisory Icon">
+        <h3>Advisory & Supervision</h3>
+        <p>Professional supervision and advisory to meet industry standards and client expectations.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+        <img src="images/icons/safety.png" alt="Health & Safety Icon">
+        <h3>Environmental Health & Safety</h3>
+        <p>Ensuring compliance, safety, and protection of people, property, and the environment.</p>
       </div>
     </div>
   </section>
@@ -149,5 +109,9 @@
     &copy; 2025 Crestpoint. All Rights Reserved.
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({duration:1000, once:true});
+  </script>
 </body>
 </html>
