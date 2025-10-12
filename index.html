@@ -1,147 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Crest Point Management</title>
-<link rel="icon" href="favicon.ico">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<meta name="description" content="Professional project and contracts management services across Africa.">
-<meta name="author" content="Crest Point Management">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crestpoint | Building Excellence Across Africa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    /* Reset and basic styling */
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {font-family: 'Open Sans', sans-serif; color: #333;}
+    a {text-decoration: none; color: inherit;}
+
+    /* Header */
+    header {
+      background-color: #0b2f5a; /* Deep navy */
+      color: white;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header nav a {margin-left: 25px; font-weight: 600; transition: color 0.3s;}
+    header nav a:hover {color: #f5a623;} /* Orange highlight */
+
+    /* Hero Section */
+    .hero {
+      background: url('images/construction-hero.jpg') center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {font-family: 'Montserrat', sans-serif; font-size: 3rem; margin-bottom: 20px;}
+    .hero p {font-size: 1.3rem; margin-bottom: 30px;}
+    .hero button {
+      background-color: #f5a623;
+      border: none;
+      padding: 15px 35px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .hero button:hover {background-color: #e6951f;}
+
+    /* Services Section */
+    .services {padding: 80px 50px; text-align: center;}
+    .services h2 {font-family: 'Montserrat', sans-serif; font-size: 2.5rem; margin-bottom: 50px;}
+    .service-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    .card {
+      flex: 1 1 250px;
+      background-color: #f7f7f7;
+      padding: 30px 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover {transform: translateY(-10px);}
+    .card h3 {font-family: 'Montserrat', sans-serif; margin-bottom: 15px; color: #0b2f5a;}
+    .card p {font-size: 1rem; line-height: 1.6;}
+
+    /* Projects Section */
+    .projects {padding: 80px 50px; background-color: #eef1f5;}
+    .projects h2 {text-align: center; font-family: 'Montserrat', sans-serif; font-size: 2.5rem; margin-bottom: 50px;}
+    .project-grid {display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;}
+    .project-card {
+      flex: 1 1 300px;
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .project-card:hover {transform: translateY(-10px);}
+    .project-card img {width: 100%; height: 200px; object-fit: cover;}
+    .project-card .content {padding: 20px;}
+    .project-card h3 {font-family: 'Montserrat', sans-serif; color: #0b2f5a; margin-bottom: 10px;}
+    .project-card p {font-size: 0.95rem; line-height: 1.5;}
+
+    /* Contact CTA */
+    .contact-cta {padding: 60px 50px; text-align: center; background-color: #0b2f5a; color: white;}
+    .contact-cta h2 {font-family: 'Montserrat', sans-serif; font-size: 2rem; margin-bottom: 20px;}
+    .contact-cta button {
+      background-color: #f5a623; padding: 15px 35px; font-size: 1rem; border-radius: 5px; border: none; cursor: pointer; font-weight: bold;
+    }
+    .contact-cta button:hover {background-color: #e6951f;}
+
+    /* Footer */
+    footer {
+      background-color: #1c1c1c;
+      color: #ccc;
+      text-align: center;
+      padding: 30px 50px;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media(max-width: 768px){
+      .service-cards, .project-grid {flex-direction: column; align-items: center;}
+      .hero h1 {font-size: 2.2rem;}
+      .hero p {font-size: 1rem;}
+    }
+  </style>
 </head>
 <body>
 
-<!-- Header -->
-<header class="header">
-  <div class="container">
-    <a href="index.html" class="logo"><img src="assets/logo.png" alt="Crest Point Management"></a>
-    <nav class="nav">
+  <!-- Header -->
+  <header>
+    <div class="logo"><img src="images/logo.png" alt="Crestpoint Logo" height="50"></div>
+    <nav>
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
+      <a href="about.html">About Us</a>
       <a href="services.html">Services</a>
-      <a href="industries.html">Industries</a>
-      <a href="case-studies.html">Case Studies</a>
-      <a href="team.html">Team</a>
+      <a href="projects.html">Projects</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
-  </div>
-  <div class="mobile-nav" id="mobileNav">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="industries.html">Industries</a>
-    <a href="case-studies.html">Case Studies</a>
-    <a href="team.html">Team</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</header>
+  </header>
 
-<!-- Hero Section -->
-<section class="hero">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <h1>Building Africa’s Future with Precision</h1>
-    <p>Professional project and contracts management services across Africa’s industries.</p>
-    <a href="contact.html" class="btn-primary">Let’s Work Together</a>
-  </div>
-</section>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Building Excellence Across Africa</h1>
+      <p>Project Management | Contracts | Advisory & Supervision</p>
+      <button onclick="location.href='contact.html'">Request a Quote</button>
+    </div>
+  </section>
 
-<!-- About Section -->
-<section class="about section">
-  <div class="container">
-    <h2>About Crest Point Management</h2>
-    <p>We combine expertise, precision, and innovative solutions to ensure your projects succeed across Africa.</p>
-  </div>
-</section>
-
-<!-- Services Section -->
-<section class="services section">
-  <div class="container">
+  <!-- Services Section -->
+  <section class="services">
     <h2>Our Services</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <img src="assets/service-1.jpg" alt="Project Management">
+    <div class="service-cards">
+      <div class="card">
         <h3>Project Management</h3>
-        <p>Planning and executing projects efficiently with measurable results.</p>
+        <p>We plan, execute, and deliver projects on time, ensuring quality and efficiency across all stages.</p>
       </div>
-      <div class="service-card">
-        <img src="assets/service-2.jpg" alt="Contracts Management">
+      <div class="card">
         <h3>Contracts Management</h3>
-        <p>Mitigating risks and optimizing contracts for maximum value.</p>
+        <p>Our experts handle contracts with precision, mitigating risks and maximizing value for clients.</p>
       </div>
-      <div class="service-card">
-        <img src="assets/service-3.jpg" alt="Advisory & Supervision">
+      <div class="card">
         <h3>Advisory & Supervision</h3>
-        <p>Ensuring high-quality execution and regulatory compliance.</p>
+        <p>We provide expert supervision and advisory services to ensure your projects meet industry standards.</p>
+      </div>
+      <div class="card">
+        <h3>Environmental Health & Safety</h3>
+        <p>Ensuring compliance and safety across all operations, protecting both people and the environment.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Projects Section -->
-<section class="projects section">
-  <div class="container">
+  <!-- Projects Section -->
+  <section class="projects">
     <h2>Our Projects</h2>
-    <div class="projects-grid">
+    <div class="project-grid">
       <div class="project-card">
-        <img src="assets/project1.jpg" alt="Project Alpha">
-        <div class="project-overlay">
+        <img src="images/project1.jpg" alt="Project Alpha">
+        <div class="content">
           <h3>Project Alpha</h3>
           <p>Infrastructure development for urban growth in East Africa.</p>
         </div>
       </div>
       <div class="project-card">
-        <img src="assets/project2.jpg" alt="Project Beta">
-        <div class="project-overlay">
+        <img src="images/project2.jpg" alt="Project Beta">
+        <div class="content">
           <h3>Project Beta</h3>
-          <p>Contracts management for industrial expansion in West Africa.</p>
+          <p>Industrial expansion with precise contracts management in West Africa.</p>
         </div>
       </div>
       <div class="project-card">
-        <img src="assets/project3.jpg" alt="Project Gamma">
-        <div class="project-overlay">
+        <img src="images/project3.jpg" alt="Project Gamma">
+        <div class="content">
           <h3>Project Gamma</h3>
           <p>Advisory & supervision for renewable energy initiatives.</p>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Team Section -->
-<section class="team section">
-  <div class="container">
-    <h2>Meet Our Team</h2>
-    <div class="team-grid">
-      <div class="team-member">
-        <img src="assets/king.jpg" alt="RABIU SALEH DEEN - CEO/Director">
-        <h3>RABIU SALEH DEEN</h3>
-        <p>CEO / Director</p>
-      </div>
-      <div class="team-member">
-        <img src="assets/jane.jpg" alt="Jane - Project Manager">
-        <h3>Jane</h3>
-        <p>Project Manager</p>
-      </div>
-      <div class="team-member">
-        <img src="assets/mark.jpg" alt="Mark - Contracts Manager">
-        <h3>Mark</h3>
-        <p>Contracts Manager</p>
-      </div>
-    </div>
-  </div>
-</section>
+  <!-- Contact CTA -->
+  <section class="contact-cta">
+    <h2>Ready to start your project?</h2>
+    <button onclick="location.href='contact.html'">Contact Us Today</button>
+  </section>
 
-<!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <p>© Crest Point Management — Delivering precision in project and contracts management.</p>
-    <p><a href="https://saldee.github.io/Crestpoint/">saldee.github.io/Crestpoint/</a></p>
-  </div>
-</footer>
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Crestpoint. All Rights Reserved.
+  </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
