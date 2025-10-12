@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Industries | Crestpoint</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Industries We Serve | Crestpoint</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <style>
     * {margin:0; padding:0; box-sizing:border-box;}
     body {font-family:'Open Sans',sans-serif; color:#333;}
@@ -13,30 +13,47 @@
 
     /* Header */
     header {background-color:#0b2f5a; color:white; padding:20px 50px; display:flex; justify-content:space-between; align-items:center; position:relative;}
-    header nav a {margin-left:25px; font-weight:600; transition: color 0.3s;}
+    header nav a {margin-left:25px; font-weight:600; transition:color 0.3s;}
     header nav a:hover {color:#f5a623;}
-    .mobile-menu-toggle {display:none; font-size:2rem; cursor:pointer; position:absolute; top:20px; right:30px; z-index:1000;}
+    .mobile-menu-toggle {display:none; font-size:2rem; cursor:pointer; position:absolute; top:20px; right:30px;}
     .nav-links-mobile {display:none; flex-direction:column; background:#0b2f5a; position:absolute; top:70px; right:0; width:200px; border-radius:0 0 5px 5px; padding:20px;}
     .nav-links-mobile a {margin:10px 0; font-weight:600; color:white;}
 
-    /* Hero Section */
-    .hero {background:url('images/industries-hero.jpg') center/cover no-repeat; height:60vh; display:flex; align-items:center; justify-content:center; color:white; text-align:center; position:relative; overflow:hidden;}
-    .hero::after {content:''; position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5);}
-    .hero-content {position:relative; z-index:1; opacity:0; transform:translateY(20px); animation:fadeInUp 1s forwards 0.3s;}
-    @keyframes fadeInUp {to {opacity:1; transform:translateY(0);}}
-    .hero h1 {font-family:'Montserrat',sans-serif; font-size:clamp(2rem, 4vw, 3rem);}
-    .hero p {font-size:clamp(1rem, 2.5vw, 1.2rem); margin-top:15px;}
+    /* Hero */
+    .hero {
+      background:url('images/industries-hero.jpg') center/cover fixed no-repeat;
+      height:60vh; display:flex; align-items:center; justify-content:center;
+      color:white; text-align:center; position:relative; overflow:hidden;
+    }
+    .hero::after {
+      content:''; position:absolute; top:0; left:0; right:0; bottom:0;
+      background:rgba(0,0,0,0.6);
+    }
+    .hero-content {
+      position:relative; z-index:1; max-width:700px;
+    }
+    .hero h1 {font-family:'Montserrat',sans-serif; font-size:clamp(2rem,5vw,3rem); margin-bottom:10px;}
+    .hero p {font-size:1.1rem;}
 
-    /* Industries Section */
+    /* Section */
     .section {padding:80px 50px; max-width:1200px; margin:0 auto;}
     h2 {font-family:'Montserrat',sans-serif; font-size:2.5rem; margin-bottom:50px; text-align:center;}
+
+    /* Industry Cards */
     .cards {display:flex; flex-wrap:wrap; gap:30px; justify-content:center;}
-    .card {flex:1 1 250px; background:#fff; padding:30px 20px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s; opacity:0; text-align:center;}
+    .card {
+      flex:1 1 250px; background:#fff; padding:40px 25px; border-radius:12px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1); text-align:center; transition:transform 0.3s, box-shadow 0.3s;
+    }
     .card:hover {transform:translateY(-10px); box-shadow:0 10px 20px rgba(0,0,0,0.2);}
-    .card img {width:60px; height:60px; margin-bottom:15px; transition: transform 0.3s;}
-    .card:hover img {transform:scale(1.05);}
+    .card svg {width:60px; height:60px; fill:#f5a623; margin-bottom:15px;}
     .card h3 {font-family:'Montserrat',sans-serif; color:#0b2f5a; margin-bottom:10px;}
     .card p {font-size:0.95rem; line-height:1.5;}
+
+    /* CTA */
+    .cta {text-align:center; margin-top:60px;}
+    .cta a {background:#0b2f5a; color:white; padding:12px 25px; border-radius:5px; transition:background 0.3s;}
+    .cta a:hover {background:#f5a623;}
 
     /* Footer */
     footer {background:#1c1c1c; color:#ccc; text-align:center; padding:30px 50px; font-size:0.9rem;}
@@ -44,8 +61,6 @@
     /* Responsive */
     @media(max-width:768px){
       .cards {flex-direction:column; align-items:center;}
-      .hero h1 {font-size:2.2rem;}
-      .hero p {font-size:1rem;}
       header nav {display:none;}
       .mobile-menu-toggle {display:block;}
     }
@@ -59,15 +74,15 @@
     <div class="mobile-menu-toggle">&#9776;</div>
     <nav class="nav-links">
       <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
+      <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="projects.html">Projects</a>
-      <a href="industries.html">Industries</a>
+      <a href="industries.html" style="color:#f5a623;">Industries</a>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="nav-links-mobile">
       <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
+      <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="projects.html">Projects</a>
       <a href="industries.html">Industries</a>
@@ -75,43 +90,45 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
-    <div class="hero-content">
+    <div class="hero-content" data-aos="fade-up">
       <h1>Industries We Serve</h1>
-      <p>Providing Specialized Services Across Multiple Sectors</p>
+      <p>We proudly provide services across diverse sectors — delivering reliability, safety, and precision in every project.</p>
     </div>
   </section>
 
-  <!-- Industries Cards -->
-  <section class="section">
-    <h2>Our Expertise Across Sectors</h2>
-    <div class="cards industry-cards">
-      <div class="card" data-aos="fade-up">
-        <img src="images/icons/construction.png" alt="Construction">
+  <!-- Industry Cards -->
+  <section class="section" data-aos="fade-up">
+    <h2>Our Areas of Expertise</h2>
+    <div class="cards">
+      <div class="card" data-aos="zoom-in">
+        <svg viewBox="0 0 24 24"><path d="M2 21h20v-2H2v2zm9-18h2v8h-2V3zm4 2h2v6h-2V5zM6 7h2v4H6V7z"/></svg>
         <h3>Construction</h3>
-        <p>Project and construction management for commercial and infrastructure projects.</p>
+        <p>Delivering top-tier infrastructure, civil works, and industrial construction projects with precision and efficiency.</p>
       </div>
-      <div class="card" data-aos="fade-up" data-aos-delay="100">
-        <img src="images/icons/real-estate.png" alt="Real Estate">
+
+      <div class="card" data-aos="zoom-in" data-aos-delay="100">
+        <svg viewBox="0 0 24 24"><path d="M3 13h18v8H3v-8zm0-2V9l9-6 9 6v2H3z"/></svg>
         <h3>Real Estate</h3>
-        <p>Advisory and project management for residential and commercial developments.</p>
+        <p>Comprehensive development and supervision for residential, commercial, and mixed-use properties.</p>
       </div>
-      <div class="card" data-aos="fade-up" data-aos-delay="200">
-        <img src="images/icons/public.png" alt="Public Sector">
+
+      <div class="card" data-aos="zoom-in" data-aos-delay="200">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16v2H4V4zm2 4h12v2H6V8zm-2 4h16v2H4v-2zm2 4h12v2H6v-2z"/></svg>
         <h3>Public Sector</h3>
-        <p>Government and public sector projects delivered efficiently and transparently.</p>
+        <p>Partnering with government agencies to deliver infrastructure and social projects that enhance communities.</p>
       </div>
-      <div class="card" data-aos="fade-up" data-aos-delay="300">
-        <img src="images/icons/private.png" alt="Private Sector">
+
+      <div class="card" data-aos="zoom-in" data-aos-delay="300">
+        <svg viewBox="0 0 24 24"><path d="M12 7V3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
         <h3>Private Sector</h3>
-        <p>Private sector advisory, project execution, and contracts management services.</p>
+        <p>Supporting private developers and investors with tailored project management, supervision, and advisory solutions.</p>
       </div>
-      <div class="card" data-aos="fade-up" data-aos-delay="400">
-        <img src="images/icons/industrial.png" alt="Industrial">
-        <h3>Industrial</h3>
-        <p>Industrial projects supervision, planning, and execution with strict safety compliance.</p>
-      </div>
+    </div>
+
+    <div class="cta" data-aos="fade-up" data-aos-delay="300">
+      <a href="contact.html">Talk to Our Experts</a>
     </div>
   </section>
 
@@ -123,20 +140,10 @@
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({duration:1000, once:true});
-
-    // Mobile menu toggle
     const toggle = document.querySelector('.mobile-menu-toggle');
     const mobileNav = document.querySelector('.nav-links-mobile');
     toggle.addEventListener('click', () => {
       mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
-    });
-
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-      anchor.addEventListener('click', function(e){
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'});
-      });
     });
   </script>
 </body>
