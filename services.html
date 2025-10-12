@@ -3,9 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Services | Crestpoint</title>
+  <title>Crestpoint | Services</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Crestpoint offers expert services in Construction, Project Management, Contracts Management, Supervision, and Environmental Health & Safety.">
+  <meta name="keywords" content="Crestpoint, Services, Construction, Project Management, Contracts Management, Supervision, EHS, Uganda">
+  <meta name="author" content="Crestpoint Company Ltd">
+  <link rel="canonical" href="https://saldee.github.io/Crestpoint-New/services.html">
+  <meta property="og:title" content="Crestpoint | Services">
+  <meta property="og:description" content="Delivering high-quality construction, project management, and advisory services across Uganda.">
+  <meta property="og:image" content="https://saldee.github.io/Crestpoint-New/images/services-hero.jpg">
+  <meta property="og:url" content="https://saldee.github.io/Crestpoint-New/services.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts & AOS -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
   <style>
     * {margin:0; padding:0; box-sizing:border-box;}
     body {font-family:'Open Sans',sans-serif; color:#333;}
@@ -29,9 +43,7 @@
       content:''; position:absolute; top:0; left:0; right:0; bottom:0;
       background:rgba(0,0,0,0.6);
     }
-    .hero-content {
-      position:relative; z-index:1;
-    }
+    .hero-content {position:relative; z-index:1;}
     .hero h1 {font-family:'Montserrat',sans-serif; font-size:clamp(2rem,5vw,3rem); margin-bottom:10px;}
     .hero p {font-size:1.1rem;}
 
@@ -39,16 +51,16 @@
     .section {padding:80px 50px; max-width:1200px; margin:0 auto;}
     h2 {font-family:'Montserrat',sans-serif; font-size:2.3rem; margin-bottom:30px; color:#0b2f5a; text-align:center;}
 
-    /* Services Grid */
-    .services-grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:30px;}
-    .service-card {
-      background:#fff; padding:40px 30px; border-radius:10px; text-align:center;
-      box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s;
+    /* Service Cards */
+    .cards {display:flex; flex-wrap:wrap; gap:30px; justify-content:center;}
+    .card {
+      flex:1 1 280px; background:#fff; padding:30px; border-radius:10px; text-align:center;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:transform 0.3s;
     }
-    .service-card:hover {transform:translateY(-10px); box-shadow:0 10px 25px rgba(0,0,0,0.15);}
-    .service-card img {width:60px; margin-bottom:20px;}
-    .service-card h3 {font-family:'Montserrat'; color:#0b2f5a; margin-bottom:15px;}
-    .service-card p {font-size:0.95rem; line-height:1.6;}
+    .card:hover {transform:translateY(-10px);}
+    .card img {width:60px; margin-bottom:15px;}
+    .card h3 {font-family:'Montserrat'; color:#0b2f5a; margin-bottom:10px;}
+    .card p {font-size:0.95rem; line-height:1.6;}
 
     /* Footer */
     footer {background:#1c1c1c; color:#ccc; text-align:center; padding:30px 50px; font-size:0.9rem;}
@@ -57,6 +69,7 @@
     @media(max-width:768px){
       header nav {display:none;}
       .mobile-menu-toggle {display:block;}
+      .cards {flex-direction:column; align-items:center;}
     }
   </style>
 </head>
@@ -88,45 +101,34 @@
   <section class="hero">
     <div class="hero-content" data-aos="fade-up">
       <h1>Our Services</h1>
-      <p>Delivering excellence through every phase of project development.</p>
+      <p>Expert solutions in Construction, Project Management, Supervision, Contracts Management, and EHS consultancy.</p>
     </div>
   </section>
 
-  <!-- Services -->
+  <!-- Services Section -->
   <section class="section" data-aos="fade-up">
     <h2>What We Offer</h2>
-    <div class="services-grid">
-
-      <div class="service-card" data-aos="zoom-in">
+    <div class="cards">
+      <div class="card" data-aos="zoom-in">
         <img src="images/icons/project-management.svg" alt="Project Management">
         <h3>Project Management</h3>
-        <p>We provide end-to-end project management ensuring timely delivery, budget control, and quality assurance across all construction phases.</p>
+        <p>Comprehensive project planning, execution, monitoring, and delivery to ensure client satisfaction.</p>
       </div>
-
-      <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+      <div class="card" data-aos="zoom-in" data-aos-delay="100">
         <img src="images/icons/contract.svg" alt="Contracts Management">
         <h3>Contracts Management</h3>
-        <p>Our experts manage procurement, tendering, and contract administration, minimizing risks and ensuring legal compliance.</p>
+        <p>Efficient contract administration, procurement, tendering, and compliance monitoring services.</p>
       </div>
-
-      <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+      <div class="card" data-aos="zoom-in" data-aos-delay="200">
         <img src="images/icons/supervision.svg" alt="Supervision">
-        <h3>Construction Supervision</h3>
-        <p>From site inspections to progress reporting, we ensure that projects adhere to design, safety, and quality standards.</p>
+        <h3>Supervision</h3>
+        <p>Ensuring construction projects meet design, quality, safety, and compliance standards.</p>
       </div>
-
-      <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
-        <img src="images/icons/ehs.svg" alt="Environmental Health & Safety">
+      <div class="card" data-aos="zoom-in" data-aos-delay="300">
+        <img src="images/icons/ehs.svg" alt="EHS">
         <h3>Environmental Health & Safety</h3>
-        <p>We promote safe and sustainable project environments by implementing industry-leading EHS systems and training.</p>
+        <p>Implementing EHS practices to safeguard people, assets, and the environment during project delivery.</p>
       </div>
-
-      <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
-        <img src="images/icons/advisory.svg" alt="Advisory Services">
-        <h3>Advisory & Consultancy</h3>
-        <p>We offer strategic advice on infrastructure planning, project feasibility, and construction best practices.</p>
-      </div>
-
     </div>
   </section>
 
