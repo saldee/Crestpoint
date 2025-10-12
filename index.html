@@ -6,120 +6,84 @@
   <title>Crestpoint | Building Excellence Across Africa</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
-    /* Reset and basic styling */
-    * {margin: 0; padding: 0; box-sizing: border-box;}
-    body {font-family: 'Open Sans', sans-serif; color: #333;}
-    a {text-decoration: none; color: inherit;}
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {font-family:'Open Sans',sans-serif; color:#333;}
+    a {text-decoration:none; color:inherit;}
 
     /* Header */
     header {
-      background-color: #0b2f5a; /* Deep navy */
-      color: white;
-      padding: 20px 50px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      background-color:#0b2f5a; color:white; padding:20px 50px;
+      display:flex; justify-content:space-between; align-items:center;
     }
-    header nav a {margin-left: 25px; font-weight: 600; transition: color 0.3s;}
-    header nav a:hover {color: #f5a623;} /* Orange highlight */
+    header nav a {margin-left:25px; font-weight:600; transition: color 0.3s;}
+    header nav a:hover {color:#f5a623;}
 
-    /* Hero Section */
+    /* Hero */
     .hero {
-      background: url('images/construction-hero.jpg') center/cover no-repeat;
-      height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
-      position: relative;
+      background:url('images/construction-hero.jpg') center/cover no-repeat;
+      height:90vh; display:flex; flex-direction:column; justify-content:center; align-items:center; color:white; text-align:center;
+      position:relative;
     }
     .hero::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.5);
+      content:''; position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5);
     }
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
-    .hero h1 {font-family: 'Montserrat', sans-serif; font-size: 3rem; margin-bottom: 20px;}
-    .hero p {font-size: 1.3rem; margin-bottom: 30px;}
+    .hero-content {position:relative; z-index:1;}
+    .hero h1 {font-family:'Montserrat',sans-serif; font-size:3rem; margin-bottom:20px;}
+    .hero p {font-size:1.3rem; margin-bottom:30px;}
     .hero button {
-      background-color: #f5a623;
-      border: none;
-      padding: 15px 35px;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: background 0.3s;
+      background-color:#f5a623; border:none; padding:15px 35px; font-size:1rem; font-weight:bold; cursor:pointer; border-radius:5px; transition:background 0.3s;
     }
-    .hero button:hover {background-color: #e6951f;}
+    .hero button:hover {background-color:#e6951f;}
 
     /* Services Section */
-    .services {padding: 80px 50px; text-align: center;}
-    .services h2 {font-family: 'Montserrat', sans-serif; font-size: 2.5rem; margin-bottom: 50px;}
-    .service-cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
-    }
+    .services {padding:80px 50px; text-align:center;}
+    .services h2 {font-family:'Montserrat',sans-serif; font-size:2.5rem; margin-bottom:50px;}
+    .service-cards {display:flex; flex-wrap:wrap; gap:30px; justify-content:center;}
     .card {
-      flex: 1 1 250px;
-      background-color: #f7f7f7;
-      padding: 30px 20px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
+      flex:1 1 250px; background:#f7f7f7; padding:30px 20px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:transform 0.3s;
     }
-    .card:hover {transform: translateY(-10px);}
-    .card h3 {font-family: 'Montserrat', sans-serif; margin-bottom: 15px; color: #0b2f5a;}
-    .card p {font-size: 1rem; line-height: 1.6;}
+    .card:hover {transform:translateY(-10px);}
+    .card h3 {font-family:'Montserrat',sans-serif; margin-bottom:15px; color:#0b2f5a;}
+    .card p {font-size:1rem; line-height:1.6;}
+
+    /* Industries Section */
+    .industries-home {padding:80px 50px; text-align:center; background:#eef1f5;}
+    .industries-home h2 {font-family:'Montserrat',sans-serif; font-size:2.5rem; margin-bottom:50px;}
+    .industry-cards {display:flex; flex-wrap:wrap; gap:30px; justify-content:center;}
+    .industry-card {
+      flex:1 1 250px; background:#fff; padding:30px 20px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:transform 0.3s; text-align:center;
+    }
+    .industry-card:hover {transform:translateY(-10px);}
+    .industry-card img {width:60px; height:60px; margin-bottom:15px;}
+    .industry-card h3 {font-family:'Montserrat',sans-serif; color:#0b2f5a; margin-bottom:10px;}
+    .industry-card p {font-size:0.95rem; line-height:1.5;}
 
     /* Projects Section */
-    .projects {padding: 80px 50px; background-color: #eef1f5;}
-    .projects h2 {text-align: center; font-family: 'Montserrat', sans-serif; font-size: 2.5rem; margin-bottom: 50px;}
-    .project-grid {display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;}
+    .projects {padding:80px 50px; text-align:center;}
+    .projects h2 {text-align:center; font-family:'Montserrat',sans-serif; font-size:2.5rem; margin-bottom:50px;}
+    .project-grid {display:flex; flex-wrap:wrap; gap:30px; justify-content:center;}
     .project-card {
-      flex: 1 1 300px;
-      background-color: white;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
+      flex:1 1 300px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:transform 0.3s;
     }
-    .project-card:hover {transform: translateY(-10px);}
-    .project-card img {width: 100%; height: 200px; object-fit: cover;}
-    .project-card .content {padding: 20px;}
-    .project-card h3 {font-family: 'Montserrat', sans-serif; color: #0b2f5a; margin-bottom: 10px;}
-    .project-card p {font-size: 0.95rem; line-height: 1.5;}
+    .project-card:hover {transform:translateY(-10px);}
+    .project-card img {width:100%; height:200px; object-fit:cover;}
+    .project-card .content {padding:20px;}
+    .project-card h3 {font-family:'Montserrat',sans-serif; color:#0b2f5a; margin-bottom:10px;}
+    .project-card p {font-size:0.95rem; line-height:1.5;}
 
     /* Contact CTA */
-    .contact-cta {padding: 60px 50px; text-align: center; background-color: #0b2f5a; color: white;}
-    .contact-cta h2 {font-family: 'Montserrat', sans-serif; font-size: 2rem; margin-bottom: 20px;}
-    .contact-cta button {
-      background-color: #f5a623; padding: 15px 35px; font-size: 1rem; border-radius: 5px; border: none; cursor: pointer; font-weight: bold;
-    }
-    .contact-cta button:hover {background-color: #e6951f;}
+    .contact-cta {padding:60px 50px; text-align:center; background:#0b2f5a; color:white;}
+    .contact-cta h2 {font-family:'Montserrat',sans-serif; font-size:2rem; margin-bottom:20px;}
+    .contact-cta button {background:#f5a623; padding:15px 35px; font-size:1rem; border-radius:5px; border:none; cursor:pointer; font-weight:bold;}
+    .contact-cta button:hover {background:#e6951f;}
 
     /* Footer */
-    footer {
-      background-color: #1c1c1c;
-      color: #ccc;
-      text-align: center;
-      padding: 30px 50px;
-      font-size: 0.9rem;
-    }
+    footer {background:#1c1c1c; color:#ccc; text-align:center; padding:30px 50px; font-size:0.9rem;}
 
-    /* Responsive */
-    @media(max-width: 768px){
-      .service-cards, .project-grid {flex-direction: column; align-items: center;}
-      .hero h1 {font-size: 2.2rem;}
-      .hero p {font-size: 1rem;}
+    @media(max-width:768px){
+      .service-cards, .industry-cards, .project-grid {flex-direction:column; align-items:center;}
+      .hero h1 {font-size:2.2rem;}
+      .hero p {font-size:1rem;}
     }
   </style>
 </head>
@@ -133,6 +97,7 @@
       <a href="about.html">About Us</a>
       <a href="services.html">Services</a>
       <a href="projects.html">Projects</a>
+      <a href="industries.html">Industries</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
@@ -141,7 +106,7 @@
   <section class="hero">
     <div class="hero-content">
       <h1>Building Excellence Across Africa</h1>
-      <p>Project Management | Contracts |Environmental Health and Safety| Advisory & Supervision</p>
+      <p>Project Management | Contracts | Advisory & Supervision</p>
       <button onclick="location.href='contact.html'">Request a Quote</button>
     </div>
   </section>
@@ -169,6 +134,34 @@
     </div>
   </section>
 
+  <!-- Industries Section -->
+  <section class="industries-home">
+    <h2>Industries We Serve</h2>
+    <div class="industry-cards">
+      <div class="industry-card">
+        <img src="images/icons/construction.png" alt="Construction Icon">
+        <h3>Construction</h3>
+        <p>Residential, commercial, and industrial projects.</p>
+      </div>
+      <div class="industry-card">
+        <img src="images/icons/real-estate.png" alt="Real Estate Icon">
+        <h3>Real Estate</h3>
+        <p>Supporting property development and delivery.</p>
+      </div>
+      <div class="industry-card">
+        <img src="images/icons/public-sector.png" alt="Public Sector Icon">
+        <h3>Public Sector</h3>
+        <p>Large-scale infrastructure projects with transparency.</p>
+      </div>
+      <div class="industry-card">
+        <img src="images/icons/private-sector.png" alt="Private Sector Icon">
+        <h3>Private Sector</h3>
+        <p>High-quality private sector project execution.</p>
+      </div>
+    </div>
+    <button style="margin-top:30px;" onclick="location.href='industries.html'">See All Industries</button>
+  </section>
+
   <!-- Projects Section -->
   <section class="projects">
     <h2>Our Projects</h2>
@@ -177,21 +170,14 @@
         <img src="images/project1.jpg" alt="Project Alpha">
         <div class="content">
           <h3>Project Alpha</h3>
-          <p>Infrastructure development for urban growth in East Africa.</p>
+          <p>Urban infrastructure delivered on time and within budget.</p>
         </div>
       </div>
       <div class="project-card">
         <img src="images/project2.jpg" alt="Project Beta">
         <div class="content">
           <h3>Project Beta</h3>
-          <p>Industrial expansion with precise contracts management in West Africa.</p>
-        </div>
-      </div>
-      <div class="project-card">
-        <img src="images/project3.jpg" alt="Project Gamma">
-        <div class="content">
-          <h3>Project Gamma</h3>
-          <p>Advisory & supervision for renewable energy initiatives.</p>
+          <p>Industrial expansion with meticulous contracts management.</p>
         </div>
       </div>
     </div>
@@ -199,8 +185,8 @@
 
   <!-- Contact CTA -->
   <section class="contact-cta">
-    <h2>Ready to start your project?</h2>
-    <button onclick="location.href='contact.html'">Contact Us Today</button>
+    <h2>Ready to Start Your Project?</h2>
+    <button onclick="location.href='contact.html'">Contact Us</button>
   </section>
 
   <!-- Footer -->
