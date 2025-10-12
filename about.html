@@ -3,9 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us | Crestpoint</title>
+  <title>Crestpoint | About Us</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Learn about Crestpoint, a leading construction and project management company in Uganda. Discover our mission, vision, and core values.">
+  <meta name="keywords" content="Crestpoint, About, Construction, Project Management, Values, Mission, Vision, Uganda">
+  <meta name="author" content="Crestpoint Company Ltd">
+  <link rel="canonical" href="https://saldee.github.io/Crestpoint-New/about.html">
+  <meta property="og:title" content="Crestpoint | About Us">
+  <meta property="og:description" content="Crestpoint delivers excellence in construction, project management, and advisory services. Learn more about our mission, vision, and values.">
+  <meta property="og:image" content="https://saldee.github.io/Crestpoint-New/images/about-hero.jpg">
+  <meta property="og:url" content="https://saldee.github.io/Crestpoint-New/about.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts & AOS -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
   <style>
     * {margin:0; padding:0; box-sizing:border-box;}
     body {font-family:'Open Sans',sans-serif; color:#333;}
@@ -29,9 +43,7 @@
       content:''; position:absolute; top:0; left:0; right:0; bottom:0;
       background:rgba(0,0,0,0.6);
     }
-    .hero-content {
-      position:relative; z-index:1;
-    }
+    .hero-content {position:relative; z-index:1;}
     .hero h1 {font-family:'Montserrat',sans-serif; font-size:clamp(2rem,5vw,3rem); margin-bottom:10px;}
     .hero p {font-size:1.1rem;}
 
@@ -39,31 +51,25 @@
     .section {padding:80px 50px; max-width:1200px; margin:0 auto;}
     h2 {font-family:'Montserrat',sans-serif; font-size:2.3rem; margin-bottom:30px; color:#0b2f5a; text-align:center;}
 
-    .about-content {display:flex; flex-wrap:wrap; align-items:center; gap:50px;}
-    .about-text {flex:1 1 500px;}
-    .about-text p {font-size:1rem; line-height:1.7; margin-bottom:15px;}
-    .about-image {flex:1 1 400px;}
-    .about-image img {width:100%; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);}
-
-    /* Values Section */
-    .values {background:#f7f7f7;}
-    .cards {display:flex; flex-wrap:wrap; justify-content:center; gap:30px;}
+    /* Cards */
+    .cards {display:flex; flex-wrap:wrap; gap:30px; justify-content:center;}
     .card {
-      flex:1 1 250px; background:#fff; padding:30px; border-radius:10px; text-align:center;
+      flex:1 1 280px; background:#fff; padding:30px; border-radius:10px; text-align:center;
       box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:transform 0.3s;
     }
     .card:hover {transform:translateY(-10px);}
-    .card h3 {color:#0b2f5a; font-family:'Montserrat'; margin-bottom:10px;}
-    .card p {font-size:0.95rem;}
+    .card img {width:60px; margin-bottom:15px;}
+    .card h3 {font-family:'Montserrat'; color:#0b2f5a; margin-bottom:10px;}
+    .card p {font-size:0.95rem; line-height:1.6;}
 
     /* Footer */
     footer {background:#1c1c1c; color:#ccc; text-align:center; padding:30px 50px; font-size:0.9rem;}
 
     /* Responsive */
     @media(max-width:768px){
-      .about-content {flex-direction:column;}
       header nav {display:none;}
       .mobile-menu-toggle {display:block;}
+      .cards {flex-direction:column; align-items:center;}
     }
   </style>
 </head>
@@ -95,44 +101,33 @@
   <section class="hero">
     <div class="hero-content" data-aos="fade-up">
       <h1>About Crestpoint</h1>
-      <p>Committed to excellence in Construction, Project Management, and Advisory services across Africa.</p>
+      <p>Excellence in Construction, Project Management, and Advisory services across Uganda.</p>
     </div>
   </section>
 
-  <!-- Company Story -->
+  <!-- Our Story & Mission -->
   <section class="section" data-aos="fade-up">
-    <h2>Who We Are</h2>
-    <div class="about-content">
-      <div class="about-text" data-aos="fade-right">
-        <p>Crestpoint is a multi-disciplinary company specializing in Construction, Project Management, Contracts Management, Supervision, and Environmental Health & Safety consultancy.</p>
-        <p>With a strong focus on delivering value, quality, and safety, we partner with both public and private sector clients to deliver world-class infrastructure and development projects.</p>
-        <p>Our experienced team ensures every project is managed efficiently — meeting client goals on time and within budget.</p>
-      </div>
-      <div class="about-image" data-aos="zoom-in">
-        <img src="images/about-team.jpg" alt="Crestpoint Team">
-      </div>
-    </div>
-  </section>
-
-  <!-- Our Values -->
-  <section class="section values" data-aos="fade-up">
-    <h2>Our Core Values</h2>
+    <h2>Our Story</h2>
     <div class="cards">
       <div class="card" data-aos="zoom-in">
-        <h3>Integrity</h3>
-        <p>We uphold transparency, honesty, and ethical practices in all our engagements.</p>
+        <img src="images/icons/team.svg" alt="Team">
+        <h3>Who We Are</h3>
+        <p>Crestpoint is a multi-disciplinary company specializing in construction, project management, contracts management, supervision, and EHS advisory.</p>
       </div>
       <div class="card" data-aos="zoom-in" data-aos-delay="100">
-        <h3>Excellence</h3>
-        <p>We aim for the highest quality standards in every aspect of our work.</p>
+        <img src="images/icons/mission.svg" alt="Mission">
+        <h3>Our Mission</h3>
+        <p>To deliver high-quality, safe, and sustainable projects while exceeding client expectations.</p>
       </div>
       <div class="card" data-aos="zoom-in" data-aos-delay="200">
-        <h3>Safety</h3>
-        <p>We prioritize safety and environmental sustainability on every project site.</p>
+        <img src="images/icons/vision.svg" alt="Vision">
+        <h3>Our Vision</h3>
+        <p>To be Uganda’s most trusted partner in construction and project advisory services.</p>
       </div>
       <div class="card" data-aos="zoom-in" data-aos-delay="300">
-        <h3>Innovation</h3>
-        <p>We embrace technology and modern methods to deliver efficient, forward-looking solutions.</p>
+        <img src="images/icons/values.svg" alt="Values">
+        <h3>Our Values</h3>
+        <p>Integrity, Excellence, Safety, Innovation, and Client Satisfaction are at the core of everything we do.</p>
       </div>
     </div>
   </section>
