@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crestpoint | Building Excellence Across Africa</title>
+  <title>Crestpoint | Premium Project & Construction Services</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
@@ -13,83 +13,46 @@
 
     /* Header */
     header {
-      background-color:#0b2f5a; color:white; padding:20px 50px;
-      display:flex; justify-content:space-between; align-items:center;
+      background-color:#0b2f5a; color:white; padding:20px 50px; display:flex; justify-content:space-between; align-items:center; position:relative;
     }
     header nav a {margin-left:25px; font-weight:600; transition: color 0.3s;}
     header nav a:hover {color:#f5a623;}
+    .mobile-menu-toggle {display:none; font-size:2rem; cursor:pointer; position:absolute; top:20px; right:30px; z-index:1000;}
+    .nav-links-mobile {display:none; flex-direction:column; background:#0b2f5a; position:absolute; top:70px; right:0; width:200px; border-radius:0 0 5px 5px; padding:20px;}
+    .nav-links-mobile a {margin:10px 0; font-weight:600; color:white;}
 
-    /* Hero */
+    /* Hero Section */
     .hero {
-      background:url('images/construction-hero.jpg') center/cover no-repeat;
-      height:90vh; display:flex; flex-direction:column; justify-content:center; align-items:center; color:white; text-align:center;
-      position:relative; overflow:hidden;
+      background:url('images/hero.jpg') center/cover no-repeat;
+      height:60vh; display:flex; align-items:center; justify-content:center; color:white; text-align:center; position:relative; overflow:hidden;
     }
-    .hero::after {
-      content:''; position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5);
-    }
+    .hero::after {content:''; position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5);}
     .hero-content {position:relative; z-index:1; opacity:0; transform:translateY(20px); animation:fadeInUp 1s forwards 0.3s;}
     @keyframes fadeInUp {to {opacity:1; transform:translateY(0);}}
-    .hero h1 {font-family:'Montserrat',sans-serif; font-size:3rem; margin-bottom:20px;}
-    .hero p {font-size:1.3rem; margin-bottom:30px;}
-    .hero button {
-      background-color:#f5a623; border:none; padding:15px 35px; font-size:1rem; font-weight:bold; cursor:pointer; border-radius:5px; transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .hero button:hover {transform:scale(1.05); box-shadow:0 5px 15px rgba(0,0,0,0.3);}
+    .hero h1 {font-family:'Montserrat',sans-serif; font-size:clamp(2rem, 4vw, 3rem);}
+    .hero p {font-size:clamp(1rem, 2.5vw, 1.2rem); margin-top:15px;}
 
-    /* Services Section */
-    .services {padding:80px 50px; text-align:center;}
-    .services h2 {font-family:'Montserrat',sans-serif; font-size:2.5rem; margin-bottom:50px;}
-    .service-cards {display:flex; flex-wrap:wrap; gap:30px; justify-content:center;}
-    .card {
-      flex:1 1 250px; background:#f7f7f7; padding:30px 20px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);
-      transition:transform 0.3s, box-shadow 0.3s; opacity:0;
-    }
+    /* Sections */
+    .section {padding:80px 50px; max-width:1200px; margin:0 auto;}
+    h2 {font-family:'Montserrat',sans-serif; font-size:2.5rem; margin-bottom:50px; text-align:center;}
+    .cards {display:flex; flex-wrap:wrap; gap:30px; justify-content:center;}
+    .card {flex:1 1 250px; background:#fff; padding:30px 20px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s; opacity:0; text-align:center;}
     .card:hover {transform:translateY(-10px); box-shadow:0 10px 20px rgba(0,0,0,0.2);}
-    .card h3 {font-family:'Montserrat',sans-serif; margin-bottom:15px; color:#0b2f5a;}
-    .card p {font-size:1rem; line-height:1.6;}
-
-    /* Industries Section */
-    .industries-home {padding:80px 50px; text-align:center; background:#eef1f5;}
-    .industries-home h2 {font-family:'Montserrat',sans-serif; font-size:2.5rem; margin-bottom:50px;}
-    .industry-cards {display:flex; flex-wrap:wrap; gap:30px; justify-content:center;}
-    .industry-card {
-      flex:1 1 250px; background:#fff; padding:30px 20px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);
-      transition:transform 0.3s, box-shadow 0.3s; text-align:center; opacity:0;
-    }
-    .industry-card:hover {transform:translateY(-10px); box-shadow:0 10px 20px rgba(0,0,0,0.2);}
-    .industry-card img {width:60px; height:60px; margin-bottom:15px;}
-    .industry-card h3 {font-family:'Montserrat',sans-serif; color:#0b2f5a; margin-bottom:10px;}
-    .industry-card p {font-size:0.95rem; line-height:1.5;}
-
-    /* Projects Section */
-    .projects {padding:80px 50px; text-align:center;}
-    .projects h2 {text-align:center; font-family:'Montserrat',sans-serif; font-size:2.5rem; margin-bottom:50px;}
-    .project-grid {display:flex; flex-wrap:wrap; gap:30px; justify-content:center;}
-    .project-card {
-      flex:1 1 300px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.1);
-      transition:transform 0.3s, box-shadow 0.3s; opacity:0;
-    }
-    .project-card:hover {transform:translateY(-10px); box-shadow:0 10px 20px rgba(0,0,0,0.2);}
-    .project-card img {width:100%; height:200px; object-fit:cover; transition: transform 0.3s;}
-    .project-card:hover img {transform:scale(1.05);}
-    .project-card .content {padding:20px;}
-    .project-card h3 {font-family:'Montserrat',sans-serif; color:#0b2f5a; margin-bottom:10px;}
-    .project-card p {font-size:0.95rem; line-height:1.5;}
-
-    /* Contact CTA */
-    .contact-cta {padding:60px 50px; text-align:center; background:#0b2f5a; color:white;}
-    .contact-cta h2 {font-family:'Montserrat',sans-serif; font-size:2rem; margin-bottom:20px;}
-    .contact-cta button {background:#f5a623; padding:15px 35px; font-size:1rem; border-radius:5px; border:none; cursor:pointer; font-weight:bold;}
-    .contact-cta button:hover {background:#e6951f;}
+    .card img {width:60px; height:60px; margin-bottom:15px; transition: transform 0.3s;}
+    .card:hover img {transform:scale(1.05);}
+    .card h3 {font-family:'Montserrat',sans-serif; color:#0b2f5a; margin-bottom:10px;}
+    .card p {font-size:0.95rem; line-height:1.5;}
 
     /* Footer */
     footer {background:#1c1c1c; color:#ccc; text-align:center; padding:30px 50px; font-size:0.9rem;}
 
+    /* Responsive */
     @media(max-width:768px){
-      .service-cards, .industry-cards, .project-grid {flex-direction:column; align-items:center;}
+      .cards {flex-direction:column; align-items:center;}
       .hero h1 {font-size:2.2rem;}
       .hero p {font-size:1rem;}
+      header nav {display:none;}
+      .mobile-menu-toggle {display:block;}
     }
   </style>
 </head>
@@ -98,7 +61,8 @@
   <!-- Header -->
   <header>
     <div class="logo"><img src="images/logo.png" alt="Crestpoint Logo" height="50"></div>
-    <nav>
+    <div class="mobile-menu-toggle">&#9776;</div>
+    <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About Us</a>
       <a href="services.html">Services</a>
@@ -106,93 +70,71 @@
       <a href="industries.html">Industries</a>
       <a href="contact.html">Contact</a>
     </nav>
+    <div class="nav-links-mobile">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="industries.html">Industries</a>
+      <a href="contact.html">Contact</a>
+    </div>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <h1>Building Excellence Across Africa</h1>
-      <p>Project Management | Contracts | Advisory & Supervision</p>
-      <button onclick="location.href='contact.html'">Request a Quote</button>
+      <h1>Premium Project & Construction Services</h1>
+      <p>Delivering Excellence Across Africa in Project Management, Supervision, and Advisory</p>
     </div>
   </section>
 
   <!-- Services Section -->
-  <section class="services">
-    <h2>Our Services</h2>
-    <div class="service-cards">
+  <section class="section">
+    <h2>Our Core Services</h2>
+    <div class="cards service-cards">
       <div class="card" data-aos="fade-up">
+        <img src="images/icons/project-management.png" alt="Project Management">
         <h3>Project Management</h3>
-        <p>We plan, execute, and deliver projects on time, ensuring quality and efficiency across all stages.</p>
+        <p>Efficient planning, execution, and delivery of construction projects.</p>
       </div>
       <div class="card" data-aos="fade-up" data-aos-delay="100">
+        <img src="images/icons/contracts.png" alt="Contracts Management">
         <h3>Contracts Management</h3>
-        <p>Our experts handle contracts with precision, mitigating risks and maximizing value for clients.</p>
+        <p>Expert handling of contracts and risk mitigation for maximum client value.</p>
       </div>
       <div class="card" data-aos="fade-up" data-aos-delay="200">
+        <img src="images/icons/advisory.png" alt="Advisory">
         <h3>Advisory & Supervision</h3>
-        <p>We provide expert supervision and advisory services to ensure your projects meet industry standards.</p>
+        <p>Professional supervision and advisory to meet industry standards.</p>
       </div>
       <div class="card" data-aos="fade-up" data-aos-delay="300">
+        <img src="images/icons/safety.png" alt="Health & Safety">
         <h3>Environmental Health & Safety</h3>
-        <p>Ensuring compliance and safety across all operations, protecting both people and the environment.</p>
+        <p>Ensuring compliance, safety, and protection of people and the environment.</p>
       </div>
     </div>
-  </section>
-
-  <!-- Industries Section -->
-  <section class="industries-home">
-    <h2>Industries We Serve</h2>
-    <div class="industry-cards">
-      <div class="industry-card" data-aos="fade-up">
-        <img src="images/icons/construction.png" alt="Construction Icon">
-        <h3>Construction</h3>
-        <p>Residential, commercial, and industrial projects.</p>
-      </div>
-      <div class="industry-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="images/icons/real-estate.png" alt="Real Estate Icon">
-        <h3>Real Estate</h3>
-        <p>Supporting property development and delivery.</p>
-      </div>
-      <div class="industry-card" data-aos="fade-up" data-aos-delay="200">
-        <img src="images/icons/public-sector.png" alt="Public Sector Icon">
-        <h3>Public Sector</h3>
-        <p>Large-scale infrastructure projects with transparency.</p>
-      </div>
-      <div class="industry-card" data-aos="fade-up" data-aos-delay="300">
-        <img src="images/icons/private-sector.png" alt="Private Sector Icon">
-        <h3>Private Sector</h3>
-        <p>High-quality private sector project execution.</p>
-      </div>
-    </div>
-    <button style="margin-top:30px;" onclick="location.href='industries.html'">See All Industries</button>
   </section>
 
   <!-- Projects Section -->
-  <section class="projects">
-    <h2>Our Projects</h2>
-    <div class="project-grid">
-      <div class="project-card" data-aos="fade-up">
+  <section class="section">
+    <h2>Featured Projects</h2>
+    <div class="cards project-grid">
+      <div class="card" data-aos="fade-up">
         <img src="images/project1.jpg" alt="Project Alpha">
-        <div class="content">
-          <h3>Project Alpha</h3>
-          <p>Urban infrastructure delivered on time and within budget.</p>
-        </div>
+        <h3>Project Alpha</h3>
+        <p>Urban infrastructure delivered on time and within budget.</p>
       </div>
-      <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+      <div class="card" data-aos="fade-up" data-aos-delay="100">
         <img src="images/project2.jpg" alt="Project Beta">
-        <div class="content">
-          <h3>Project Beta</h3>
-          <p>Industrial expansion with meticulous contracts management.</p>
-        </div>
+        <h3>Project Beta</h3>
+        <p>Industrial expansion project executed with precision supervision.</p>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="200">
+        <img src="images/project3.jpg" alt="Project Gamma">
+        <h3>Project Gamma</h3>
+        <p>Commercial complex completed with attention to quality and safety.</p>
       </div>
     </div>
-  </section>
-
-  <!-- Contact CTA -->
-  <section class="contact-cta">
-    <h2>Ready to Start Your Project?</h2>
-    <button onclick="location.href='contact.html'">Contact Us</button>
   </section>
 
   <!-- Footer -->
@@ -203,6 +145,21 @@
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({duration:1000, once:true});
+
+    // Mobile menu toggle
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const mobileNav = document.querySelector('.nav-links-mobile');
+    toggle.addEventListener('click', () => {
+      mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+      anchor.addEventListener('click', function(e){
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+      });
+    });
   </script>
 </body>
 </html>
