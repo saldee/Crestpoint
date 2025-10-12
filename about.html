@@ -12,47 +12,36 @@
     a {text-decoration:none; color:inherit;}
 
     /* Header */
-    header {
-      background-color:#0b2f5a; color:white; padding:20px 50px;
-      display:flex; justify-content:space-between; align-items:center;
-    }
+    header {background-color:#0b2f5a; color:white; padding:20px 50px; display:flex; justify-content:space-between; align-items:center; position:relative;}
     header nav a {margin-left:25px; font-weight:600; transition: color 0.3s;}
     header nav a:hover {color:#f5a623;}
+    .mobile-menu-toggle {display:none; font-size:2rem; cursor:pointer; position:absolute; top:20px; right:30px; z-index:1000;}
+    .nav-links-mobile {display:none; flex-direction:column; background:#0b2f5a; position:absolute; top:70px; right:0; width:200px; border-radius:0 0 5px 5px; padding:20px;}
+    .nav-links-mobile a {margin:10px 0; font-weight:600; color:white;}
 
     /* Hero Section */
-    .hero {
-      background:url('images/about-hero.jpg') center/cover no-repeat;
-      height:60vh; display:flex; align-items:center; justify-content:center; color:white; text-align:center;
-      position:relative; overflow:hidden;
-    }
+    .hero {background:url('images/about-hero.jpg') center/cover no-repeat; height:60vh; display:flex; align-items:center; justify-content:center; color:white; text-align:center; position:relative; overflow:hidden;}
     .hero::after {content:''; position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5);}
     .hero-content {position:relative; z-index:1; opacity:0; transform:translateY(20px); animation:fadeInUp 1s forwards 0.3s;}
     @keyframes fadeInUp {to {opacity:1; transform:translateY(0);}}
-    .hero h1 {font-family:'Montserrat',sans-serif; font-size:2.8rem;}
-    .hero p {font-size:1.2rem; margin-top:15px;}
+    .hero h1 {font-family:'Montserrat',sans-serif; font-size:clamp(2rem, 4vw, 3rem);}
+    .hero p {font-size:clamp(1rem, 2.5vw, 1.2rem); margin-top:15px;}
 
-    /* About Content */
-    .about-section {padding:80px 50px; max-width:1100px; margin:0 auto;}
-    .about-section h2 {font-family:'Montserrat',sans-serif; font-size:2.5rem; margin-bottom:30px; text-align:center;}
-    .about-section p {font-size:1.1rem; line-height:1.8; margin-bottom:20px; text-align:justify;}
-    
-    /* Values Section */
-    .values {padding:60px 50px; background:#eef1f5; text-align:center;}
-    .values h2 {font-family:'Montserrat',sans-serif; font-size:2.5rem; margin-bottom:50px;}
-    .value-cards {display:flex; flex-wrap:wrap; gap:30px; justify-content:center;}
-    .value-card {
-      flex:1 1 250px; background:#fff; padding:30px 20px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);
-      transition:transform 0.3s, box-shadow 0.3s; text-align:center; opacity:0;
-    }
-    .value-card:hover {transform:translateY(-10px); box-shadow:0 10px 20px rgba(0,0,0,0.2);}
-    .value-card h3 {font-family:'Montserrat',sans-serif; color:#0b2f5a; margin-bottom:10px;}
-    .value-card p {font-size:0.95rem; line-height:1.5;}
+    /* About Section */
+    .section {padding:80px 50px; max-width:1200px; margin:0 auto;}
+    h2 {font-family:'Montserrat',sans-serif; font-size:2.5rem; margin-bottom:50px; text-align:center;}
+    .about-content {display:flex; gap:40px; align-items:center; flex-wrap:wrap;}
+    .about-content img {flex:1 1 400px; border-radius:10px; max-width:100%;}
+    .about-text {flex:1 1 400px;}
+    .about-text p {margin-bottom:20px; line-height:1.6;}
 
     /* Footer */
     footer {background:#1c1c1c; color:#ccc; text-align:center; padding:30px 50px; font-size:0.9rem;}
 
     @media(max-width:768px){
-      .value-cards {flex-direction:column; align-items:center;}
+      .about-content {flex-direction:column; align-items:center;}
+      header nav {display:none;}
+      .mobile-menu-toggle {display:block;}
       .hero h1 {font-size:2.2rem;}
       .hero p {font-size:1rem;}
     }
@@ -63,7 +52,8 @@
   <!-- Header -->
   <header>
     <div class="logo"><img src="images/logo.png" alt="Crestpoint Logo" height="50"></div>
-    <nav>
+    <div class="mobile-menu-toggle">&#9776;</div>
+    <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About Us</a>
       <a href="services.html">Services</a>
@@ -71,42 +61,33 @@
       <a href="industries.html">Industries</a>
       <a href="contact.html">Contact</a>
     </nav>
+    <div class="nav-links-mobile">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="industries.html">Industries</a>
+      <a href="contact.html">Contact</a>
+    </div>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
       <h1>About Crestpoint</h1>
-      <p>Delivering Excellence in Project Management, Supervision, and Advisory Services Across Africa</p>
+      <p>Delivering Excellence in Project Management and Construction Across Africa</p>
     </div>
   </section>
 
   <!-- About Section -->
-  <section class="about-section">
+  <section class="section">
     <h2>Who We Are</h2>
-    <p>Crestpoint Company is a premier provider of project management, contracts management, supervision, and advisory services. With years of experience across multiple sectors, we pride ourselves on delivering projects that meet international standards of quality, safety, and efficiency.</p>
-    <p>Our mission is to ensure that every project, whether public or private, large-scale or small, is executed with precision, transparency, and a commitment to excellence. We leverage our deep industry knowledge to provide actionable insights, risk management strategies, and innovative solutions to our clients.</p>
-  </section>
-
-  <!-- Core Values Section -->
-  <section class="values">
-    <h2>Our Core Values</h2>
-    <div class="value-cards">
-      <div class="value-card" data-aos="fade-up">
-        <h3>Integrity</h3>
-        <p>We uphold the highest standards of honesty and ethics in every project.</p>
-      </div>
-      <div class="value-card" data-aos="fade-up" data-aos-delay="100">
-        <h3>Excellence</h3>
-        <p>Delivering top-tier results with attention to detail and quality assurance.</p>
-      </div>
-      <div class="value-card" data-aos="fade-up" data-aos-delay="200">
-        <h3>Safety</h3>
-        <p>Ensuring the safety of people, property, and the environment in all operations.</p>
-      </div>
-      <div class="value-card" data-aos="fade-up" data-aos-delay="300">
-        <h3>Innovation</h3>
-        <p>Applying creative and efficient solutions to complex project challenges.</p>
+    <div class="about-content">
+      <img src="images/about-image.jpg" alt="About Crestpoint">
+      <div class="about-text">
+        <p>Crestpoint is a leading project and construction management company committed to delivering high-quality services across Africa. We specialize in project management, contracts management, supervision, advisory, and environmental health & safety services.</p>
+        <p>Our mission is to provide innovative, reliable, and efficient solutions for our clients, ensuring projects are completed on time, within budget, and with the highest standards of quality and safety.</p>
+        <p>With a team of skilled professionals and years of experience, Crestpoint ensures your projects succeed, every step of the way.</p>
       </div>
     </div>
   </section>
@@ -119,6 +100,21 @@
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({duration:1000, once:true});
+
+    // Mobile menu toggle
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const mobileNav = document.querySelector('.nav-links-mobile');
+    toggle.addEventListener('click', () => {
+      mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+      anchor.addEventListener('click', function(e){
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+      });
+    });
   </script>
 </body>
 </html>
