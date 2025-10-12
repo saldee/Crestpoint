@@ -4,15 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Crestpoint | Projects</title>
-
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Explore Crestpoint’s featured projects in construction, infrastructure, and real estate across Uganda.">
-  <meta name="keywords" content="Crestpoint, Projects, Construction, Infrastructure, Real Estate, Uganda">
+  <meta name="description" content="Showcasing the featured projects executed by Crestpoint in Construction, Real Estate, and Public/Private sectors.">
+  <meta name="keywords" content="Crestpoint, Projects, Construction, Real Estate, Public Sector, Private Sector, Uganda">
   <meta name="author" content="Crestpoint Company Ltd">
   <link rel="canonical" href="https://saldee.github.io/Crestpoint/projects.html">
   <meta property="og:title" content="Crestpoint | Projects">
-  <meta property="og:description" content="Showcasing completed and ongoing projects delivered with excellence in construction and project management.">
-  <meta property="og:image" content="https://saldee.github.io/Crestpoint/assets/projects-hero.jpg">
+  <meta property="og:description" content="Explore the projects delivered by Crestpoint across Uganda.">
+  <meta property="og:image" content="https://saldee.github.io/Crestpoint/images/projects/project1.jpg">
   <meta property="og:url" content="https://saldee.github.io/Crestpoint/projects.html">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -35,21 +33,23 @@
 
     /* Hero */
     .hero {
-      background:url('images/projects-hero.jpg') center/cover no-repeat;
+      background:url('assets/projects-hero.jpg') center/cover no-repeat;
       height:50vh; display:flex; align-items:center; justify-content:center;
       color:white; text-align:center; position:relative;
     }
     .hero::after {
       content:''; position:absolute; top:0; left:0; right:0; bottom:0;
-      background:rgba(0,0,0,0.6);
+      background:rgba(0,0,0,0.5);
     }
     .hero-content {position:relative; z-index:1;}
     .hero h1 {font-family:'Montserrat',sans-serif; font-size:clamp(2rem,5vw,3rem); margin-bottom:10px;}
     .hero p {font-size:1.1rem;}
 
-    /* Projects Grid */
+    /* Section */
     .section {padding:80px 50px; max-width:1200px; margin:0 auto;}
     h2 {font-family:'Montserrat',sans-serif; font-size:2.3rem; margin-bottom:30px; color:#0b2f5a; text-align:center;}
+
+    /* Projects Grid */
     .projects-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px;}
     .project-card {position:relative; overflow:hidden; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1); cursor:pointer; transition:transform 0.3s, box-shadow 0.3s;}
     .project-card:hover {transform:translateY(-5px); box-shadow:0 10px 25px rgba(0,0,0,0.15);}
@@ -61,6 +61,27 @@
 
     /* Footer */
     footer {background:#1c1c1c; color:#ccc; text-align:center; padding:30px 50px; font-size:0.9rem;}
+
+    /* Floating WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      width: 45px;
+      height: 45px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: float 2.5s infinite ease-in-out;
+    }
+    .whatsapp-float img { width: 22px; transition: transform 0.3s; }
+    .whatsapp-float:hover { transform: scale(1.2); box-shadow: 0 8px 20px rgba(0,0,0,0.35); }
+    @keyframes float { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-5px);} }
 
     /* Responsive */
     @media(max-width:768px){
@@ -97,120 +118,64 @@
   <section class="hero">
     <div class="hero-content" data-aos="fade-up">
       <h1>Our Projects</h1>
-      <p>Delivering high-quality construction and infrastructure projects across Uganda.</p>
+      <p>Delivering excellence across construction, real estate, and public/private sector projects.</p>
     </div>
   </section>
 
-  <!-- Projects Grid -->
+  <!-- Projects Section -->
   <section class="section" data-aos="fade-up">
     <h2>Featured Projects</h2>
     <div class="projects-grid">
       <div class="project-card" data-aos="zoom-in">
-        <img src="images/projects/project1.jpg" alt="Infrastructure Project">
+        <img src="assets/projects/project1.jpg" alt="Infrastructure Project">
         <div class="project-overlay">
           <h3>Infrastructure Development</h3>
-          <p>Roads, bridges, and public facilities executed with precision.</p>
+          <p>Roads, bridges, and civil works executed with precision and safety.</p>
         </div>
       </div>
       <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
-        <img src="images/projects/project2.jpg" alt="Commercial Project">
+        <img src="assets/projects/project2.jpg" alt="Commercial Project">
         <div class="project-overlay">
           <h3>Commercial Complex</h3>
-          <p>Multi-story commercial buildings delivered efficiently and safely.</p>
+          <p>Multi-story commercial buildings delivered efficiently and on schedule.</p>
         </div>
       </div>
       <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
-        <img src="images/projects/project3.jpg" alt="Residential Project">
+        <img src="assets/projects/project3.jpg" alt="Residential Project">
         <div class="project-overlay">
-          <h3>Residential Development</h3>
-          <p>High-quality residential estates designed for comfort and sustainability.</p>
-        </div>
-      </div>
-      <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
-        <img src="images/projects/project4.jpg" alt="Industrial Project">
-        <div class="project-overlay">
-          <h3>Industrial Facilities</h3>
-          <p>Warehouses and industrial setups constructed with safety and efficiency.</p>
+          <h3>Residential Estates</h3>
+          <p>Modern housing projects combining functionality and aesthetics.</p>
         </div>
       </div>
     </div>
   </section>
 
-
   <!-- Footer -->
-<footer>
-  <div style="display:flex; flex-direction:column; align-items:center; gap:15px;">
-    <p>&copy; 2025 Crestpoint. All Rights Reserved.</p>
-    
-    <!-- Social Links -->
-    <div style="display:flex; gap:20px;">
-      <a href="https://www.facebook.com/crestpoint" target="_blank" aria-label="Facebook">
-        <img src="images/icons/facebook.svg" alt="Facebook" width="24">
-      </a>
-      <a href="https://wa.me/256700123456" target="_blank" aria-label="WhatsApp">
-        <img src="images/icons/whatsapp.svg" alt="WhatsApp" width="24">
-      </a>
-      <a href="https://www.linkedin.com/company/crestpoint" target="_blank" aria-label="LinkedIn">
-        <img src="images/icons/linkedin.svg" alt="LinkedIn" width="24">
-      </a>
-      <a href="https://twitter.com/crestpoint" target="_blank" aria-label="X / Twitter">
-        <img src="images/icons/twitter.svg" alt="X / Twitter" width="24">
-      </a>
+  <footer>
+    <div style="display:flex; flex-direction:column; align-items:center; gap:15px;">
+      <p>&copy; 2025 Crestpoint. All Rights Reserved.</p>
+      <div style="display:flex; gap:20px;">
+        <a href="https://www.facebook.com/crestpoint" target="_blank" aria-label="Facebook">
+          <img src="images/icons/facebook.svg" alt="Facebook" width="24">
+        </a>
+        <a href="https://wa.me/256700123456" target="_blank" aria-label="WhatsApp">
+          <img src="images/icons/whatsapp.svg" alt="WhatsApp" width="24">
+        </a>
+        <a href="https://www.linkedin.com/company/crestpoint" target="_blank" aria-label="LinkedIn">
+          <img src="images/icons/linkedin.svg" alt="LinkedIn" width="24">
+        </a>
+        <a href="https://twitter.com/crestpoint" target="_blank" aria-label="X / Twitter">
+          <img src="images/icons/twitter.svg" alt="X / Twitter" width="24">
+        </a>
+      </div>
     </div>
-  </div>
-</footer>
-
-<!-- Floating WhatsApp Button -->
-<a href="https://wa.me/256700123456" target="_blank" class="whatsapp-float" aria-label="Chat with us on WhatsApp">
-  <img src="images/icons/whatsapp.svg" alt="WhatsApp" width="40">
-</a>
-
-<style>
-  footer {
-    background:#1c1c1c;
-    color:#ccc;
-    text-align:center;
-    padding:30px 50px;
-    font-size:0.9rem;
-  }
-
-  footer a img {
-    transition: transform 0.3s, filter 0.3s;
-  }
-
-  footer a img:hover {
-    transform: scale(1.2);
-    filter: brightness(1.2);
-  }
-
-  .whatsapp-float {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    z-index: 1000;
-    background: #25D366;
-    border-radius: 50%;
-    padding: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .whatsapp-float:hover {
-    transform: scale(1.2);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-  }
-
-  @media(max-width:768px){
-    footer div {flex-direction:column;}
-  }
-
-  @media(max-width:480px){
-    .whatsapp-float img {width:35px;}
-    .whatsapp-float {padding:8px; bottom:15px; right:15px;}
-  }
-</style>
-
   </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/256700123456" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <img src="images/icons/whatsapp.svg" alt="WhatsApp">
+  </a>
+
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({duration:1000, once:true});
