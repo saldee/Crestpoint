@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Crestpoint</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Crestpoint</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <style>
     * {margin:0; padding:0; box-sizing:border-box;}
     body {font-family:'Open Sans',sans-serif; color:#333;}
@@ -13,39 +13,74 @@
 
     /* Header */
     header {background-color:#0b2f5a; color:white; padding:20px 50px; display:flex; justify-content:space-between; align-items:center; position:relative;}
-    header nav a {margin-left:25px; font-weight:600; transition: color 0.3s;}
+    header nav a {margin-left:25px; font-weight:600; transition:color 0.3s;}
     header nav a:hover {color:#f5a623;}
-    .mobile-menu-toggle {display:none; font-size:2rem; cursor:pointer; position:absolute; top:20px; right:30px; z-index:1000;}
+    .mobile-menu-toggle {display:none; font-size:2rem; cursor:pointer; position:absolute; top:20px; right:30px;}
     .nav-links-mobile {display:none; flex-direction:column; background:#0b2f5a; position:absolute; top:70px; right:0; width:200px; border-radius:0 0 5px 5px; padding:20px;}
     .nav-links-mobile a {margin:10px 0; font-weight:600; color:white;}
 
-    /* Hero Section */
-    .hero {background:url('images/contact-hero.jpg') center/cover no-repeat; height:50vh; display:flex; align-items:center; justify-content:center; color:white; text-align:center; position:relative; overflow:hidden;}
-    .hero::after {content:''; position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5);}
-    .hero-content {position:relative; z-index:1; opacity:0; transform:translateY(20px); animation:fadeInUp 1s forwards 0.3s;}
-    @keyframes fadeInUp {to {opacity:1; transform:translateY(0);}}
-    .hero h1 {font-family:'Montserrat',sans-serif; font-size:clamp(2rem, 4vw, 3rem);}
-    .hero p {font-size:clamp(1rem, 2.5vw, 1.2rem); margin-top:15px;}
+    /* Hero */
+    .hero {
+      background:url('images/contact-hero.jpg') center/cover no-repeat;
+      height:50vh; display:flex; align-items:center; justify-content:center;
+      color:white; text-align:center; position:relative;
+    }
+    .hero::after {
+      content:''; position:absolute; top:0; left:0; right:0; bottom:0;
+      background:rgba(0,0,0,0.6);
+    }
+    .hero-content {
+      position:relative; z-index:1;
+    }
+    .hero h1 {font-family:'Montserrat',sans-serif; font-size:clamp(2rem,5vw,3rem); margin-bottom:10px;}
+    .hero p {font-size:1.1rem;}
 
-    /* Contact Section */
+    /* Section */
     .section {padding:80px 50px; max-width:1200px; margin:0 auto;}
-    h2 {font-family:'Montserrat',sans-serif; font-size:2.5rem; margin-bottom:50px; text-align:center;}
-    .contact-container {display:flex; gap:40px; flex-wrap:wrap;}
-    .contact-form {flex:1 1 400px;}
-    .contact-form input, .contact-form textarea {width:100%; padding:12px 15px; margin-bottom:20px; border-radius:5px; border:1px solid #ccc; font-size:1rem;}
-    .contact-form button {background:#0b2f5a; color:white; padding:12px 20px; border:none; border-radius:5px; cursor:pointer; font-size:1rem; transition: background 0.3s;}
-    .contact-form button:hover {background:#f5a623;}
-    .map {flex:1 1 400px; border-radius:10px; overflow:hidden; min-height:400px;}
-    iframe {width:100%; height:100%; border:0;}
+    h2 {font-family:'Montserrat',sans-serif; font-size:2.3rem; margin-bottom:30px; color:#0b2f5a; text-align:center;}
+
+    /* Contact Layout */
+    .contact-container {
+      display:flex; flex-wrap:wrap; gap:50px; justify-content:space-between; align-items:flex-start;
+    }
+    .contact-info, .contact-form {
+      flex:1 1 450px;
+    }
+
+    /* Info */
+    .contact-info h3 {font-family:'Montserrat'; color:#0b2f5a; margin-bottom:15px;}
+    .contact-info p {font-size:0.95rem; line-height:1.7; margin-bottom:10px;}
+    .contact-info a {color:#f5a623; font-weight:600;}
+
+    /* Form */
+    form {display:flex; flex-direction:column; gap:15px;}
+    input, textarea {
+      width:100%; padding:12px 15px; border:1px solid #ccc; border-radius:8px;
+      font-family:'Open Sans'; font-size:0.95rem;
+    }
+    textarea {height:120px; resize:none;}
+    button {
+      background:#0b2f5a; color:white; border:none; padding:12px 20px;
+      font-size:1rem; border-radius:8px; cursor:pointer; transition:background 0.3s;
+    }
+    button:hover {background:#f5a623; color:#0b2f5a;}
+
+    /* Map */
+    .map {
+      width:100%;
+      height:350px;
+      border-radius:10px;
+      overflow:hidden;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      margin-top:40px;
+    }
 
     /* Footer */
     footer {background:#1c1c1c; color:#ccc; text-align:center; padding:30px 50px; font-size:0.9rem;}
 
     /* Responsive */
     @media(max-width:768px){
-      .contact-container {flex-direction:column; align-items:center;}
-      .hero h1 {font-size:2.2rem;}
-      .hero p {font-size:1rem;}
+      .contact-container {flex-direction:column;}
       header nav {display:none;}
       .mobile-menu-toggle {display:block;}
     }
@@ -59,15 +94,15 @@
     <div class="mobile-menu-toggle">&#9776;</div>
     <nav class="nav-links">
       <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
+      <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="projects.html">Projects</a>
       <a href="industries.html">Industries</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html" style="color:#f5a623;">Contact</a>
     </nav>
     <div class="nav-links-mobile">
       <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
+      <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="projects.html">Projects</a>
       <a href="industries.html">Industries</a>
@@ -75,34 +110,55 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
-    <div class="hero-content">
+    <div class="hero-content" data-aos="fade-up">
       <h1>Contact Us</h1>
-      <p>Reach Out for Project Inquiries, Consultation, or Support</p>
+      <p>We’d love to hear from you — let’s build something exceptional together.</p>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section class="section">
+  <section class="section" data-aos="fade-up">
     <h2>Get In Touch</h2>
     <div class="contact-container">
-      <!-- Form -->
-      <div class="contact-form" data-aos="fade-up">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <input type="text" placeholder="Subject" required>
-        <textarea rows="6" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
+
+      <!-- Contact Info -->
+      <div class="contact-info" data-aos="fade-right">
+        <h3>Office Address</h3>
+        <p><strong>Crestpoint Company Ltd</strong></p>
+        <p>Plot 12, Spring Road, Bugolobi</p>
+        <p>Kampala, Uganda</p>
+
+        <h3>Phone</h3>
+        <p>Office: <a href="tel:+256700000000">+256 700 000 000</a></p>
+        <p>Support: <a href="tel:+256780000000">+256 780 000 000</a></p>
+
+        <h3>Email</h3>
+        <p><a href="mailto:info@crestpoint.co.ug">info@crestpoint.co.ug</a></p>
+
+        <h3>Working Hours</h3>
+        <p>Monday - Friday: 8:00 AM – 5:00 PM</p>
+        <p>Saturday: 9:00 AM – 1:00 PM</p>
       </div>
 
-      <!-- Google Map -->
-      <div class="map" data-aos="fade-up" data-aos-delay="100">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.1159654025285!2d32.58236647488327!3d0.3123456990467736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177db9d445d7f2a9%3A0x8f4d9f6e1e1a14d6!2sKampala%2C%20Uganda!5e0!3m2!1sen!2sus!4v1697042829476!5m2!1sen!2sus" 
-          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+      <!-- Contact Form -->
+      <div class="contact-form" data-aos="fade-left">
+        <form action="#" method="post">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <input type="text" name="subject" placeholder="Subject" />
+          <textarea name="message" placeholder="Your Message..." required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
       </div>
+    </div>
+
+    <!-- Google Map -->
+    <div class="map" data-aos="fade-up">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.748765442393!2d32.61900087451877!3d0.31962109970797126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb5a7b9c55ad%3A0x7e2c4f7eb6c598ae!2sBugolobi%2C%20Kampala!5e0!3m2!1sen!2sug!4v1696941224123!5m2!1sen!2sug"
+        width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
   </section>
 
@@ -114,20 +170,10 @@
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({duration:1000, once:true});
-
-    // Mobile menu toggle
     const toggle = document.querySelector('.mobile-menu-toggle');
     const mobileNav = document.querySelector('.nav-links-mobile');
     toggle.addEventListener('click', () => {
       mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
-    });
-
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-      anchor.addEventListener('click', function(e){
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'});
-      });
     });
   </script>
 </body>
