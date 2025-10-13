@@ -1,13 +1,16 @@
-// Mobile Menu
-const hamburger = document.getElementById('hamburger');
-const mobileNav = document.getElementById('mobileNav');
-hamburger.addEventListener('click', () => mobileNav.classList.toggle('show'));
+<!-- JS for Hamburger -->
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const mobileNav = document.querySelector('.mobile-nav');
 
-// Scroll Fade-in
-const sections = document.querySelectorAll('.section, .service-card, .team-member, .project-card');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting) entry.target.classList.add('visible');
+  hamburger.addEventListener('click', () => {
+    mobileNav.classList.toggle('show');
   });
-}, { threshold: 0.2 });
-sections.forEach(sec => observer.observe(sec));
+
+  // Close mobile nav when clicking outside
+  document.addEventListener('click', (e) => {
+    if(!hamburger.contains(e.target) && !mobileNav.contains(e.target)){
+      mobileNav.classList.remove('show');
+    }
+  });
+</script>
