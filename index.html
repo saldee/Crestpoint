@@ -1,119 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Crestpoint | Home</title>
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
-  <link rel="apple-touch-icon" href="favicon.ico">
-  <meta name="theme-color" content="#0b2f5a">
-
-  <!-- SEO Meta -->
-  <meta name="description" content="Crestpoint provides construction, project management, contracts management, supervision, and advisory services across Uganda.">
-  <meta name="keywords" content="Crestpoint, Construction, Project Management, Contracts Management, Supervision, Uganda">
-  <meta name="author" content="Crestpoint Company Ltd">
-  <link rel="canonical" href="https://saldee.github.io/Crestpoint/index.html">
-  <meta property="og:title" content="Crestpoint | Home">
-  <meta property="og:description" content="Crestpoint provides professional construction and project management services in Uganda.">
-  <meta property="og:image" content="https://saldee.github.io/Crestpoint/assets/home-hero.jpg">
-  <meta property="og:url" content="https://saldee.github.io/Crestpoint/index.html">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- Fonts & AOS -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
-  <!-- External CSS -->
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <!-- Header -->
-  <header>
-    <a href="index.html" class="logo"><img src="assets/logo.png" alt="Crestpoint Logo" height="50"></a>
-    <div class="mobile-menu-toggle">&#9776;</div>
-    <nav class="nav-links">
-      <a href="index.html" style="color:#f5a623;">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
-      <a href="industries.html">Industries</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <div class="nav-links-mobile">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
-      <a href="industries.html">Industries</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content" data-aos="fade-up">
-      <h1>Welcome to Crestpoint</h1>
-      <p>Delivering excellence in construction, project management, supervision, and advisory services across Uganda.</p>
-    </div>
-  </section>
-
-  <!-- Services Preview -->
-  <section class="section" data-aos="fade-up">
-    <h2>Our Services</h2>
-    <div class="cards">
-      <div class="card" data-aos="zoom-in">
-        <img src="images/icons/project-management.svg" alt="Project Management">
-        <h3>Project Management</h3>
-        <p>Comprehensive planning, execution, and monitoring to ensure quality and timely delivery.</p>
-      </div>
-      <div class="card" data-aos="zoom-in" data-aos-delay="100">
-        <img src="images/icons/contract.svg" alt="Contracts Management">
-        <h3>Contracts Management</h3>
-        <p>Efficient tendering, procurement, and contract administration services.</p>
-      </div>
-      <div class="card" data-aos="zoom-in" data-aos-delay="200">
-        <img src="images/icons/supervision.svg" alt="Supervision">
-        <h3>Supervision</h3>
-        <p>Ensuring compliance with design, safety, and quality standards throughout the project.</p>
-      </div>
-      <div class="card" data-aos="zoom-in" data-aos-delay="300">
-        <img src="images/icons/ehs.svg" alt="EHS Consultancy">
-        <h3>EHS Consultancy</h3>
-        <p>Environmental, Health, and Safety advisory services to minimize risk and enhance sustainability.</p>
+<!-- Featured Projects -->
+<section class="section" data-aos="fade-up">
+  <h2>Featured Projects</h2>
+  <div class="projects-grid">
+    <div class="project-card" data-aos="zoom-in">
+      <img src="assets/projects/project1.jpg" alt="Infrastructure Project">
+      <div class="project-overlay">
+        <h3>Infrastructure Development</h3>
+        <p>Roads, bridges, and civil works executed with precision and safety.</p>
       </div>
     </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <p>&copy; 2025 Crestpoint. All Rights Reserved.</p>
-      <div class="social-links">
-        <a href="https://www.facebook.com/crestpoint" target="_blank" aria-label="Facebook"><img src="images/icons/facebook.svg" alt="Facebook"></a>
-        <a href="https://wa.me/256700123456" target="_blank" aria-label="WhatsApp"><img src="images/icons/whatsapp.svg" alt="WhatsApp"></a>
-        <a href="https://www.linkedin.com/company/crestpoint" target="_blank" aria-label="LinkedIn"><img src="images/icons/linkedin.svg" alt="LinkedIn"></a>
-        <a href="https://twitter.com/crestpoint" target="_blank" aria-label="Twitter"><img src="images/icons/twitter.svg" alt="Twitter"></a>
+    <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
+      <img src="assets/projects/project2.jpg" alt="Commercial Project">
+      <div class="project-overlay">
+        <h3>Commercial Complex</h3>
+        <p>Multi-story commercial buildings delivered efficiently and on schedule.</p>
       </div>
     </div>
-  </footer>
-
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/256700123456" target="_blank" class="whatsapp-float"><img src="images/icons/whatsapp.svg" alt="WhatsApp"></a>
-
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({duration:1000, once:true});
-    const toggle = document.querySelector('.mobile-menu-toggle');
-    const mobileNav = document.querySelector('.nav-links-mobile');
-    toggle.addEventListener('click', () => {
-      mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
-    });
-  </script>
-
-</body>
-</html>
+    <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+      <img src="assets/projects/project3.jpg" alt="Residential Project">
+      <div class="project-overlay">
+        <h3>Residential Estates</h3>
+        <p>Modern housing projects combining functionality and aesthetics.</p>
+      </div>
+    </div>
+  </div>
+</section>
