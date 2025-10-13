@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crestpoint | About</title>
 
-  <link rel="icon" href="favicon.ico" sizes="32x32">
-  <link rel="icon" href="favicon.ico" sizes="16x16">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
   <link rel="apple-touch-icon" href="favicon.ico">
   <meta name="theme-color" content="#0b2f5a">
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css">
+  <!-- SEO -->
+  <meta name="description" content="Learn more about Crestpoint, a leading construction and project management company in Uganda.">
+  <meta name="keywords" content="Crestpoint, About, Construction, Project Management, Real Estate, Uganda">
+  <meta name="author" content="Crestpoint Company Ltd">
+  <link rel="canonical" href="https://saldee.github.io/Crestpoint/about.html">
+  <meta property="og:title" content="Crestpoint | About">
+  <meta property="og:description" content="Learn more about Crestpoint, a leading construction and project management company in Uganda.">
+  <meta property="og:image" content="https://saldee.github.io/Crestpoint/assets/home-hero.jpg">
+  <meta property="og:url" content="https://saldee.github.io/Crestpoint/about.html">
+  <meta name="twitter:card" content="summary_large_image">
 
+  <!-- Fonts & AOS -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Your existing CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -59,7 +73,7 @@
     </p>
   </section>
 
-  <!-- Values -->
+  <!-- Values Section -->
   <section class="section" data-aos="fade-up">
     <h2>Our Values</h2>
     <div class="cards">
@@ -107,11 +121,11 @@
     <img src="images/icons/whatsapp.svg" alt="WhatsApp">
   </a>
 
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({duration:1000, once:true});
 
-    // Mobile menu toggle
     const toggle = document.querySelector('.mobile-menu-toggle');
     const mobileNav = document.querySelector('.nav-links-mobile');
 
@@ -119,7 +133,6 @@
       mobileNav.classList.toggle('show');
     });
 
-    // Close mobile menu if clicked outside
     document.addEventListener('click', (e) => {
       if (!toggle.contains(e.target) && !mobileNav.contains(e.target)) {
         mobileNav.classList.remove('show');
