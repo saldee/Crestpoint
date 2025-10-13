@@ -1,16 +1,13 @@
-<!-- JS for Hamburger -->
-<script>
-  const hamburger = document.querySelector('.hamburger');
-  const mobileNav = document.querySelector('.mobile-nav');
+// Hamburger Menu Toggle
+const hamburger=document.getElementById("hamburger");
+const navLinks=document.querySelector(".nav-links");
+hamburger.addEventListener("click",()=>{
+  navLinks.classList.toggle("active");
+  hamburger.classList.toggle("toggle");
+});
 
-  hamburger.addEventListener('click', () => {
-    mobileNav.classList.toggle('show');
-  });
-
-  // Close mobile nav when clicking outside
-  document.addEventListener('click', (e) => {
-    if(!hamburger.contains(e.target) && !mobileNav.contains(e.target)){
-      mobileNav.classList.remove('show');
-    }
-  });
-</script>
+// Card Overlay Toggle (projects, industries, team)
+const cards=document.querySelectorAll(".project-card, .industry-card, .team-card");
+cards.forEach(card=>{
+  card.addEventListener("click",()=>{card.classList.toggle("overlay-active")});
+});
