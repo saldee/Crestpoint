@@ -1,311 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crestpoint | Home</title>
-
-  <!-- ✅ Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
-  <link rel="apple-touch-icon" href="favicon.ico">
-  <meta name="theme-color" content="#0b2f5a">
-
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Crestpoint is a leading construction and project management company in Uganda, providing services across construction, real estate, and public/private sectors.">
-  <meta name="keywords" content="Crestpoint, Construction, Project Management, Real Estate, Supervision, EHS, Uganda">
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico">
+  <!-- SEO -->
+  <meta name="description" content="Crestpoint provides top-notch construction, project management, and advisory services across Uganda.">
+  <meta name="keywords" content="Crestpoint, Construction, Project Management, Uganda">
   <meta name="author" content="Crestpoint Company Ltd">
   <link rel="canonical" href="https://saldee.github.io/Crestpoint/index.html">
-  <meta property="og:title" content="Crestpoint | Construction & Project Management">
-  <meta property="og:description" content="Delivering excellence in construction, project management, and advisory services across Uganda.">
-  <meta property="og:image" content="https://saldee.github.io/Crestpoint/assets/home-hero.jpg">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Crestpoint | Home">
+  <meta property="og:description" content="Leading construction, project management, and advisory services in Uganda.">
+  <meta property="og:image" content="assets/home-hero.jpg">
   <meta property="og:url" content="https://saldee.github.io/Crestpoint/index.html">
   <meta name="twitter:card" content="summary_large_image">
-
+  
   <!-- Fonts & AOS -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
-  <style>
-    :root {
-      --navy: #0b2f5a;
-      --gold: #f5a623;
-      --white: #ffffff;
-      --gray: #f5f7fb;
-      --text-dark: #333;
-    }
-
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: 'Open Sans', sans-serif; color: var(--text-dark); background: var(--gray); line-height:1.6;}
-    a {text-decoration:none; color:inherit;}
-
-    /* Header */
-    header {
-      background: var(--navy);
-      color: var(--white);
-      padding: 20px 50px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      position:sticky;
-      top:0;
-      z-index:1001; /* higher than hero */
-    }
-    .logo img { height:50px; }
-    header nav a {margin-left:25px; font-weight:600; transition:color 0.3s; color:var(--white);}
-    header nav a:hover {color: var(--gold);}
-    
-    /* Hamburger */
-    .mobile-menu-toggle {
-      display:none;
-      font-size:2rem;
-      cursor:pointer;
-    }
-    .nav-links-mobile {
-      display:none;
-      flex-direction:column;
-      background: var(--navy);
-      position:absolute;
-      top:70px;
-      right:0;
-      width:200px;
-      border-radius:0 0 5px 5px;
-      padding:20px;
-      z-index:1002; /* above hero */
-    }
-    .nav-links-mobile a { margin:10px 0; font-weight:600; color:white; }
-    .nav-links-mobile.show { display:flex !important; }
-
-    /* Hero */
-    .hero {
-      background:url('assets/home-hero.jpg') center/cover no-repeat;
-      height:60vh;
-      display:flex; align-items:center; justify-content:center;
-      text-align:center; color:white; position:relative;
-      z-index:1;
-    }
-    .hero::after {
-      content:''; position:absolute; top:0; left:0; right:0; bottom:0;
-      background:rgba(0,0,0,0.6);
-    }
-    .hero-content { position:relative; z-index:2; }
-    .hero h1 { font-family:'Montserrat',sans-serif; font-size:clamp(2rem,5vw,3rem); margin-bottom:10px; }
-    .hero p { font-size:1.1rem; }
-
-    /* Section */
-    .section { padding:80px 50px; max-width:1200px; margin:0 auto; }
-    h2 { font-family:'Montserrat',sans-serif; font-size:2.3rem; margin-bottom:30px; color:var(--navy); text-align:center; }
-
-    /* Cards/Grid */
-    .cards { display:flex; flex-wrap:wrap; gap:30px; justify-content:center; }
-    .card {
-      flex:1 1 250px;
-      background:#fff;
-      padding:30px;
-      border-radius:10px;
-      text-align:center;
-      box-shadow:0 5px 15px rgba(0,0,0,0.1);
-      transition:transform 0.3s;
-    }
-    .card:hover { transform:translateY(-10px); }
-    .card img { width:60px; margin-bottom:15px; }
-    .card h3 { font-family:'Montserrat'; color:var(--navy); margin-bottom:10px; }
-    .card p { font-size:0.95rem; line-height:1.6; }
-
-    /* Projects Grid */
-    .projects-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; }
-    .project-card { position:relative; overflow:hidden; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1); cursor:pointer; transition:transform 0.3s, box-shadow 0.3s; }
-    .project-card:hover { transform:translateY(-5px); box-shadow:0 10px 25px rgba(0,0,0,0.15); }
-    .project-card img { width:100%; height:220px; object-fit:cover; display:block; }
-    .project-overlay {
-      position:absolute;
-      top:0; left:0; right:0; bottom:0;
-      background:rgba(11,47,90,0.85);
-      color:white;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      opacity:0;
-      transition:opacity 0.3s;
-      padding:20px;
-    }
-    .project-card:hover .project-overlay { opacity:1; }
-    .project-overlay h3 { font-family:'Montserrat'; font-size:1.4rem; margin-bottom:10px; color:var(--gold); }
-    .project-overlay p { font-size:0.95rem; line-height:1.5; }
-
-    /* Footer */
-    footer { background:#1c1c1c; color:#ccc; text-align:center; padding:30px 50px; font-size:0.9rem; }
-    footer a { color: var(--gold); text-decoration:none; }
-
-    /* Floating WhatsApp */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 1000;
-      width: 45px;
-      height: 45px;
-      background: #25D366;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.25);
-      transition: transform 0.3s, box-shadow 0.3s;
-      animation: float 2.5s infinite ease-in-out;
-    }
-    .whatsapp-float img { width:22px; transition: transform 0.3s; }
-    .whatsapp-float:hover { transform: scale(1.2); box-shadow: 0 8px 20px rgba(0,0,0,0.35); }
-    @keyframes float { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-5px);} }
-
-    /* Responsive */
-    @media(max-width:768px){
-      header nav { display:none; }
-      .mobile-menu-toggle { display:block; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  <!-- Single CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <a href="index.html" class="logo">
-      <img src="assets/logo.png" alt="Crestpoint Logo">
-    </a>
-    <div class="mobile-menu-toggle">&#9776;</div>
-    <nav class="nav-links">
-      <a href="index.html" style="color:var(--gold)">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
-      <a href="industries.html">Industries</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <div class="nav-links-mobile">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
-      <a href="industries.html">Industries</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-content" data-aos="fade-up">
-      <h1>Welcome to Crestpoint</h1>
-      <p>Delivering excellence in Construction, Project Management, and Advisory services.</p>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section class="section" data-aos="fade-up">
-    <h2>About Crestpoint</h2>
-    <div class="cards">
-      <div class="card" data-aos="zoom-in">
-        <img src="images/icons/team.svg" alt="Team">
-        <h3>Our Story</h3>
-        <p>Crestpoint is a multi-disciplinary company specializing in Construction, Project Management, Contracts Management, Supervision, and EHS consultancy.</p>
-      </div>
-      <div class="card" data-aos="zoom-in" data-aos-delay="100">
-        <img src="images/icons/values.svg" alt="Values">
-        <h3>Our Values</h3>
-        <p>We uphold Integrity, Excellence, Safety, and Innovation in all our projects and client engagements.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section class="section" data-aos="fade-up">
-    <h2>Our Services</h2>
-    <div class="cards">
-      <div class="card" data-aos="zoom-in">
-        <img src="images/icons/project-management.svg" alt="Project Management">
-        <h3>Project Management</h3>
-        <p>End-to-end project delivery ensuring quality, safety, and timely completion.</p>
-      </div>
-      <div class="card" data-aos="zoom-in" data-aos-delay="100">
-        <img src="images/icons/contract.svg" alt="Contracts Management">
-        <h3>Contracts Management</h3>
-        <p>Efficient procurement, tendering, and contract administration services.</p>
-      </div>
-      <div class="card" data-aos="zoom-in" data-aos-delay="200">
-        <img src="images/icons/supervision.svg" alt="Supervision">
-        <h3>Supervision</h3>
-        <p>Ensuring projects comply with design, safety, and quality standards.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section class="section" data-aos="fade-up">
-    <h2>Featured Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card" data-aos="zoom-in">
-        <img src="images/projects/project1.jpg" alt="Infrastructure Project">
-        <div class="project-overlay">
-          <h3>Infrastructure Development</h3>
-          <p>Roads and bridges executed with precision and safety.</p>
-        </div>
-      </div>
-      <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
-        <img src="images/projects/project2.jpg" alt="Commercial Project">
-        <div class="project-overlay">
-          <h3>Commercial Complex</h3>
-          <p>Multi-story commercial projects delivered efficiently.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div style="display:flex; flex-direction:column; align-items:center; gap:15px;">
-      <p>&copy; 2025 Crestpoint. All Rights Reserved.</p>
-      <div style="display:flex; gap:20px;">
-        <a href="https://www.facebook.com/crestpoint" target="_blank" aria-label="Facebook">
-          <img src="images/icons/facebook.svg" alt="Facebook" width="24">
-        </a>
-        <a href="https://wa.me/256700123456" target="_blank" aria-label="WhatsApp">
-          <img src="images/icons/whatsapp.svg" alt="WhatsApp" width="24">
-        </a>
-        <a href="https://www.linkedin.com/company/crestpoint" target="_blank" aria-label="LinkedIn">
-          <img src="images/icons/linkedin.svg" alt="LinkedIn" width="24">
-        </a>
-        <a href="https://twitter.com/crestpoint" target="_blank" aria-label="X / Twitter">
-          <img src="images/icons/twitter.svg" alt="X / Twitter" width="24">
-        </a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/256700123456" target="_blank" class="whatsapp-float" aria-label="Chat with us on WhatsApp">
-    <img src="images/icons/whatsapp.svg" alt="WhatsApp">
+<!-- Header -->
+<header>
+  <a href="index.html" class="logo">
+    <img src="assets/logo.png" alt="Crestpoint Logo">
   </a>
+  <div class="mobile-menu-toggle">&#9776;</div>
+  <nav class="nav-links">
+    <a href="index.html" style="color:#f5a623;">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="industries.html">Industries</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="nav-links-mobile">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="industries.html">Industries</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</header>
 
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({duration:1000, once:true});
+<!-- Hero -->
+<section class="hero" style="background-image:url('assets/home-hero.jpg');">
+  <div class="hero-content" data-aos="fade-up">
+    <h1>Welcome to Crestpoint</h1>
+    <p>Excellence in Construction, Project Management, and Advisory Services across Uganda.</p>
+  </div>
+</section>
 
-    // Mobile menu toggle
-    const toggle = document.querySelector('.mobile-menu-toggle');
-    const mobileNav = document.querySelector('.nav-links-mobile');
+<!-- Example Services Section -->
+<section class="section" data-aos="fade-up">
+  <h2>Our Services</h2>
+  <div class="cards">
+    <div class="card" data-aos="zoom-in">
+      <img src="images/icons/construction.svg" alt="Construction">
+      <h3>Construction</h3>
+      <p>Reliable infrastructure, commercial, and residential construction projects.</p>
+    </div>
+    <div class="card" data-aos="zoom-in" data-aos-delay="100">
+      <img src="images/icons/project-management.svg" alt="Project Management">
+      <h3>Project Management</h3>
+      <p>Efficient planning, execution, and supervision for all project scales.</p>
+    </div>
+    <div class="card" data-aos="zoom-in" data-aos-delay="200">
+      <img src="images/icons/advisory.svg" alt="Advisory">
+      <h3>Advisory</h3>
+      <p>Expert consulting and advisory services to optimize project outcomes.</p>
+    </div>
+  </div>
+</section>
 
-    toggle.addEventListener('click', () => {
-      mobileNav.classList.toggle('show');
-    });
+<!-- Footer -->
+<footer>
+  <div style="display:flex; flex-direction:column; align-items:center; gap:15px;">
+    <p>&copy; 2025 Crestpoint. All Rights Reserved.</p>
+    <div style="display:flex; gap:20px;">
+      <a href="https://www.facebook.com/crestpoint" target="_blank" aria-label="Facebook">
+        <img src="images/icons/facebook.svg" alt="Facebook" width="24">
+      </a>
+      <a href="https://wa.me/256700123456" target="_blank" aria-label="WhatsApp">
+        <img src="images/icons/whatsapp.svg" alt="WhatsApp" width="24">
+      </a>
+      <a href="https://www.linkedin.com/company/crestpoint" target="_blank" aria-label="LinkedIn">
+        <img src="images/icons/linkedin.svg" alt="LinkedIn" width="24">
+      </a>
+      <a href="https://twitter.com/crestpoint" target="_blank" aria-label="X / Twitter">
+        <img src="images/icons/twitter.svg" alt="X / Twitter" width="24">
+      </a>
+    </div>
+  </div>
+</footer>
 
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!toggle.contains(e.target) && !mobileNav.contains(e.target)) {
-        mobileNav.classList.remove('show');
-      }
-    });
-  </script>
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/256700123456" target="_blank" class="whatsapp-float" aria-label="Chat with us on WhatsApp">
+  <img src="images/icons/whatsapp.svg" alt="WhatsApp">
+</a>
 
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({duration:1000, once:true});
+  const toggle = document.querySelector('.mobile-menu-toggle');
+  const mobileNav = document.querySelector('.nav-links-mobile');
+  toggle.addEventListener('click', () => {
+    mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+  });
+</script>
 </body>
 </html>
