@@ -5,15 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crestpoint | Home</title>
   <link rel="icon" href="favicon.ico">
+
+  <!-- Google Fonts & AOS -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- Header -->
 <header>
-  <div class="container header-container">
+  <div class="header-container">
     <a href="index.html" class="logo"><img src="assets/logo.png" alt="Crestpoint Logo"></a>
     <nav class="nav-links">
       <a href="index.html" class="active">Home</a>
@@ -27,7 +31,7 @@
   </div>
 </header>
 
-<!-- Hero -->
+<!-- Hero Section -->
 <section class="hero" style="background-image:url('assets/hero-bg.jpg');">
   <div class="hero-overlay"></div>
   <div class="hero-content" data-aos="fade-up">
@@ -92,14 +96,12 @@
 
 <!-- Footer -->
 <footer>
-  <div class="footer-container">
-    <p>&copy; 2025 Crestpoint. All Rights Reserved.</p>
-    <div class="social-links">
-      <a href="https://www.facebook.com/crestpoint" target="_blank"><img src="images/icons/facebook.svg" alt="Facebook"></a>
-      <a href="https://wa.me/256700123456" target="_blank"><img src="images/icons/whatsapp.svg" alt="WhatsApp"></a>
-      <a href="https://www.linkedin.com/company/crestpoint" target="_blank"><img src="images/icons/linkedin.svg" alt="LinkedIn"></a>
-      <a href="https://twitter.com/crestpoint" target="_blank"><img src="images/icons/twitter.svg" alt="Twitter"></a>
-    </div>
+  <p>&copy; 2025 Crestpoint. All Rights Reserved.</p>
+  <div class="social-links">
+    <a href="https://www.facebook.com/crestpoint" target="_blank"><img src="images/icons/facebook.svg" alt="Facebook"></a>
+    <a href="https://wa.me/256700123456" target="_blank"><img src="images/icons/whatsapp.svg" alt="WhatsApp"></a>
+    <a href="https://www.linkedin.com/company/crestpoint" target="_blank"><img src="images/icons/linkedin.svg" alt="LinkedIn"></a>
+    <a href="https://twitter.com/crestpoint" target="_blank"><img src="images/icons/twitter.svg" alt="Twitter"></a>
   </div>
 </footer>
 
@@ -116,6 +118,5 @@
   const navLinks = document.querySelector('.nav-links');
   toggle.addEventListener('click', () => navLinks.classList.toggle('show'));
 </script>
-
 </body>
 </html>
