@@ -1,56 +1,55 @@
-// Hamburger Menu Toggle
-const hamburger=document.getElementById("hamburger");
-const navLinks=document.querySelector(".nav-links");
-hamburger.addEventListener("click",()=>{
-  navLinks.classList.toggle("active");
-  hamburger.classList.toggle("toggle");
-});
-
-// Card Overlay Toggle (projects, industries, team)
-const cards=document.querySelectorAll(".project-card, .industry-card, .team-card");
-cards.forEach(card=>{
-  card.addEventListener("click",()=>{card.classList.toggle("overlay-active")});
-});
-// Wait for the DOM to load before running scripts
-document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.querySelector(".nav-links");
-  const navItems = document.querySelectorAll(".nav-links a");
-
-  // ✅ Toggle the navigation menu on mobile
-  hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-    hamburger.classList.toggle("toggle");
-  });
-
-  // ✅ Close the menu when a link is clicked (mobile)
-  navItems.forEach(link => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("active");
-      hamburger.classList.remove("toggle");
-    });
-  });
-
-  // ✅ Card overlay toggle for Projects, Industries, and Team pages
-  const cards = document.querySelectorAll(
-    ".project-card, .industry-card, .team-card"
-  );
-
-  cards.forEach(card => {
-    card.addEventListener("click", () => {
-      card.classList.toggle("overlay-active");
-    });
-  });
-
-  // ✅ Optional: Add smooth scroll for anchor links
-  const smoothLinks = document.querySelectorAll('a[href^="#"]');
-  smoothLinks.forEach(link => {
-    link.addEventListener("click", e => {
-      const target = document.querySelector(link.getAttribute("href"));
-      if (target) {
+// ==========================
+// SMOOTH SCROLLING
+// ==========================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        target.scrollIntoView({ behavior: "smooth" });
-      }
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
     });
-  });
 });
+
+// ==========================
+// MOBILE MENU TOGGLE
+// ==========================
+const menu = document.querySelector('.menu');
+const logo = document.querySelector('.logo');
+const header = document.querySelector('header');
+
+const hamburger = document.createElement('div');
+hamburger.classList.add('hamburger');
+hamburger.innerHTML = '&#9776;'; // Hamburger icon
+header.insertBefore(hamburger, menu);
+
+hamburger.addEventListener('click', () => {
+    menu.classList.toggle('menu-open');
+});
+
+// ==========================
+// CONTACT FORM VALIDATION
+// ==========================
+const contactForm = document.querySelector('.contact-form form');
+
+if(contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        const name = contactForm.name.value.trim();
+        const email = contactForm.email.value.trim();
+        const message = contactForm.message.value.trim();
+
+        if(!name || !email || !message) {
+            e.preventDefault();
+            alert('Please fill in all fields before submitting.');
+            return false;
+        }
+
+        // Basic email format check
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        if(!emailPattern.test(email)) {
+            e.preventDefault();
+            alert('Please enter a valid email address.');
+            return false;
+        }
+    });
+}
