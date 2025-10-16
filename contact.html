@@ -8,10 +8,11 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<header class="header-dark">
+  
+<header>
   <h1 id="site-title"></h1>
-  <nav>
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+  <nav id="nav-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
@@ -20,6 +21,7 @@
     <a href="contact.html">Contact</a>
   </nav>
 </header>
+
 
 <div class="container">
   <section id="contact-info"></section>
@@ -45,6 +47,16 @@
   &copy; 2025 Crestpoint | <a href="mailto:" id="contact-email"></a>
 </footer>
 
+  <script>
+  const toggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("nav-links");
+
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("show");
+  });
+</script>
+
+  
 <!-- ✅ Load siteData first -->
 <script src="siteData.js"></script>
 <script src="data.js"></script>
