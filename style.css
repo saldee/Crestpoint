@@ -266,6 +266,49 @@ footer {
     display: flex;
   }
 }
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+@media(max-width:600px){
+  .menu-toggle {
+    display: block;
+  }
+
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    padding: 10px;
+    gap: 10px;
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
+    max-height: 0;
+  }
+
+  #nav-links.show {
+    display: flex;
+    max-height: 500px;
+  }
+
+  #nav-links a {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .hero {
+    height: 40vh;
+  }
+
+  .hero-content .btn-primary,
+  .hero-content .btn-secondary {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
 
   .hero-content p {
     font-size: 1rem;
