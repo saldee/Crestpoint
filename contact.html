@@ -49,21 +49,54 @@
   </header>
 
   <div class="container">
-    <section id="contact-info"></section>
-
     <section id="contact-form-section">
-      <h4>Send Us a Message</h4>
-      <form id="contact-form" style="display:flex;flex-direction:column;gap:12px;max-width:500px;">
-        <input type="text" id="name" name="name" placeholder="Your Name" required>
-        <input type="email" id="email" name="email" placeholder="Your Email" required>
-        <input type="text" id="subject" name="subject" placeholder="Subject" required>
-        <textarea id="message" name="message" placeholder="Message" rows="5" required></textarea>
-      </form>
+      <!-- Contact Info Block -->
+      <section id="contact-info">
+        <h4>Contact Information</h4>
+        <p><strong>Address:</strong> Plot 12, Kampala Road, Kampala, Uganda</p>
+        <p><strong>Phone:</strong> +256 700 123456</p>
+        <p><strong>Email:</strong> <a href="mailto:info@crestpoint.co.ug">info@crestpoint.co.ug</a></p>
+        <p><strong>Hours:</strong> Mon–Fri, 8:00 AM – 5:00 PM</p>
+
+        <!-- Embedded Google Map -->
+        <div style="margin-top:20px;">
+          <iframe
+            src="https://www.google.com/maps?q=Plot+12+Kampala+Road,+Kampala,+Uganda&output=embed"
+            width="100%"
+            height="300"
+            style="border:0; border-radius:8px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <!-- Get Directions Button -->
+        <div style="margin-top:12px;">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Plot+12+Kampala+Road,+Kampala,+Uganda"
+             target="_blank" rel="noopener"
+             style="display:inline-block; padding:10px 16px; background-color:#005b96; color:#fff; border-radius:8px; font-weight:500; text-decoration:none;">
+            Get Directions
+          </a>
+        </div>
+      </section>
+
+      <!-- Contact Form Block -->
+      <section>
+        <h4>Send Us a Message</h4>
+        <form id="contact-form" onsubmit="event.preventDefault(); alert('Message sent!');">
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+          <input type="text" id="subject" name="subject" placeholder="Subject" required>
+          <textarea id="message" name="message" placeholder="Message" rows="5" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
     </section>
   </div>
 
   <footer>
-    &copy; 2025 Crestpoint | <a href="mailto:" id="contact-email"></a>
+    &copy; 2025 Crestpoint | <a href="mailto:info@crestpoint.co.ug" id="contact-email">info@crestpoint.co.ug</a>
   </footer>
 
   <script>
