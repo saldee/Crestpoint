@@ -1,120 +1,135 @@
-const siteData = {
-  siteTitle: "Crestpoint",
-  tagline: "Building Excellence Through Precision & Safety",
+<script src="data.js"></script>
+<script>
+  // ---------- Common Elements ----------
+  const siteTitleEl = document.getElementById("site-title");
+  if(siteTitleEl) siteTitleEl.textContent = siteData.siteTitle;
 
-  about: {
-    heading: "About Crestpoint",
-    content: "Crestpoint focuses on Project Management, Contracts Management, Environmental Health and Safety, Supervision, and Advisory. We deliver high-quality construction and infrastructure solutions with commitment to safety, timelines and client satisfaction."
-  },
+  const contactEmailEl = document.getElementById("contact-email");
+  if(contactEmailEl) contactEmailEl.textContent = siteData.contact.email;
 
-  visionMissionValues: [
-    {
-      title: "Our Vision",
-      img: "images/vision-icon.png",
-      desc: "To be the leading construction consultancy recognized for precision, safety, and sustainable project delivery across all sectors."
-    },
-    {
-      title: "Our Mission",
-      img: "images/mission-icon.png",
-      desc: "To provide expert guidance, innovative solutions, and hands-on management that ensure every project is completed safely, efficiently, and to the highest quality standards."
-    },
-    {
-      title: "Our Values",
-      img: "images/values-icon.png",
-      desc: "• Integrity and Transparency<br>• Excellence in Delivery<br>• Safety First<br>• Sustainability and Innovation"
-    }
-  ],
+  // ---------- Hero Section ----------
+  const heroTitle = document.querySelector(".hero-content h2");
+  const heroText  = document.querySelector(".hero-content p");
+  if(heroTitle) heroTitle.textContent = siteData.tagline;
+  if(heroText)  heroText.textContent = "Delivering safe, timely and high-quality construction projects across sectors.";
 
-  services: [
-    {title:"Project Management", desc:"Full lifecycle project management from planning to handover."},
-    {title:"Contracts Management", desc:"Transparent contract administration and procurement support."},
-    {title:"Environmental Health & Safety", desc:"Robust EHS systems to protect people and the environment."},
-    {title:"Supervision", desc:"On-site supervision ensuring quality and compliance."},
-    {title:"Advisory", desc:"Technical and commercial advisory to optimize project outcomes."}
-  ],
-
-  projects: [
-    {title:"Modern Office Complex", img:"images/project1.png", desc:"Completed 2023"},
-    {title:"Residential Tower", img:"images/project2.png", desc:"Completed 2022"},
-    {title:"Infrastructure Upgrade", img:"images/project3.png", desc:"Completed 2021"}
-  ],
-
-  team: [
-    {name:"Alice K. – CEO", role:"Founder & CEO", img:"images/team1.png"},
-    {name:"John M. – COO", role:"Operations Lead", img:"images/team2.png"},
-    {name:"Grace P. – EHS", role:"EHS Manager", img:"images/team3.png"},
-    {name:"Samuel T. – PM", role:"Senior Project Manager", img:"images/team4.png"}
-  ],
-
-  contact: {
-    email: "info@crestpoint.com",
-    phone: "+123-456-7890",
-    address: "500 Terry Francine St, San Francisco, CA",
-    googleMapKey: "YOUR_GOOGLE_MAPS_API_KEY" // replace with your key
+  // ---------- About Page ----------
+  const aboutSection = document.getElementById("about-section");
+  if(aboutSection){
+    aboutSection.innerHTML = `
+      <h3 class="section-title">${siteData.about.heading}</h3>
+      <p>${siteData.about.content}</p>
+    `;
   }
-};
-const siteData = {
-  siteTitle: "Crestpoint",
-  tagline: "Building Excellence Through Precision & Safety",
 
-  about: {
-    heading: "About Crestpoint",
-    content: "Crestpoint focuses on Project Management, Contracts Management, Environmental Health and Safety, Supervision, and Advisory. We deliver high-quality construction and infrastructure solutions with commitment to safety, timelines and client satisfaction."
-  },
+  // Vision, Mission, Values
+  const vmvContainer = document.getElementById("vmv-section");
+  if(vmvContainer){
+    siteData.visionMissionValues.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "vmv-card";
+      card.style.cssText = "flex:1 1 calc(33% - 20px);border:1px solid #ddd;border-radius:8px;padding:20px;text-align:center;";
+      card.innerHTML = `
+        <img src="${item.img}" alt="${item.title}" style="width:60px;height:60px;margin-bottom:12px;">
+        <h4>${item.title}</h4>
+        <p style="text-align:left">${item.desc}</p>
+      `;
+      vmvContainer.appendChild(card);
+    });
+  }
 
-  visionMissionValues: [
-    {
-      title: "Our Vision",
-      img: "images/vision-icon.png",
-      desc: "To be the leading construction consultancy recognized for precision, safety, and sustainable project delivery across all sectors."
-    },
-    {
-      title: "Our Mission",
-      img: "images/mission-icon.png",
-      desc: "To provide expert guidance, innovative solutions, and hands-on management that ensure every project is completed safely, efficiently, and to the highest quality standards."
-    },
-    {
-      title: "Our Values",
-      img: "images/values-icon.png",
-      desc: "• Integrity and Transparency<br>• Excellence in Delivery<br>• Safety First<br>• Sustainability and Innovation"
-    }
-  ],
+  // ---------- Services ----------
+  const servicesContainer = document.getElementById("services-cards");
+  if(servicesContainer){
+    siteData.services.forEach(service => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <img src="${service.img || 'images/default-service-icon.png'}" alt="${service.title}" class="card-icon">
+        <h4>${service.title}</h4>
+        <p>${service.desc}</p>
+      `;
+      servicesContainer.appendChild(card);
+    });
+  }
 
-  services: [
-    {title:"Project Management", desc:"Full lifecycle project management from planning to handover."},
-    {title:"Contracts Management", desc:"Transparent contract administration and procurement support."},
-    {title:"Environmental Health & Safety", desc:"Robust EHS systems to protect people and the environment."},
-    {title:"Supervision", desc:"On-site supervision ensuring quality and compliance."},
-    {title:"Advisory", desc:"Technical and commercial advisory to optimize project outcomes."}
-  ],
+  // ---------- Projects ----------
+  const projectsContainer = document.getElementById("projects-cards") || document.getElementById("projects-grid");
+  if(projectsContainer){
+    siteData.projects.forEach(project => {
+      const card = document.createElement("div");
+      card.className = "card project-card";
+      card.innerHTML = `
+        <img src="${project.img}" alt="${project.title}" class="card-img">
+        <h4>${project.title}</h4>
+        <p>${project.desc}</p>
+      `;
+      projectsContainer.appendChild(card);
+    });
+  }
 
-  projects: [
-    {title:"Modern Office Complex", img:"images/project1.png", desc:"Completed 2023"},
-    {title:"Residential Tower", img:"images/project2.png", desc:"Completed 2022"},
-    {title:"Infrastructure Upgrade", img:"images/project3.png", desc:"Completed 2021"}
-  ],
+  // ---------- Team ----------
+  const teamContainer = document.getElementById("team-cards") || document.getElementById("team-grid");
+  if(teamContainer){
+    siteData.team.forEach(member => {
+      const card = document.createElement("div");
+      card.className = "card team-member";
+      card.innerHTML = `
+        <img src="${member.img}" alt="${member.name}" class="card-img-circle">
+        <h4>${member.name}</h4>
+        <p>${member.role}</p>
+      `;
+      teamContainer.appendChild(card);
+    });
+  }
 
-  team: [
-    {name:"Alice K. – CEO", role:"Founder & CEO", img:"images/team1.png"},
-    {name:"John M. – COO", role:"Operations Lead", img:"images/team2.png"},
-    {name:"Grace P. – EHS", role:"EHS Manager", img:"images/team3.png"},
-    {name:"Samuel T. – PM", role:"Senior Project Manager", img:"images/team4.png"}
-  ],
+  // ---------- Testimonials ----------
+  const testimonialsContainer = document.getElementById("testimonials-cards");
+  if(testimonialsContainer){
+    siteData.testimonials.forEach(t => {
+      const card = document.createElement("div");
+      card.className = "card testimonial-card";
+      card.innerHTML = `<p>"${t.text}"</p><h5>- ${t.name}</h5>`;
+      testimonialsContainer.appendChild(card);
+    });
+  }
 
-  contact: {
-    email: "info@crestpoint.com",
-    phone: "+123-456-7890",
-    address: "500 Terry Francine St, San Francisco, CA",
-    googleMapKey: "YOUR_GOOGLE_MAPS_API_KEY" // replace with your key
-  },
+  // ---------- Blog ----------
+  const blogContainer = document.getElementById("blog-cards");
+  if(blogContainer){
+    siteData.blogPosts.forEach(b => {
+      const card = document.createElement("div");
+      card.className = "card blog-card";
+      card.innerHTML = `
+        <h4>${b.title}</h4>
+        <small>${b.date}</small>
+        <p>${b.excerpt}</p>
+        <a href="${b.link}" class="btn-secondary">Read More</a>
+      `;
+      blogContainer.appendChild(card);
+    });
+  }
 
-  testimonials: [
-    { name: "Client A", text: "Crestpoint delivered our project on time and with exceptional quality." },
-    { name: "Client B", text: "Professional team, great communication, and excellent safety standards." }
-  ],
+  // ---------- Contact Page ----------
+  const contactInfo = document.getElementById("contact-info");
+  if(contactInfo){
+    contactInfo.innerHTML = `
+      <p>Email: ${siteData.contact.email}</p>
+      <p>Phone: ${siteData.contact.phone}</p>
+      <p>Address: ${siteData.contact.address}</p>
+    `;
+  }
 
-  blogPosts: [
-    { title: "Construction Trends 2025", date: "2025-01-15", excerpt: "Explore the latest trends in modern construction and project management.", link: "#" },
-    { title: "EHS Best Practices", date: "2025-03-10", excerpt: "How to implement robust EHS systems on construction sites.", link: "#" }
-  ]
-};
+  // Google Map
+  const mapContainer = document.getElementById("google-map");
+  if(mapContainer && siteData.contact.googleMapKey){
+    const iframe = document.createElement("iframe");
+    iframe.width = "100%";
+    iframe.height = "350";
+    iframe.style.border = 0;
+    iframe.loading = "lazy";
+    iframe.allowFullscreen = true;
+    iframe.src = `https://www.google.com/maps/embed/v1/place?key=${siteData.contact.googleMapKey}&q=${encodeURIComponent(siteData.contact.address)}`;
+    mapContainer.appendChild(iframe);
+  }
+</script>
