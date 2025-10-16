@@ -9,8 +9,9 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <header>
-  <h1 id="site-title"></h1>
+  <h1 id="site-title">Crestpoint</h1>
   <nav id="nav-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -29,7 +30,8 @@
   </video>
   <div class="overlay"></div>
   <div class="hero-content container">
-    <h2 id="hero-tagline"></h2>
+    <h2>Building Excellence Through Precision & Safety</h2>
+    <p>Delivering safe, timely and high-quality construction projects across sectors.</p>
     <div style="margin-top:14px">
       <a href="about.html" class="btn-primary">Learn More</a>
       <a href="services.html" class="btn-secondary">Our Services</a>
@@ -39,40 +41,49 @@
 
 <div class="container">
 
-  <!-- About Preview -->
-  <section id="about-preview"></section>
+  <!-- Quick Overview -->
+  <section id="intro">
+    <h3 class="section-title">Quick Overview</h3>
+    <p>We specialize in project delivery, contracts, EHS, supervision and advisory services to make sure your projects finish on time and to spec.</p>
+  </section>
 
-  <!-- Services Preview -->
-  <section>
+  <!-- About Section -->
+  <section id="about-section">
+    <h3 class="section-title">About Crestpoint</h3>
+    <p>Crestpoint focuses on Project Management, Contracts Management, Environmental Health and Safety, Supervision, and Advisory. We deliver high-quality construction and infrastructure solutions with commitment to safety, timelines and client satisfaction.</p>
+  </section>
+
+  <!-- Core Services (Dynamic) -->
+  <section id="services-section">
     <h3 class="section-title">Our Core Services</h3>
-    <div id="services-cards" class="grid-container"></div>
+    <div id="services-cards" class="cards"></div>
     <a href="services.html" class="btn-primary" style="margin-top:16px;display:inline-block;">Explore All Services</a>
   </section>
 
   <!-- Featured Projects -->
-  <section>
+  <section id="projects-section">
     <h3 class="section-title">Featured Projects</h3>
-    <div id="projects-cards" class="grid-container"></div>
+    <div id="projects-cards" class="cards"></div>
     <a href="projects.html" class="btn-primary" style="margin-top:16px;display:inline-block;">View All Projects</a>
   </section>
 
   <!-- Team Preview -->
-  <section>
+  <section id="team-section">
     <h3 class="section-title">Meet Our Team</h3>
-    <div id="team-cards" class="grid-container"></div>
+    <div id="team-cards" class="cards"></div>
     <a href="team.html" class="btn-primary" style="margin-top:16px;display:inline-block;">View Full Team</a>
   </section>
 
   <!-- Testimonials -->
-  <section>
+  <section id="testimonials-section">
     <h3 class="section-title">Client Testimonials</h3>
-    <div id="testimonials-cards" class="grid-container"></div>
+    <div id="testimonials-cards" class="cards"></div>
   </section>
 
   <!-- Blog Preview -->
-  <section>
+  <section id="blog-section">
     <h3 class="section-title">Latest Insights</h3>
-    <div id="blog-cards" class="grid-container"></div>
+    <div id="blog-cards" class="cards"></div>
   </section>
 
 </div>
@@ -83,54 +94,49 @@
 
 <script src="data.js"></script>
 <script>
-  // Site title and tagline
-  document.getElementById("site-title").textContent = siteData.siteTitle;
-  document.getElementById("hero-tagline").textContent = siteData.tagline;
+  // Footer email
   document.getElementById("contact-email").textContent = siteData.contact.email;
 
-  // Meta description for SEO
-  document.querySelector('meta[name="description"]').setAttribute('content', siteData.about.content);
-
-  // About Preview
-  document.getElementById("about-preview").innerHTML = `
-    <h3 class="section-title">${siteData.about.heading}</h3>
-    <p>${siteData.about.content}</p>
-  `;
-
-  // Services Cards
+  // Services
   const servicesContainer = document.getElementById("services-cards");
-  siteData.services.forEach(s => {
+  siteData.services.forEach(service => {
     const card = document.createElement("div");
     card.className = "card";
-    card.innerHTML = `<img src="images/default-service-icon.png" alt="${s.title}" class="card-icon">
-                      <h4>${s.title}</h4>
-                      <p>${s.desc}</p>`;
+    card.innerHTML = `
+      <img src="images/default-service-icon.png" alt="${service.title}" class="card-icon">
+      <h4>${service.title}</h4>
+      <p>${service.desc}</p>
+    `;
     servicesContainer.appendChild(card);
   });
 
-  // Projects Cards
+  // Projects
   const projectsContainer = document.getElementById("projects-cards");
-  siteData.projects.forEach(p => {
+  siteData.projects.forEach(project => {
     const card = document.createElement("div");
     card.className = "card";
-    card.innerHTML = `<img src="${p.img}" alt="${p.title}" class="card-img">
-                      <h4>${p.title}</h4>
-                      <p>${p.desc}</p>`;
+    card.innerHTML = `
+      <img src="${project.img}" alt="${project.title}" class="card-img">
+      <h4>${project.title}</h4>
+      <p>${project.desc}</p>
+    `;
     projectsContainer.appendChild(card);
   });
 
-  // Team Cards
+  // Team
   const teamContainer = document.getElementById("team-cards");
-  siteData.team.forEach(m => {
+  siteData.team.forEach(member => {
     const card = document.createElement("div");
     card.className = "card";
-    card.innerHTML = `<img src="${m.img}" alt="${m.name}" class="card-img-circle">
-                      <h4>${m.name}</h4>
-                      <p>${m.role}</p>`;
+    card.innerHTML = `
+      <img src="${member.img}" alt="${member.name}" class="card-img-circle">
+      <h4>${member.name}</h4>
+      <p>${member.role}</p>
+    `;
     teamContainer.appendChild(card);
   });
 
-  // Testimonials Cards
+  // Testimonials
   const testimonialsContainer = document.getElementById("testimonials-cards");
   siteData.testimonials.forEach(t => {
     const card = document.createElement("div");
@@ -139,7 +145,7 @@
     testimonialsContainer.appendChild(card);
   });
 
-  // Blog Cards
+  // Blog
   const blogContainer = document.getElementById("blog-cards");
   siteData.blogPosts.forEach(b => {
     const card = document.createElement("div");
@@ -150,5 +156,6 @@
     blogContainer.appendChild(card);
   });
 </script>
+
 </body>
 </html>
