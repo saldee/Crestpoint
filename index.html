@@ -50,17 +50,42 @@
     <a href="about.html" style="background:#005b96;color:#fff;padding:10px 14px;border-radius:6px;margin-top:10px;display:inline-block">Read More About Us</a>
   </section>
 
-  <!-- Services Preview -->
+  <!-- Services Preview as Cards -->
   <section id="services-preview">
     <h3 class="section-title">Our Core Services</h3>
     <p>From project management to environmental health & safety, our services are designed to cover every aspect of construction delivery:</p>
-    <ul>
-      <li><strong>Project Management:</strong> Planning, scheduling, and execution oversight.</li>
-      <li><strong>Contracts Management:</strong> Clear, compliant contracts for smooth operations.</li>
-      <li><strong>Supervision & Advisory:</strong> On-site supervision and expert guidance.</li>
-      <li><strong>Environmental & Safety Compliance:</strong> Ensuring safe and sustainable practices.</li>
-    </ul>
-    <a href="services.html" style="background:#fff;color:#005b96;padding:10px 14px;border-radius:6px;margin-top:10px;display:inline-block">Explore All Services</a>
+    
+    <div class="services-grid" style="display:flex;gap:20px;flex-wrap:wrap;margin-top:20px;">
+      <!-- Project Management -->
+      <div class="service-card" style="flex:1 1 calc(33% - 20px);border:1px solid #ddd;border-radius:8px;padding:16px;text-align:center;">
+        <img src="images/project-management-icon.png" alt="Project Management" style="width:60px;height:60px;margin-bottom:12px;">
+        <h4>Project Management</h4>
+        <p>Planning, scheduling, and execution oversight to ensure your projects are delivered on time and within budget.</p>
+      </div>
+
+      <!-- Contracts Management -->
+      <div class="service-card" style="flex:1 1 calc(33% - 20px);border:1px solid #ddd;border-radius:8px;padding:16px;text-align:center;">
+        <img src="images/contracts-management-icon.png" alt="Contracts Management" style="width:60px;height:60px;margin-bottom:12px;">
+        <h4>Contracts Management</h4>
+        <p>Clear, compliant contracts that reduce risk and keep your projects running smoothly from start to finish.</p>
+      </div>
+
+      <!-- Supervision & Advisory -->
+      <div class="service-card" style="flex:1 1 calc(33% - 20px);border:1px solid #ddd;border-radius:8px;padding:16px;text-align:center;">
+        <img src="images/supervision-icon.png" alt="Supervision & Advisory" style="width:60px;height:60px;margin-bottom:12px;">
+        <h4>Supervision & Advisory</h4>
+        <p>On-site supervision and expert guidance to maintain high quality standards and prevent project delays.</p>
+      </div>
+
+      <!-- Environmental & Safety Compliance -->
+      <div class="service-card" style="flex:1 1 calc(33% - 20px);border:1px solid #ddd;border-radius:8px;padding:16px;text-align:center;">
+        <img src="images/ehs-icon.png" alt="Environmental & Safety Compliance" style="width:60px;height:60px;margin-bottom:12px;">
+        <h4>Environmental & Safety Compliance</h4>
+        <p>Ensuring safe, sustainable, and environmentally compliant construction practices at every stage.</p>
+      </div>
+    </div>
+
+    <a href="services.html" style="background:#005b96;color:#fff;padding:10px 14px;border-radius:6px;margin-top:16px;display:inline-block">Explore All Services</a>
   </section>
 
   <!-- Why Choose Us -->
