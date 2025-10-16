@@ -30,6 +30,87 @@
   <meta name="twitter:title" content="Contact Crestpoint">
   <meta name="twitter:description" content="Get in touch with Crestpoint for construction services and project support across Uganda.">
   <meta name="twitter:image" content="https://saldee.github.io/Crestpoint/images/logo.png">
+
+  <style>
+    /* Contact Section Layout */
+    #contact-form-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+      margin-top: 40px;
+    }
+
+    #contact-info,
+    #contact-form {
+      flex: 1 1 45%;
+    }
+
+    @media screen and (max-width: 600px) {
+      #contact-form-section {
+        flex-direction: column;
+      }
+
+      #contact-info,
+      #contact-form {
+        flex: 1 1 100%;
+      }
+    }
+
+    /* Stylish Send Button */
+    #contact-form button {
+      padding: 12px 20px;
+      background: linear-gradient(135deg, #005b96, #002b5c);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 43, 92, 0.3);
+      transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+    }
+
+    #contact-form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0, 43, 92, 0.4);
+      background: linear-gradient(135deg, #f5a623, #005b96);
+    }
+
+    /* Map Styling */
+    #contact-info iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease-out;
+    }
+
+    /* Directions Button */
+    .directions-btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 16px;
+      background: #f5a623;
+      color: #fff;
+      border-radius: 8px;
+      font-weight: 500;
+      text-decoration: none;
+      box-shadow: 0 3px 8px rgba(245, 166, 35, 0.3);
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .directions-btn:hover {
+      background: #e59400;
+      transform: scale(1.05);
+    }
+
+    /* Fade-in Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
 
@@ -62,9 +143,6 @@
         <div style="margin-top:20px;">
           <iframe
             src="https://www.google.com/maps?q=Plot+12+Kampala+Road,+Kampala,+Uganda&output=embed"
-            width="100%"
-            height="300"
-            style="border:0; border-radius:8px;"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade">
@@ -72,13 +150,10 @@
         </div>
 
         <!-- Get Directions Button -->
-        <div style="margin-top:12px;">
-          <a href="https://www.google.com/maps/dir/?api=1&destination=Plot+12+Kampala+Road,+Kampala,+Uganda"
-             target="_blank" rel="noopener"
-             style="display:inline-block; padding:10px 16px; background-color:#005b96; color:#fff; border-radius:8px; font-weight:500; text-decoration:none;">
-            Get Directions
-          </a>
-        </div>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Plot+12+Kampala+Road,+Kampala,+Uganda"
+           target="_blank" rel="noopener" class="directions-btn">
+           Get Directions
+        </a>
       </section>
 
       <!-- Contact Form Block -->
