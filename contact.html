@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Contact - Crestpoint</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact - Crestpoint</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -45,7 +45,20 @@
   &copy; 2025 Crestpoint | <a href="mailto:" id="contact-email"></a>
 </footer>
 
-<script src="data.js"></script>
+<!-- ✅ Load siteData first -->
 <script src="siteData.js"></script>
+<script src="data.js"></script>
+
+<!-- ✅ Inline script to populate contact info -->
+<script>
+  document.getElementById("site-title").textContent = siteData.siteTitle;
+  document.getElementById("contact-email").textContent = siteData.contact.email;
+  document.getElementById("contact-email").href = `mailto:${siteData.contact.email}`;
+
+  // Optional: Embed Google Map using API key if available
+  const mapFrame = document.getElementById("google-map");
+  mapFrame.src = `https://www.google.com/maps/embed/v1/place?key=${siteData.contact.googleMapKey}&q=${encodeURIComponent(siteData.contact.address)}`;
+</script>
+
 </body>
 </html>
