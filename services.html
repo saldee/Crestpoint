@@ -8,9 +8,10 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
+
+<header class="header-dark">
   <h1 id="site-title"></h1>
-  <nav id="nav-links">
+  <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
@@ -22,39 +23,16 @@
 
 <div class="container">
   <section id="services-section">
-    <h3 class="section-title">Our Services</h3>
-    <div class="cards" id="services-cards" style="display:flex;flex-wrap:wrap;gap:20px;margin-top:20px;"></div>
+    <h3 class="section-title">Our Core Services</h3>
+    <div id="services-cards" class="cards"></div>
   </section>
 </div>
 
 <footer>
-  &copy; 2025 Crestpoint. All rights reserved. | <a href="mailto:info@crestpoint.com" id="contact-email"></a>
+  &copy; 2025 Crestpoint | <a href="mailto:" id="contact-email"></a>
 </footer>
 
 <script src="data.js"></script>
-<script>
-  // Set site title
-  document.getElementById("site-title").textContent = siteData.siteTitle;
-
-  // Populate contact email in footer
-  document.getElementById("contact-email").textContent = siteData.contact.email;
-
-  // Generate service cards
-  const servicesContainer = document.getElementById("services-cards");
-
-  siteData.services.forEach(service => {
-    const card = document.createElement("div");
-    card.className = "service-card";
-    card.style.cssText = "flex:1 1 calc(50% - 20px);border:1px solid #ddd;border-radius:8px;padding:20px;text-align:center;";
-
-    card.innerHTML = `
-      <img src="images/default-service-icon.png" alt="${service.title}" style="width:60px;height:60px;margin-bottom:12px;">
-      <h4>${service.title}</h4>
-      <p>${service.desc}</p>
-    `;
-
-    servicesContainer.appendChild(card);
-  });
-</script>
+<script src="populate.js"></script>
 </body>
 </html>
