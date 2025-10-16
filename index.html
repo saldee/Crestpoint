@@ -4,15 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Home - Crestpoint</title>
-<meta name="description" content="">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <h1 id="site-title">Crestpoint</h1>
-  <nav id="nav-links">
+  <h1 id="site-title"></h1>
+  <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
@@ -24,15 +23,14 @@
 
 <!-- Hero Section -->
 <section class="hero">
-  <video id="heroVideo" autoplay muted loop playsinline poster="images/hero-poster.png">
+  <video autoplay muted loop playsinline poster="images/hero-poster.png">
     <source src="videos/hero.mp4" type="video/mp4">
-    Your browser does not support the video tag.
   </video>
   <div class="overlay"></div>
   <div class="hero-content container">
-    <h2>Building Excellence Through Precision & Safety</h2>
-    <p>Delivering safe, timely and high-quality construction projects across sectors.</p>
-    <div style="margin-top:14px">
+    <h2></h2>
+    <p></p>
+    <div>
       <a href="about.html" class="btn-primary">Learn More</a>
       <a href="services.html" class="btn-secondary">Our Services</a>
     </div>
@@ -47,31 +45,28 @@
     <p>We specialize in project delivery, contracts, EHS, supervision and advisory services to make sure your projects finish on time and to spec.</p>
   </section>
 
-  <!-- About Section -->
-  <section id="about-section">
-    <h3 class="section-title">About Crestpoint</h3>
-    <p>Crestpoint focuses on Project Management, Contracts Management, Environmental Health and Safety, Supervision, and Advisory. We deliver high-quality construction and infrastructure solutions with commitment to safety, timelines and client satisfaction.</p>
-  </section>
+  <!-- About Preview -->
+  <section id="about-section"></section>
 
-  <!-- Core Services (Dynamic) -->
+  <!-- Services Preview -->
   <section id="services-section">
     <h3 class="section-title">Our Core Services</h3>
     <div id="services-cards" class="cards"></div>
-    <a href="services.html" class="btn-primary" style="margin-top:16px;display:inline-block;">Explore All Services</a>
+    <a href="services.html" class="btn-primary">Explore All Services</a>
   </section>
 
-  <!-- Featured Projects -->
+  <!-- Projects Preview -->
   <section id="projects-section">
     <h3 class="section-title">Featured Projects</h3>
     <div id="projects-cards" class="cards"></div>
-    <a href="projects.html" class="btn-primary" style="margin-top:16px;display:inline-block;">View All Projects</a>
+    <a href="projects.html" class="btn-primary">View All Projects</a>
   </section>
 
   <!-- Team Preview -->
   <section id="team-section">
     <h3 class="section-title">Meet Our Team</h3>
     <div id="team-cards" class="cards"></div>
-    <a href="team.html" class="btn-primary" style="margin-top:16px;display:inline-block;">View Full Team</a>
+    <a href="team.html" class="btn-primary">View Full Team</a>
   </section>
 
   <!-- Testimonials -->
@@ -80,7 +75,7 @@
     <div id="testimonials-cards" class="cards"></div>
   </section>
 
-  <!-- Blog Preview -->
+  <!-- Blog -->
   <section id="blog-section">
     <h3 class="section-title">Latest Insights</h3>
     <div id="blog-cards" class="cards"></div>
@@ -89,73 +84,10 @@
 </div>
 
 <footer>
-  &copy; 2025 Crestpoint. All rights reserved. | <a href="mailto:info@crestpoint.com" id="contact-email"></a>
+  &copy; 2025 Crestpoint | <a href="mailto:" id="contact-email"></a>
 </footer>
 
 <script src="data.js"></script>
-<script>
-  // Footer email
-  document.getElementById("contact-email").textContent = siteData.contact.email;
-
-  // Services
-  const servicesContainer = document.getElementById("services-cards");
-  siteData.services.forEach(service => {
-    const card = document.createElement("div");
-    card.className = "card";
-    card.innerHTML = `
-      <img src="images/default-service-icon.png" alt="${service.title}" class="card-icon">
-      <h4>${service.title}</h4>
-      <p>${service.desc}</p>
-    `;
-    servicesContainer.appendChild(card);
-  });
-
-  // Projects
-  const projectsContainer = document.getElementById("projects-cards");
-  siteData.projects.forEach(project => {
-    const card = document.createElement("div");
-    card.className = "card";
-    card.innerHTML = `
-      <img src="${project.img}" alt="${project.title}" class="card-img">
-      <h4>${project.title}</h4>
-      <p>${project.desc}</p>
-    `;
-    projectsContainer.appendChild(card);
-  });
-
-  // Team
-  const teamContainer = document.getElementById("team-cards");
-  siteData.team.forEach(member => {
-    const card = document.createElement("div");
-    card.className = "card";
-    card.innerHTML = `
-      <img src="${member.img}" alt="${member.name}" class="card-img-circle">
-      <h4>${member.name}</h4>
-      <p>${member.role}</p>
-    `;
-    teamContainer.appendChild(card);
-  });
-
-  // Testimonials
-  const testimonialsContainer = document.getElementById("testimonials-cards");
-  siteData.testimonials.forEach(t => {
-    const card = document.createElement("div");
-    card.className = "card";
-    card.innerHTML = `<p>"${t.text}"</p><h5>- ${t.name}</h5>`;
-    testimonialsContainer.appendChild(card);
-  });
-
-  // Blog
-  const blogContainer = document.getElementById("blog-cards");
-  siteData.blogPosts.forEach(b => {
-    const card = document.createElement("div");
-    card.className = "card";
-    card.innerHTML = `<h4>${b.title}</h4><small>${b.date}</small>
-                      <p>${b.excerpt}</p>
-                      <a href="${b.link}" class="btn-secondary">Read More</a>`;
-    blogContainer.appendChild(card);
-  });
-</script>
-
+<script src="populate.js"></script>
 </body>
 </html>
