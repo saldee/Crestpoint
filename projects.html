@@ -1,66 +1,68 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Projects - Crestpoint</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Projects - Crestpoint</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1 id="site-title"></h1>
-  <nav id="nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="projects.html">Projects</a>
-    <a href="team.html">Team</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+  <header>
+    <h1 id="site-title"></h1>
+    <nav id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="team.html">Team</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-<div class="container">
-  <!-- Projects Section -->
-  <section id="projects-section">
-    <h3 class="section-title">Our Projects</h3>
-    <div class="projects-grid" id="projects-cards" style="display:flex;flex-wrap:wrap;gap:20px;margin-top:20px;"></div>
-  </section>
-</div>
+  <div class="container">
+    <!-- Projects Section -->
+    <section id="projects-section">
+      <h3 class="section-title">Our Projects</h3>
+      <div class="projects-grid" id="projects-cards" style="display:flex;flex-wrap:wrap;gap:20px;margin-top:20px;"></div>
+    </section>
+  </div>
 
-<footer>
-  &copy; 2025 Crestpoint. All rights reserved. | <a href="mailto:info@crestpoint.com" id="contact-email"></a>
-</footer>
+  <footer>
+    &copy; 2025 Crestpoint. All rights reserved. | <a href="mailto:info@crestpoint.com" id="contact-email"></a>
+  </footer>
 
-<script src="data.js"></script>
-<script>
-  // Set site title
-  document.getElementById("site-title").textContent = siteData.siteTitle;
+  <!-- Load siteData first -->
+  <script src="siteData.js"></script>
 
-  // Footer contact email
-  document.getElementById("contact-email").textContent = siteData.contact.email;
+  <!-- Load data.js next -->
+  <script src="data.js"></script>
 
-  // Populate Projects
-  const projectsContainer = document.getElementById("projects-cards");
-  siteData.projects.forEach(project => {
-    const card = document.createElement("div");
-    card.className = "project-card";
-    card.style.cssText = "flex:1 1 calc(33% - 20px);border:1px solid #ddd;border-radius:6px;overflow:hidden;";
+  <!-- Inline script that uses siteData -->
+  <script>
+    // Set site title
+    document.getElementById("site-title").textContent = siteData.siteTitle;
 
-    card.innerHTML = `
-      <img src="${project.img}" alt="${project.title}" style="width:100%;height:180px;object-fit:cover;">
-      <div style="padding:12px;">
-        <h4>${project.title}</h4>
-        <p>${project.desc}</p>
-      </div>
-    `;
+    // Footer contact email
+    document.getElementById("contact-email").textContent = siteData.contact.email;
 
-    projectsContainer.appendChild(card);
-  });
-</script>
-<script src="siteData.js"></script>
-<script src="data.js"></script>
+    // Populate Projects
+    const projectsContainer = document.getElementById("projects-cards");
+    siteData.projects.forEach(project => {
+      const card = document.createElement("div");
+      card.className = "project-card";
+      card.style.cssText = "flex:1 1 calc(33% - 20px);border:1px solid #ddd;border-radius:6px;overflow:hidden;";
 
+      card.innerHTML = `
+        <img src="${project.img}" alt="${project.title}" style="width:100%;height:180px;object-fit:cover;">
+        <div style="padding:12px;">
+          <h4>${project.title}</h4>
+          <p>${project.desc}</p>
+        </div>
+      `;
 
+      projectsContainer.appendChild(card);
+    });
+  </script>
 </body>
 </html>
