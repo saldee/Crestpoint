@@ -1,14 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Contact - Crestpoint</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
-  <h1>Crestpoint</h1>
+  <h1 id="site-title"></h1>
   <nav id="nav-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -18,11 +19,60 @@
     <a href="contact.html">Contact</a>
   </nav>
 </header>
-<div class="container"><section id="contact-section"><h3 class="section-title">Contact Us</h3><form class="contact-form"><input type="text" placeholder="Your name" required><input type="email" placeholder="Your email" required><textarea rows="5" placeholder="Your message" required></textarea><button type="submit">Send Message</button></form><p style="margin-top:18px">Email: <a href="mailto:info@crestpoint.com">info@crestpoint.com</a> | Phone: +123-456-7890</p><div style="margin-top:18px"><iframe src="https://maps.google.com/maps?q=San%20Francisco&t=&z=13&ie=UTF8&iwloc=&output=embed" style="width:100%;height:300px;border:0;border-radius:8px"></iframe></div></section></div>
+
+<div class="container">
+  <!-- Contact Info -->
+  <section id="contact-info" style="margin-bottom:30px;">
+    <h3 class="section-title">Contact Us</h3>
+    <p><strong>Email:</strong> <span id="contact-email"></span></p>
+    <p><strong>Phone:</strong> <span id="contact-phone"></span></p>
+    <p><strong>Address:</strong> <span id="contact-address"></span></p>
+  </section>
+
+  <!-- Contact Form -->
+  <section id="contact-form-section" style="margin-bottom:30px;">
+    <h4>Send Us a Message</h4>
+    <form id="contact-form" style="display:flex;flex-direction:column;gap:12px;max-width:500px;">
+      <input type="text" id="name" name="name" placeholder="Your Name" required style="padding:10px;border-radius:6px;border:1px solid #ccc;">
+      <input type="email" id="email" name="email" placeholder="Your Email" required style="padding:10px;border-radius:6px;border:1px solid #ccc;">
+      <input type="text" id="subject" name="subject" placeholder="Subject" required style="padding:10px;border-radius:6px;border:1px solid #ccc;">
+      <textarea id="message" name="message" placeholder="Message" rows="5" required style="padding:10px;border-radius:6px;border:1px solid #ccc;"></textarea>
+      <button type="submit" style="background:#005b96;color:#fff;padding:10px 14px;border-radius:6px;border:none;cursor:pointer;">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Google Map -->
+  <section id="map-section" style="margin-top:30px;">
+    <h4>Our Location</h4>
+    <iframe id="google-map" src="" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+</div>
+
 <footer>
-  &copy; 2025 Crestpoint. All rights reserved. | <a href="mailto:info@crestpoint.com">info@crestpoint.com</a>
+  &copy; 2025 Crestpoint. All rights reserved.
 </footer>
+
 <script src="data.js"></script>
-<script src="script.js"></script>
+<script>
+  // Set site title
+  document.getElementById("site-title").textContent = siteData.siteTitle;
+
+  // Populate contact info dynamically
+  document.getElementById("contact-email").textContent = siteData.contact.email;
+  document.getElementById("contact-phone").textContent = siteData.contact.phone;
+  document.getElementById("contact-address").textContent = siteData.contact.address;
+
+  // Populate Google Map dynamically
+  const address = encodeURIComponent(siteData.contact.address);
+  document.getElementById("google-map").src = `https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=${address}`;
+
+  // Handle form submission (basic example)
+  const form = document.getElementById("contact-form");
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Thank you! Your message has been received.");
+    form.reset();
+  });
+</script>
 </body>
 </html>
