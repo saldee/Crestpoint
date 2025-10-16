@@ -9,7 +9,7 @@
 </head>
 <body>
 <header>
-  <h1>Crestpoint</h1>
+  <h1 id="site-title"></h1>
   <nav id="nav-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -20,6 +20,7 @@
   </nav>
 </header>
 
+<!-- Hero Section -->
 <section class="hero">
   <video id="heroVideo" autoplay muted loop playsinline poster="images/hero-poster.png">
     <source src="videos/hero.mp4" type="video/mp4">
@@ -27,8 +28,7 @@
   </video>
   <div class="overlay"></div>
   <div class="hero-content container">
-    <h2>Building Excellence Through Precision & Safety</h2>
-    <p>Delivering safe, timely and high-quality construction projects across sectors.</p>
+    <h2 id="hero-tagline"></h2>
     <div style="margin-top:14px">
       <a href="about.html" style="background:#005b96;color:#fff;padding:10px 14px;border-radius:6px;margin-right:8px">Learn More</a>
       <a href="services.html" style="background:#fff;color:#005b96;padding:10px 14px;border-radius:6px">Our Services</a>
@@ -37,105 +37,94 @@
 </section>
 
 <div class="container">
-  <!-- Quick Overview -->
-  <section id="intro">
-    <h3 class="section-title">Quick Overview</h3>
-    <p>We specialize in project delivery, contracts, EHS, supervision, and advisory services to ensure your projects finish on time and to specification.</p>
-  </section>
+  <!-- Quick Overview / About Preview -->
+  <section id="about-preview"></section>
 
-  <!-- About Us Preview -->
-  <section id="about-preview">
-    <h3 class="section-title">About Crestpoint</h3>
-    <p>Crestpoint has been at the forefront of construction consultancy, providing expert guidance and hands-on management across multiple sectors. Our team combines technical expertise with a commitment to safety and sustainability, ensuring every project exceeds expectations.</p>
-    <a href="about.html" style="background:#005b96;color:#fff;padding:10px 14px;border-radius:6px;margin-top:10px;display:inline-block">Read More About Us</a>
-  </section>
-
-  <!-- Services Preview as Cards -->
+  <!-- Services Preview -->
   <section id="services-preview">
     <h3 class="section-title">Our Core Services</h3>
-    <p>From project management to environmental health & safety, our services are designed to cover every aspect of construction delivery:</p>
-    
-    <div class="services-grid" style="display:flex;gap:20px;flex-wrap:wrap;margin-top:20px;">
-      <!-- Project Management -->
-      <div class="service-card" style="flex:1 1 calc(33% - 20px);border:1px solid #ddd;border-radius:8px;padding:16px;text-align:center;">
-        <img src="images/project-management-icon.png" alt="Project Management" style="width:60px;height:60px;margin-bottom:12px;">
-        <h4>Project Management</h4>
-        <p>Planning, scheduling, and execution oversight to ensure your projects are delivered on time and within budget.</p>
-      </div>
-
-      <!-- Contracts Management -->
-      <div class="service-card" style="flex:1 1 calc(33% - 20px);border:1px solid #ddd;border-radius:8px;padding:16px;text-align:center;">
-        <img src="images/contracts-management-icon.png" alt="Contracts Management" style="width:60px;height:60px;margin-bottom:12px;">
-        <h4>Contracts Management</h4>
-        <p>Clear, compliant contracts that reduce risk and keep your projects running smoothly from start to finish.</p>
-      </div>
-
-      <!-- Supervision & Advisory -->
-      <div class="service-card" style="flex:1 1 calc(33% - 20px);border:1px solid #ddd;border-radius:8px;padding:16px;text-align:center;">
-        <img src="images/supervision-icon.png" alt="Supervision & Advisory" style="width:60px;height:60px;margin-bottom:12px;">
-        <h4>Supervision & Advisory</h4>
-        <p>On-site supervision and expert guidance to maintain high quality standards and prevent project delays.</p>
-      </div>
-
-      <!-- Environmental & Safety Compliance -->
-      <div class="service-card" style="flex:1 1 calc(33% - 20px);border:1px solid #ddd;border-radius:8px;padding:16px;text-align:center;">
-        <img src="images/ehs-icon.png" alt="Environmental & Safety Compliance" style="width:60px;height:60px;margin-bottom:12px;">
-        <h4>Environmental & Safety Compliance</h4>
-        <p>Ensuring safe, sustainable, and environmentally compliant construction practices at every stage.</p>
-      </div>
-    </div>
-
+    <div class="services-grid" id="services-cards" style="display:flex;gap:20px;flex-wrap:wrap;margin-top:20px;"></div>
     <a href="services.html" style="background:#005b96;color:#fff;padding:10px 14px;border-radius:6px;margin-top:16px;display:inline-block">Explore All Services</a>
-  </section>
-
-  <!-- Why Choose Us -->
-  <section id="why-choose-us">
-    <h3 class="section-title">Why Choose Crestpoint</h3>
-    <p>We bring precision, reliability, and a strong safety culture to every project. Our clients trust us to:</p>
-    <ul>
-      <li>Deliver projects on time and within budget.</li>
-      <li>Provide expert advice and proactive problem-solving.</li>
-      <li>Maintain high standards for safety and quality.</li>
-      <li>Build long-term partnerships based on transparency and trust.</li>
-    </ul>
   </section>
 
   <!-- Featured Projects -->
   <section id="featured-projects">
     <h3 class="section-title">Featured Projects</h3>
-    <p>Take a look at some of our recent projects demonstrating our expertise and commitment to quality.</p>
-    <div class="projects-grid" style="display:flex;gap:20px;flex-wrap:wrap;margin-top:20px;">
-      <div class="project-card" style="flex:1 1 calc(33% - 20px);border:1px solid #ddd;border-radius:6px;overflow:hidden;">
-        <img src="images/project1.jpg" alt="Project 1" style="width:100%;height:180px;object-fit:cover;">
-        <div style="padding:12px;">
-          <h4>Urban Office Complex</h4>
-          <p>Successfully delivered a state-of-the-art office complex with sustainable features and on-time completion.</p>
-        </div>
-      </div>
-      <div class="project-card" style="flex:1 1 calc(33% - 20px);border:1px solid #ddd;border-radius:6px;overflow:hidden;">
-        <img src="images/project2.jpg" alt="Project 2" style="width:100%;height:180px;object-fit:cover;">
-        <div style="padding:12px;">
-          <h4>Industrial Warehouse</h4>
-          <p>Managed construction of a high-capacity industrial warehouse with strict safety and quality standards.</p>
-        </div>
-      </div>
-      <div class="project-card" style="flex:1 1 calc(33% - 20px);border:1px solid #ddd;border-radius:6px;overflow:hidden;">
-        <img src="images/project3.jpg" alt="Project 3" style="width:100%;height:180px;object-fit:cover;">
-        <div style="padding:12px;">
-          <h4>Residential Development</h4>
-          <p>Delivered a modern residential complex with focus on efficient design, safety, and client satisfaction.</p>
-        </div>
-      </div>
-    </div>
+    <div class="projects-grid" id="projects-cards" style="display:flex;gap:20px;flex-wrap:wrap;margin-top:20px;"></div>
     <a href="projects.html" style="background:#005b96;color:#fff;padding:10px 14px;border-radius:6px;margin-top:16px;display:inline-block">View All Projects</a>
+  </section>
+
+  <!-- Team Preview -->
+  <section id="team-preview">
+    <h3 class="section-title">Meet Our Team</h3>
+    <div class="team-grid" id="team-cards" style="display:flex;gap:20px;flex-wrap:wrap;margin-top:20px;"></div>
+    <a href="team.html" style="background:#005b96;color:#fff;padding:10px 14px;border-radius:6px;margin-top:16px;display:inline-block">View Full Team</a>
   </section>
 </div>
 
 <footer>
-  &copy; 2025 Crestpoint. All rights reserved. | <a href="mailto:info@crestpoint.com">info@crestpoint.com</a>
+  &copy; 2025 Crestpoint. All rights reserved. | <a href="mailto:info@crestpoint.com" id="contact-email"></a>
 </footer>
 
 <script src="data.js"></script>
-<script src="script.js"></script>
+<script>
+  // Populate hero and site title
+  document.getElementById("site-title").textContent = siteData.siteTitle;
+  document.getElementById("hero-tagline").textContent = siteData.tagline;
+
+  // About Preview
+  const aboutPreview = document.getElementById("about-preview");
+  aboutPreview.innerHTML = `
+    <h3 class="section-title">${siteData.about.heading}</h3>
+    <p>${siteData.about.content}</p>
+  `;
+
+  // Services Cards
+  const servicesContainer = document.getElementById("services-cards");
+  siteData.services.forEach(service => {
+    const card = document.createElement("div");
+    card.className = "service-card";
+    card.style.cssText = "flex:1 1 calc(33% - 20px);border:1px solid #ddd;border-radius:8px;padding:16px;text-align:center;";
+    card.innerHTML = `
+      <img src="images/default-service-icon.png" alt="${service.title}" style="width:60px;height:60px;margin-bottom:12px;">
+      <h4>${service.title}</h4>
+      <p>${service.desc}</p>
+    `;
+    servicesContainer.appendChild(card);
+  });
+
+  // Projects Cards
+  const projectsContainer = document.getElementById("projects-cards");
+  siteData.projects.forEach(project => {
+    const card = document.createElement("div");
+    card.className = "project-card";
+    card.style.cssText = "flex:1 1 calc(33% - 20px);border:1px solid #ddd;border-radius:6px;overflow:hidden;";
+    card.innerHTML = `
+      <img src="${project.img}" alt="${project.title}" style="width:100%;height:180px;object-fit:cover;">
+      <div style="padding:12px;">
+        <h4>${project.title}</h4>
+        <p>${project.desc}</p>
+      </div>
+    `;
+    projectsContainer.appendChild(card);
+  });
+
+  // Team Cards
+  const teamContainer = document.getElementById("team-cards");
+  siteData.team.forEach(member => {
+    const card = document.createElement("div");
+    card.className = "team-card";
+    card.style.cssText = "flex:1 1 calc(25% - 20px);border:1px solid #ddd;border-radius:8px;padding:16px;text-align:center;";
+    card.innerHTML = `
+      <img src="${member.img}" alt="${member.name}" style="width:100px;height:100px;border-radius:50%;margin-bottom:12px;">
+      <h4>${member.name}</h4>
+      <p>${member.role}</p>
+    `;
+    teamContainer.appendChild(card);
+  });
+
+  // Footer contact email
+  document.getElementById("contact-email").textContent = siteData.contact.email;
+</script>
 </body>
 </html>
