@@ -5,132 +5,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Contact - Crestpoint</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  /* Base Styles */
-  body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    background-color: #f8f9fa;
-    color: #333;
-  }
-
-  /* Header */
-  header {
-    background-color: #00274d;
-    padding: 16px 32px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  header h1 {
-    color: #fff;
-    margin: 0;
-    font-size: 24px;
-  }
-
-  header nav a {
-    color: #fff;
-    margin-left: 20px;
-    text-decoration: none;
-    font-weight: 500;
-  }
-
-  header nav a:hover {
-    text-decoration: underline;
-  }
-
-  /* Container */
-  .container {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 16px;
-  }
-
-  /* Contact Section */
-  .contact-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
-  }
-
-  .contact-card, .contact-form-card {
-    background-color: #fff;
-    padding: 24px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    flex: 1 1 400px;
-  }
-
-  .contact-card h3, .contact-form-card h3 {
-    margin-top: 0;
-    color: #00274d;
-  }
-
-  /* Contact Info */
-  .contact-info p {
-    margin: 10px 0;
-  }
-
-  /* Form */
-  #contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  #contact-form input,
-  #contact-form textarea {
-    padding: 12px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    font-size: 14px;
-  }
-
-  #contact-form button {
-    background-color: #00274d;
-    color: #fff;
-    padding: 12px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background 0.3s;
-  }
-
-  #contact-form button:hover {
-    background-color: #004080;
-  }
-
-  /* Map */
-  #google-map {
-    width: 100%;
-    height: 400px;
-    border-radius: 8px;
-    border: none;
-    margin-top: 32px;
-  }
-
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #00274d;
-    color: #fff;
-    margin-top: 40px;
-  }
-
-  /* Responsive */
-  @media(max-width: 768px){
-    .contact-grid {
-      flex-direction: column;
-    }
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
+<header class="header-dark">
   <h1 id="site-title"></h1>
   <nav>
     <a href="index.html">Home</a>
@@ -143,58 +22,30 @@
 </header>
 
 <div class="container">
-  <div class="contact-grid">
-    <!-- Contact Info -->
-    <div class="contact-card contact-info">
-      <h3>Contact Us</h3>
-      <p><strong>Email:</strong> <span id="contact-email"></span></p>
-      <p><strong>Phone:</strong> <span id="contact-phone"></span></p>
-      <p><strong>Address:</strong> <span id="contact-address"></span></p>
-    </div>
+  <section id="contact-info"></section>
 
-    <!-- Contact Form -->
-    <div class="contact-form-card">
-      <h3>Send Us a Message</h3>
-      <form id="contact-form">
-        <input type="text" id="name" name="name" placeholder="Your Name" required>
-        <input type="email" id="email" name="email" placeholder="Your Email" required>
-        <input type="text" id="subject" name="subject" placeholder="Subject" required>
-        <textarea id="message" name="message" placeholder="Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
-  </div>
+  <section id="contact-form-section">
+    <h4>Send Us a Message</h4>
+    <form id="contact-form" style="display:flex;flex-direction:column;gap:12px;max-width:500px;">
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
+      <input type="email" id="email" name="email" placeholder="Your Email" required>
+      <input type="text" id="subject" name="subject" placeholder="Subject" required>
+      <textarea id="message" name="message" placeholder="Message" rows="5" required></textarea>
+      <button type="submit" class="btn-primary">Send Message</button>
+    </form>
+  </section>
 
-  <!-- Google Map -->
-  <iframe id="google-map" src="" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <section id="map-section">
+    <h4>Our Location</h4>
+    <iframe id="google-map" width="100%" height="400" style="border:0;"></iframe>
+  </section>
 </div>
 
 <footer>
-  &copy; 2025 Crestpoint. All rights reserved.
+  &copy; 2025 Crestpoint | <a href="mailto:" id="contact-email"></a>
 </footer>
 
 <script src="data.js"></script>
-<script>
-  // Set site title
-  document.getElementById("site-title").textContent = siteData.siteTitle;
-
-  // Populate contact info dynamically
-  document.getElementById("contact-email").textContent = siteData.contact.email;
-  document.getElementById("contact-phone").textContent = siteData.contact.phone;
-  document.getElementById("contact-address").textContent = siteData.contact.address;
-
-  // Populate Google Map dynamically
-  const address = encodeURIComponent(siteData.contact.address);
-  document.getElementById("google-map").src = `https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=${address}`;
-
-  // Handle form submission
-  const form = document.getElementById("contact-form");
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
-    alert("Thank you! Your message has been received.");
-    form.reset();
-  });
-</script>
-
+<script src="populate.js"></script>
 </body>
 </html>
