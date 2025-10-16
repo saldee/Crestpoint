@@ -20,7 +20,6 @@
   </nav>
 </header>
 
-<!-- Hero Section -->
 <section class="hero">
   <video id="heroVideo" autoplay muted loop playsinline poster="images/hero-poster.png">
     <source src="videos/hero.mp4" type="video/mp4">
@@ -37,7 +36,7 @@
 </section>
 
 <div class="container">
-  <!-- Quick Overview / About Preview -->
+  <!-- About Preview -->
   <section id="about-preview"></section>
 
   <!-- Services Preview -->
@@ -68,63 +67,45 @@
 
 <script src="data.js"></script>
 <script>
-  // Populate hero and site title
   document.getElementById("site-title").textContent = siteData.siteTitle;
   document.getElementById("hero-tagline").textContent = siteData.tagline;
+  document.getElementById("contact-email").textContent = siteData.contact.email;
 
-  // About Preview
-  const aboutPreview = document.getElementById("about-preview");
-  aboutPreview.innerHTML = `
+  // About preview
+  document.getElementById("about-preview").innerHTML = `
     <h3 class="section-title">${siteData.about.heading}</h3>
     <p>${siteData.about.content}</p>
   `;
 
-  // Services Cards
+  // Services cards
   const servicesContainer = document.getElementById("services-cards");
-  siteData.services.forEach(service => {
+  siteData.services.forEach(s => {
     const card = document.createElement("div");
-    card.className = "service-card";
     card.style.cssText = "flex:1 1 calc(33% - 20px);border:1px solid #ddd;border-radius:8px;padding:16px;text-align:center;";
-    card.innerHTML = `
-      <img src="images/default-service-icon.png" alt="${service.title}" style="width:60px;height:60px;margin-bottom:12px;">
-      <h4>${service.title}</h4>
-      <p>${service.desc}</p>
-    `;
+    card.innerHTML = `<img src="images/default-service-icon.png" alt="${s.title}" style="width:60px;height:60px;margin-bottom:12px;">
+      <h4>${s.title}</h4><p>${s.desc}</p>`;
     servicesContainer.appendChild(card);
   });
 
-  // Projects Cards
+  // Projects cards
   const projectsContainer = document.getElementById("projects-cards");
-  siteData.projects.forEach(project => {
+  siteData.projects.forEach(p => {
     const card = document.createElement("div");
-    card.className = "project-card";
     card.style.cssText = "flex:1 1 calc(33% - 20px);border:1px solid #ddd;border-radius:6px;overflow:hidden;";
-    card.innerHTML = `
-      <img src="${project.img}" alt="${project.title}" style="width:100%;height:180px;object-fit:cover;">
-      <div style="padding:12px;">
-        <h4>${project.title}</h4>
-        <p>${project.desc}</p>
-      </div>
-    `;
+    card.innerHTML = `<img src="${p.img}" alt="${p.title}" style="width:100%;height:180px;object-fit:cover;">
+      <div style="padding:12px;"><h4>${p.title}</h4><p>${p.desc}</p></div>`;
     projectsContainer.appendChild(card);
   });
 
-  // Team Cards
+  // Team cards
   const teamContainer = document.getElementById("team-cards");
-  siteData.team.forEach(member => {
+  siteData.team.forEach(m => {
     const card = document.createElement("div");
-    card.className = "team-card";
     card.style.cssText = "flex:1 1 calc(25% - 20px);border:1px solid #ddd;border-radius:8px;padding:16px;text-align:center;";
-    card.innerHTML = `
-      <img src="${member.img}" alt="${member.name}" style="width:100px;height:100px;border-radius:50%;margin-bottom:12px;">
-      <h4>${member.name}</h4>
-      <p>${member.role}</p>
-    `;
+    card.innerHTML = `<img src="${m.img}" alt="${m.name}" style="width:100px;height:100px;border-radius:50%;margin-bottom:12px;">
+      <h4>${m.name}</h4><p>${m.role}</p>`;
     teamContainer.appendChild(card);
   });
-
-  // Footer contact email
-  document.getElementById("contact-email").textContent = siteData.contact.email;
 </script>
 </body>
 </html>
