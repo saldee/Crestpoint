@@ -1,101 +1,119 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Home - Crestpoint</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Home - Crestpoint | Construction Experts in Uganda</title>
+  <meta name="description" content="Crestpoint delivers safe, timely, and high-quality construction projects across Uganda. Explore our services, team, and featured projects.">
+  <meta name="keywords" content="construction Uganda, infrastructure, building services, Crestpoint, project delivery, EHS, renovation">
+  <meta name="author" content="Crestpoint">
+  <meta name="robots" content="index, follow">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+
+  <!-- Fonts & Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Open Graph for social sharing -->
+  <meta property="og:title" content="Crestpoint - Building with Precision">
+  <meta property="og:description" content="Delivering safe, timely, and high-quality construction projects across Uganda.">
+  <meta property="og:image" content="https://saldee.github.io/Crestpoint/images/logo.png">
+  <meta property="og:url" content="https://saldee.github.io/Crestpoint/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Crestpoint - Building with Precision">
+  <meta name="twitter:description" content="Delivering safe, timely, and high-quality construction projects across Uganda.">
+  <meta name="twitter:image" content="https://saldee.github.io/Crestpoint/images/logo.png">
 </head>
 <body>
-  
-<header>
-  <a href="index.html">
-    <img src="images/logo.png" alt="Crestpoint Logo" style="height:48px;">
-  </a>
-  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-  <nav id="nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="projects.html">Projects</a>
-    <a href="team.html">Team</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
 
+  <header>
+    <a href="index.html">
+      <img src="images/logo.png" alt="Crestpoint Logo" style="height:48px;">
+    </a>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <nav id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="team.html">Team</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-
-<!-- Hero Section -->
-<section class="hero">
-  <video autoplay muted loop playsinline poster="images/hero-poster.png">
-    <source src="videos/hero.mp4" type="video/mp4">
-  </video>
-  <div class="overlay"></div>
-  <div class="hero-content container">
-    <h2></h2>
-    <p></p>
-    <div>
-      <a href="about.html" class="btn-primary">Learn More</a>
-      <a href="services.html" class="btn-secondary">Our Services</a>
+  <section class="hero">
+    <video autoplay muted loop playsinline poster="images/hero-poster.png">
+      <source src="videos/hero.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+    <div class="hero-content container">
+      <h2></h2>
+      <p></p>
+      <div>
+        <a href="about.html" class="btn-primary">Learn More</a>
+        <a href="services.html" class="btn-secondary">Our Services</a>
+      </div>
     </div>
+  </section>
+
+  <div class="container">
+    <section id="intro">
+      <h3 class="section-title">Quick Overview</h3>
+      <p>We specialize in project delivery, contracts, EHS, supervision and advisory services to make sure your projects finish on time and to spec.</p>
+    </section>
+
+    <section id="about-section"></section>
+
+    <section id="services-section">
+      <h3 class="section-title">Our Core Services</h3>
+      <div id="services-cards" class="cards"></div>
+      <a href="services.html" class="btn-primary">Explore All Services</a>
+    </section>
+
+    <section id="projects-section">
+      <h3 class="section-title">Featured Projects</h3>
+      <div id="projects-cards" class="cards"></div>
+      <a href="projects.html" class="btn-primary">View All Projects</a>
+    </section>
+
+    <section id="team-section">
+      <h3 class="section-title">Meet Our Team</h3>
+      <div id="team-cards" class="cards"></div>
+      <a href="team.html" class="btn-primary">View Full Team</a>
+    </section>
+
+    <section id="testimonials-section">
+      <h3 class="section-title">Client Testimonials</h3>
+      <div id="testimonials-cards" class="cards"></div>
+    </section>
+
+    <section id="blog-section">
+      <h3 class="section-title">Latest Insights</h3>
+      <div id="blog-cards" class="cards"></div>
+    </section>
   </div>
-</section>
 
-<div class="container">
+  <footer>
+    &copy; 2025 Crestpoint | <a href="mailto:" id="contact-email"></a>
+  </footer>
 
-  <section id="intro">
-    <h3 class="section-title">Quick Overview</h3>
-    <p>We specialize in project delivery, contracts, EHS, supervision and advisory services to make sure your projects finish on time and to spec.</p>
-  </section>
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav-links");
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("show");
+    });
+  </script>
 
-  <section id="about-section"></section>
-
-  <section id="services-section">
-    <h3 class="section-title">Our Core Services</h3>
-    <div id="services-cards" class="cards"></div>
-    <a href="services.html" class="btn-primary">Explore All Services</a>
-  </section>
-
-  <section id="projects-section">
-    <h3 class="section-title">Featured Projects</h3>
-    <div id="projects-cards" class="cards"></div>
-    <a href="projects.html" class="btn-primary">View All Projects</a>
-  </section>
-
-  <section id="team-section">
-    <h3 class="section-title">Meet Our Team</h3>
-    <div id="team-cards" class="cards"></div>
-    <a href="team.html" class="btn-primary">View Full Team</a>
-  </section>
-
-  <section id="testimonials-section">
-    <h3 class="section-title">Client Testimonials</h3>
-    <div id="testimonials-cards" class="cards"></div>
-  </section>
-
-  <section id="blog-section">
-    <h3 class="section-title">Latest Insights</h3>
-    <div id="blog-cards" class="cards"></div>
-  </section>
-
-</div>
-
-<footer>
-  &copy; 2025 Crestpoint | <a href="mailto:" id="contact-email"></a>
-</footer>
-<script>
-  const toggle = document.getElementById("menu-toggle");
-  const nav = document.getElementById("nav-links");
-
-  toggle.addEventListener("click", () => {
-    nav.classList.toggle("show");
-  });
-</script>
-
-  
-<script src="siteData.js"></script>
-<script src="data.js"></script>
+  <script src="siteData.js"></script>
+  <script src="data.js"></script>
 
 </body>
 </html>
