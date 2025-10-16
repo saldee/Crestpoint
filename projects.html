@@ -3,49 +3,52 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Projects - Crestpoint</title>
+
+  <title>Featured Projects - Crestpoint | Uganda Construction Portfolio</title>
+  <meta name="description" content="View Crestpoint’s featured construction projects across Uganda, showcasing our commitment to quality, safety, and timely delivery.">
+  <meta name="keywords" content="construction projects Uganda, featured builds, infrastructure, Crestpoint portfolio, project showcase, building services">
+  <meta name="author" content="Crestpoint">
+  <meta name="robots" content="index, follow">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+
+  <!-- Fonts & Styles -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  
-<title>Featured Projects - Crestpoint | Uganda Construction Portfolio</title>
-<meta name="description" content="View Crestpoint’s featured construction projects across Uganda, showcasing our commitment to quality, safety, and timely delivery.">
-<meta name="keywords" content="construction projects Uganda, featured builds, infrastructure, Crestpoint portfolio, project showcase, building services">
-<meta name="author" content="Crestpoint">
-<meta name="robots" content="index, follow">
 
-<!-- Open Graph -->
-<meta property="og:title" content="Crestpoint Featured Projects">
-<meta property="og:description" content="See our completed and ongoing construction projects across Uganda.">
-<meta property="og:image" content="https://saldee.github.io/Crestpoint/images/logo.png">
-<meta property="og:url" content="https://saldee.github.io/Crestpoint/projects.html">
-<meta property="og:type" content="website">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Crestpoint Featured Projects">
+  <meta property="og:description" content="See our completed and ongoing construction projects across Uganda.">
+  <meta property="og:image" content="https://saldee.github.io/Crestpoint/images/logo.png">
+  <meta property="og:url" content="https://saldee.github.io/Crestpoint/projects.html">
+  <meta property="og:type" content="website">
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Crestpoint Featured Projects">
-<meta name="twitter:description" content="See our completed and ongoing construction projects across Uganda.">
-<meta name="twitter:image" content="https://saldee.github.io/Crestpoint/images/logo.png">
-  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Crestpoint Featured Projects">
+  <meta name="twitter:description" content="See our completed and ongoing construction projects across Uganda.">
+  <meta name="twitter:image" content="https://saldee.github.io/Crestpoint/images/logo.png">
 </head>
 <body>
 
   <header>
-  <a href="index.html">
-    <img src="images/logo.png" alt="Crestpoint Logo" style="height:48px;">
-  </a>
-  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-  <nav id="nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="projects.html">Projects</a>
-    <a href="team.html">Team</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+    <a href="index.html">
+      <img src="images/logo.png" alt="Crestpoint Logo" style="height:48px;">
+    </a>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <nav id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="team.html">Team</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
   <div class="container">
-    <!-- Projects Section -->
     <section id="projects-section">
       <h3 class="section-title">Our Projects</h3>
       <div class="projects-grid" id="projects-cards" style="display:flex;flex-wrap:wrap;gap:20px;margin-top:20px;"></div>
@@ -56,23 +59,17 @@
     &copy; 2025 Crestpoint. All rights reserved. | <a href="mailto:info@crestpoint.com" id="contact-email"></a>
   </footer>
 
-<script>
-  const toggle = document.getElementById("menu-toggle");
-  const nav = document.getElementById("nav-links");
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav-links");
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("show");
+    });
+  </script>
 
-  toggle.addEventListener("click", () => {
-    nav.classList.toggle("show");
-  });
-</script>
-
-  
-  <!-- Load siteData first -->
   <script src="siteData.js"></script>
-
-  <!-- Load data.js next -->
   <script src="data.js"></script>
 
-  <!-- Inline script that uses siteData -->
   <script>
     // Set site title
     document.getElementById("site-title").textContent = siteData.siteTitle;
