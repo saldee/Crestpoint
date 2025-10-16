@@ -11,7 +11,7 @@
 
 <header>
   <h1 id="site-title"></h1>
-  <nav id="nav-links">
+  <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
@@ -22,68 +22,18 @@
 </header>
 
 <div class="container">
-
   <!-- About Section -->
   <section id="about-section"></section>
 
-  <!-- Vision, Mission, Values Cards -->
-  <section id="vmv-section" style="display:flex;gap:20px;flex-wrap:wrap;margin-top:30px;"></section>
-
+  <!-- Vision, Mission, Values -->
+  <section id="vmv-section" style="display:flex;gap:20px;flex-wrap:wrap;"></section>
 </div>
 
 <footer>
-  &copy; 2025 Crestpoint. All rights reserved. | <a href="mailto:info@crestpoint.com" id="contact-email"></a>
+  &copy; 2025 Crestpoint | <a href="mailto:" id="contact-email"></a>
 </footer>
 
 <script src="data.js"></script>
-<script>
-  // Set site title
-  document.getElementById("site-title").textContent = siteData.siteTitle;
-
-  // Populate About Section dynamically
-  const aboutSection = document.getElementById("about-section");
-  aboutSection.innerHTML = `
-    <h3 class="section-title">${siteData.about.heading}</h3>
-    <p>${siteData.about.content}</p>
-  `;
-
-  // Populate footer email dynamically
-  document.getElementById("contact-email").textContent = siteData.contact.email;
-
-  // Vision, Mission, Values Cards
-  const vmvContainer = document.getElementById("vmv-section");
-
-  // Dynamic content can also be moved to data.js for easy updates
-  const vmvData = [
-    {
-      title: "Our Vision",
-      img: "images/vision-icon.png",
-      desc: "To be the leading construction consultancy recognized for precision, safety, and sustainable project delivery across all sectors."
-    },
-    {
-      title: "Our Mission",
-      img: "images/mission-icon.png",
-      desc: "To provide expert guidance, innovative solutions, and hands-on management that ensure every project is completed safely, efficiently, and to the highest quality standards."
-    },
-    {
-      title: "Our Values",
-      img: "images/values-icon.png",
-      desc: "• Integrity and Transparency<br>• Excellence in Delivery<br>• Safety First<br>• Sustainability and Innovation"
-    }
-  ];
-
-  vmvData.forEach(item => {
-    const card = document.createElement("div");
-    card.className = "card";
-    card.style.cssText = "flex:1 1 calc(33% - 20px);border:1px solid #ddd;border-radius:8px;padding:20px;text-align:center;";
-    card.innerHTML = `
-      <img src="${item.img}" alt="${item.title}" style="width:60px;height:60px;margin-bottom:12px;">
-      <h4>${item.title}</h4>
-      <p style="text-align:left">${item.desc}</p>
-    `;
-    vmvContainer.appendChild(card);
-  });
-</script>
-
+<script src="populate.js"></script>
 </body>
 </html>
