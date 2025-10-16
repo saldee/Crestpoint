@@ -242,6 +242,31 @@ footer {
     font-size: 2rem;
   }
 
+  .menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+@media(max-width:600px){
+  .menu-toggle {
+    display: block;
+  }
+
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    padding: 10px;
+    gap: 10px;
+  }
+
+  #nav-links.show {
+    display: flex;
+  }
+}
+
   .hero-content p {
     font-size: 1rem;
   }
