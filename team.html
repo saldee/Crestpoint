@@ -1,80 +1,74 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Home - Crestpoint | Construction Experts in Uganda</title>
-<meta name="description" content="Crestpoint delivers safe, timely, and high-quality construction projects across Uganda. Explore our services, team, and featured projects.">
+  <title>Meet the Team - Crestpoint | Uganda Construction Experts</title>
+  <meta name="description" content="Get to know the experienced professionals behind Crestpoint’s successful construction projects across Uganda.">
+  <meta name="keywords" content="Crestpoint team, construction experts Uganda, project managers, engineers, site supervisors, building professionals">
+  <meta name="author" content="Crestpoint">
+  <meta name="robots" content="index, follow">
 
-  
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="images/favicon.png">
 
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="icon" href="images/favicon.ico" type="image/x-icon">
-<link rel="apple-touch-icon" href="images/favicon.png">
-  
-<!-- SEO Meta Tags -->
-<meta name="description" content="Crestpoint is a leading construction firm in Uganda, delivering safe, timely, and high-quality projects across sectors.">
-<meta name="keywords" content="construction Uganda, infrastructure, building services, Crestpoint, project delivery, EHS, renovation">
-<meta name="author" content="Crestpoint">
-<meta name="robots" content="index, follow">
+  <!-- Fonts & Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
-<!-- Open Graph for social sharing -->
-<meta property="og:title" content="Crestpoint - Building with Precision">
-<meta property="og:description" content="Delivering safe, timely, and high-quality construction projects across Uganda.">
-<meta property="og:image" content="https://saldee.github.io/Crestpoint/images/logo.png">
-<meta property="og:url" content="https://saldee.github.io/Crestpoint/">
-<meta property="og:type" content="website">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Meet the Crestpoint Team">
+  <meta property="og:description" content="Discover the professionals driving Crestpoint’s construction excellence across Uganda.">
+  <meta property="og:image" content="https://saldee.github.io/Crestpoint/images/logo.png">
+  <meta property="og:url" content="https://saldee.github.io/Crestpoint/team.html">
+  <meta property="og:type" content="website">
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Crestpoint - Building with Precision">
-<meta name="twitter:description" content="Delivering safe, timely, and high-quality construction projects across Uganda.">
-<meta name="twitter:image" content="https://saldee.github.io/Crestpoint/images/logo.png">
-
-  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Meet the Crestpoint Team">
+  <meta name="twitter:description" content="Discover the professionals driving Crestpoint’s construction excellence across Uganda.">
+  <meta name="twitter:image" content="https://saldee.github.io/Crestpoint/images/logo.png">
 </head>
 <body>
 
-<header>
-  <a href="index.html">
-    <img src="images/logo.png" alt="Crestpoint Logo" style="height:48px;">
-  </a>
-  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-  <nav id="nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="projects.html">Projects</a>
-    <a href="team.html">Team</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+  <header>
+    <a href="index.html">
+      <img src="images/logo.png" alt="Crestpoint Logo" style="height:48px;">
+    </a>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <nav id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="team.html">Team</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
+  <div class="container">
+    <section id="team-section">
+      <h3 class="section-title">Meet Our Team</h3>
+      <div id="team-cards" class="cards"></div>
+    </section>
+  </div>
 
-<div class="container">
-  <section id="team-section">
-    <h3 class="section-title">Meet Our Team</h3>
-    <div id="team-cards" class="cards"></div>
-  </section>
-</div>
+  <footer>
+    &copy; 2025 Crestpoint | <a href="mailto:" id="contact-email"></a>
+  </footer>
 
-<footer>
-  &copy; 2025 Crestpoint | <a href="mailto:" id="contact-email"></a>
-</footer>
-<script>
-  const toggle = document.getElementById("menu-toggle");
-  const nav = document.getElementById("nav-links");
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav-links");
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("show");
+    });
+  </script>
 
-  toggle.addEventListener("click", () => {
-    nav.classList.toggle("show");
-  });
-</script>
-
-<script src="siteData.js"></script>
-<script src="data.js"></script>
+  <script src="siteData.js"></script>
+  <script src="data.js"></script>
 
 </body>
 </html>
