@@ -331,3 +331,52 @@ footer {
   overflow: hidden;
   pointer-events: auto; /* ✅ This restores interactivity */
 }
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #fff;
+    order: 2; /* ensures toggle appears on the right */
+  }
+
+  header a img {
+    height: 48px;
+    order: 1; /* logo stays on the left */
+  }
+
+  #nav-links {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #fff;
+    flex-direction: column;
+    padding: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    border-radius: var(--border-radius);
+    z-index: 999;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  #nav-links.show {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  #nav-links a {
+    color: var(--primary-color);
+    padding: 10px;
+    font-size: 1rem;
+  }
+}
