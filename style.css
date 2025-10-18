@@ -325,3 +325,15 @@ footer {
     pointer-events: auto;
   }
 }
+header {
+  position: relative;
+  z-index: 9999;
+}
+.menu-toggle {
+  position: relative;
+  z-index: 10000;
+}
+.hero,
+.hero .overlay {
+  pointer-events: none;
+}
