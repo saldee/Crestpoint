@@ -1,5 +1,5 @@
-// ---------- Navigation Toggle ----------
 document.addEventListener("DOMContentLoaded", () => {
+  // ---------- Navigation Toggle ----------
   const toggle = document.getElementById("menu-toggle");
   const nav = document.getElementById("nav-links");
   if (toggle && nav) {
