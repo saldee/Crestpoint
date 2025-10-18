@@ -352,3 +352,11 @@ header {
   display: block;
   opacity: 1;
 }
+#nav-links {
+  right: -100%;
+  transition: right 0.3s ease, opacity 0.3s ease;
+}
+
+#nav-links.show {
+  right: 20px;
+}
