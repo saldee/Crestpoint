@@ -291,3 +291,35 @@ footer {
     font-size: 1rem;
   }
 }
+
+/* Base styles */
+#nav-links {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  #nav-links {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #fff;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  #nav-links.show {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
+}
