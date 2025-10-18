@@ -2,9 +2,18 @@ document.addEventListener("DOMContentLoaded", () => {
   // ---------- Navigation Toggle ----------
   const toggle = document.getElementById("menu-toggle");
   const nav = document.getElementById("nav-links");
+
   if (toggle && nav) {
     toggle.addEventListener("click", () => {
       nav.classList.toggle("show");
+    });
+
+    // Optional: auto-close menu when a link is clicked
+    const navLinks = nav.querySelectorAll("a");
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("show");
+      });
     });
   }
 
