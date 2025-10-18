@@ -1,20 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ---------- Navigation Toggle ----------
+  console.log("Main.js loaded");
+
   const toggle = document.getElementById("menu-toggle");
   const nav = document.getElementById("nav-links");
 
   if (toggle && nav) {
+    console.log("Toggle and nav found");
+
     toggle.addEventListener("click", () => {
+      console.log("Hamburger clicked");
       nav.classList.toggle("show");
     });
 
-    // Optional: auto-close menu when a link is clicked
-    const navLinks = nav.querySelectorAll("a");
-    navLinks.forEach(link => {
+    nav.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
         nav.classList.remove("show");
       });
     });
+  } else {
+    console.warn("Toggle or nav not found");
   }
 
   // ---------- Page-Specific Rendering ----------
@@ -27,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderIfEmpty("#site-title", renderCommonElements);
   renderIfEmpty("#contact-email", renderCommonElements);
-
   renderIfEmpty(".hero-content h2", renderHeroSection);
   renderIfEmpty("#about-section", renderAboutSection);
   renderIfEmpty("#vmv-section", renderVMV);
@@ -40,36 +43,4 @@ document.addEventListener("DOMContentLoaded", () => {
   renderIfEmpty("#blog-cards", renderBlog);
   renderIfEmpty("#contact-info", renderContactInfo);
   renderIfEmpty("#google-map", renderGoogleMap);
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.getElementById("menu-toggle");
-  const nav = document.getElementById("nav-links");
-
-  if (toggle && nav) {
-    toggle.addEventListener("click", () => {
-      nav.classList.toggle("show");
-    });
-
-    nav.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        nav.classList.remove("show");
-      });
-    });
-  }
-});
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("Main.js loaded");
-
-  const toggle = document.getElementById("menu-toggle");
-  const nav = document.getElementById("nav-links");
-
-  if (toggle && nav) {
-    console.log("Toggle and nav found");
-    toggle.addEventListener("click", () => {
-      console.log("Hamburger clicked");
-      nav.classList.toggle("show");
-    });
-  } else {
-    console.warn("Toggle or nav not found");
-  }
 });
