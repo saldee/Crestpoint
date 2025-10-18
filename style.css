@@ -321,3 +321,13 @@ footer {
     transform: translateY(0);
   }
 }
+.hero {
+  position: relative;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  pointer-events: auto; /* ✅ This restores interactivity */
+}
