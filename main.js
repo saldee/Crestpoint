@@ -31,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderIfEmpty("#site-title", renderCommonElements);
   renderIfEmpty("#contact-email", renderCommonElements);
-  renderIfEmpty(".hero-content h2", renderHeroSection);
   renderIfEmpty("#about-section", renderAboutSection);
   renderIfEmpty("#vmv-section", renderVMV);
   renderIfEmpty("#services-cards", renderServices);
