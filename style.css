@@ -433,3 +433,11 @@ header {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
 } */
+section {
+  padding: 60px 20px;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 32px;
+}
