@@ -44,3 +44,34 @@ document.addEventListener("DOMContentLoaded", () => {
   renderIfEmpty("#contact-info", renderContactInfo);
   renderIfEmpty("#google-map", renderGoogleMap);
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("nav-links");
+  const backdrop = document.getElementById("nav-backdrop");
+
+  if (toggle && nav && backdrop) {
+    const openMenu = () => {
+      nav.classList.add("show");
+      backdrop.classList.add("show");
+    };
+
+    const closeMenu = () => {
+      nav.classList.remove("show");
+      backdrop.classList.remove("show");
+    };
+
+    toggle.addEventListener("click", () => {
+      if (nav.classList.contains("show")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    backdrop.addEventListener("click", closeMenu);
+
+    nav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", closeMenu);
+    });
+  }
+});
