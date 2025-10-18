@@ -1,15 +1,14 @@
 <!doctype html>
 <html lang="en">
-
-  <head>
+<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="Content-Language" content="en">
-  <link rel="canonical" href="https://saldee.github.io/Crestpoint/index.html">
+  <link rel="canonical" href="https://saldee.github.io/Crestpoint/contact.html">
 
-  <title>Home - Crestpoint | Construction Experts in Uganda</title>
-  <meta name="description" content="Crestpoint delivers safe, timely, and high-quality construction projects across Uganda. Explore our services, team, and featured projects.">
-  <meta name="keywords" content="construction Uganda, infrastructure, building services, Crestpoint, project delivery, EHS, renovation">
+  <title>Contact - Crestpoint | Construction Experts in Uganda</title>
+  <meta name="description" content="Get in touch with Crestpoint for inquiries, quotes, or project consultations.">
+  <meta name="keywords" content="contact Crestpoint, construction Uganda, project inquiries, Kampala office">
   <meta name="author" content="Crestpoint">
   <meta name="robots" content="index, follow">
 
@@ -21,17 +20,56 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
+  <!-- Page-specific Styles -->
+  <style>
+    :root{--primary-1:#005b96;--primary-2:#002b5c;--accent:#f5a623}
+    body{font-family:Roboto,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;margin:0;color:#162029;line-height:1.4}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;background:#fff;position:sticky;top:0;z-index:1000;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+    header a img{display:block}
+    #nav-links{display:flex;gap:18px;align-items:center}
+    #nav-links a{color:inherit;text-decoration:none;font-weight:500}
+    .menu-toggle{display:none;cursor:pointer;font-size:22px;padding:6px}
+
+    /* Contact layout */
+    #contact-form-section{display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;margin-top:32px}
+    #contact-info,#contact-form{flex:1 1 45%}
+    #contact-info h4,#contact-form h4{margin-top:0}
+    #contact-info p{margin:8px 0}
+    #contact-info a{color:var(--primary-1);text-decoration:none}
+    #contact-form input,#contact-form textarea{width:100%;padding:12px;border:1px solid #e6e9eb;border-radius:8px;margin-bottom:12px;font-size:15px}
+    #contact-form button{padding:12px 20px;background:linear-gradient(135deg,var(--primary-1),var(--primary-2));color:#fff;border:none;border-radius:8px;font-weight:600;cursor:pointer;box-shadow:0 4px 10px rgba(0,43,92,0.18);transition:transform .18s ease,box-shadow .2s ease,background .25s ease}
+    #contact-form button:hover{transform:translateY(-2px);box-shadow:0 6px 14px rgba(0,43,92,0.22);background:linear-gradient(135deg,var(--accent),var(--primary-1))}
+
+    #contact-info iframe{width:100%;height:300px;border:none;border-radius:8px;box-shadow:0 4px 6px rgba(0,0,0,0.08);animation:fadeIn .9s ease-out}
+
+    .directions-btn{display:inline-block;margin-top:12px;padding:10px 16px;background:var(--accent);color:#fff;border-radius:8px;font-weight:500;text-decoration:none;box-shadow:0 3px 8px rgba(245,166,35,0.25);transition:background .2s ease,transform .14s ease}
+    .directions-btn:hover{background:#e59400;transform:scale(1.03)}
+
+    @keyframes fadeIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+    @media screen and (max-width:900px){#contact-info,#contact-form{flex:1 1 48%}}
+    @media screen and (max-width:600px){#contact-form-section{flex-direction:column}#nav-links{display:none}.menu-toggle{display:block}}
+
+    footer{background:#f7f9fb;padding:20px 24px;text-align:center;border-top:1px solid #eef2f5;margin-top:40px}
+    footer .footer-content{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:10px}
+    footer p{margin:0;color:#47555b}
+    footer .social-links{display:flex;gap:14px;align-items:center}
+    footer .social-links a{display:inline-flex;align-items:center;justify-content:center}
+    footer .social-links img{width:24px;height:24px;transition:transform .2s ease}
+    footer .social-links a:hover img{transform:scale(1.08)}
+  </style>
+
   <!-- Open Graph -->
-  <meta property="og:title" content="Crestpoint - Building with Precision">
-  <meta property="og:description" content="Delivering safe, timely, and high-quality construction projects across Uganda.">
+  <meta property="og:title" content="Crestpoint - Contact Us">
+  <meta property="og:description" content="Reach out to Crestpoint for construction project inquiries and consultations.">
   <meta property="og:image" content="https://saldee.github.io/Crestpoint/images/logo.png">
-  <meta property="og:url" content="https://saldee.github.io/Crestpoint/">
+  <meta property="og:url" content="https://saldee.github.io/Crestpoint/contact.html">
   <meta property="og:type" content="website">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Crestpoint - Building with Precision">
-  <meta name="twitter:description" content="Delivering safe, timely, and high-quality construction projects across Uganda.">
+  <meta name="twitter:title" content="Crestpoint - Contact Us">
+  <meta name="twitter:description" content="Reach out to Crestpoint for construction project inquiries and consultations.">
   <meta name="twitter:image" content="https://saldee.github.io/Crestpoint/images/logo.png">
 
   <!-- Structured Data -->
@@ -51,175 +89,126 @@
   }
   </script>
 </head>
-
-  <style>
-    /* Contact Section Layout */
-    #contact-form-section {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      justify-content: space-between;
-      margin-top: 40px;
-    }
-
-    #contact-info,
-    #contact-form {
-      flex: 1 1 45%;
-    }
-
-    @media screen and (max-width: 600px) {
-      #contact-form-section {
-        flex-direction: column;
-      }
-
-      #contact-info,
-      #contact-form {
-        flex: 1 1 100%;
-      }
-    }
-
-    /* Stylish Send Button */
-    #contact-form button {
-      padding: 12px 20px;
-      background: linear-gradient(135deg, #005b96, #002b5c);
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0, 43, 92, 0.3);
-      transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
-    }
-
-    #contact-form button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 14px rgba(0, 43, 92, 0.4);
-      background: linear-gradient(135deg, #f5a623, #005b96);
-    }
-
-    /* Map Styling */
-    #contact-info iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      animation: fadeIn 1s ease-out;
-    }
-
-    /* Directions Button */
-    .directions-btn {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 10px 16px;
-      background: #f5a623;
-      color: #fff;
-      border-radius: 8px;
-      font-weight: 500;
-      text-decoration: none;
-      box-shadow: 0 3px 8px rgba(245, 166, 35, 0.3);
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-
-    .directions-btn:hover {
-      background: #e59400;
-      transform: scale(1.05);
-    }
-
-    /* Fade-in Animation */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
 <body>
-
   <header>
-  <a href="index.html">
-    <img src="images/logo.png" alt="Crestpoint Logo" style="height:48px;">
-  </a>
-  <div id="nav-backdrop"></div>
-  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-  <nav id="nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="projects.html">Projects</a>
-    <a href="team.html">Team</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+    <a href="index.html" aria-label="Crestpoint home">
+      <img src="images/logo.png" alt="Crestpoint Logo" style="height:48px">
+    </a>
 
-  <div class="container">
-    <section id="contact-form-section">
-      <!-- Contact Info Block -->
-      <section id="contact-info">
-        <h4>Contact Information</h4>
+    <div id="nav-backdrop" hidden></div>
+    <div class="menu-toggle" id="menu-toggle" aria-hidden="false" aria-label="Open navigation">&#9776;</div>
+
+    <nav id="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="team.html">Team</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container" id="main">
+    <section id="contact-form-section" aria-labelledby="contact-title">
+      <section id="contact-info" aria-label="Contact information">
+        <h4 id="contact-title">Contact Information</h4>
         <p><strong>Address:</strong> Plot 12, Kampala Road, Kampala, Uganda</p>
-        <p><strong>Phone:</strong> +256 700 123456</p>
+        <p><strong>Phone:</strong> <a href="tel:+256700123456">+256 700 123456</a></p>
         <p><strong>Email:</strong> <a href="mailto:info@crestpoint.co.ug">info@crestpoint.co.ug</a></p>
         <p><strong>Hours:</strong> Mon–Fri, 8:00 AM – 5:00 PM</p>
 
-        <!-- Embedded Google Map -->
         <div style="margin-top:20px;">
           <iframe
             src="https://www.google.com/maps?q=Plot+12+Kampala+Road,+Kampala,+Uganda&output=embed"
             allowfullscreen=""
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Crestpoint location on map">
           </iframe>
         </div>
 
-        <!-- Get Directions Button -->
         <a href="https://www.google.com/maps/dir/?api=1&destination=Plot+12+Kampala+Road,+Kampala,+Uganda"
-           target="_blank" rel="noopener" class="directions-btn">
+           target="_blank" rel="noopener noreferrer" class="directions-btn" aria-label="Get directions to Crestpoint">
            Get Directions
         </a>
       </section>
 
-      <!-- Contact Form Block -->
-      <section>
+      <section id="contact-form" aria-label="Contact form">
         <h4>Send Us a Message</h4>
-        <form id="contact-form" onsubmit="event.preventDefault(); alert('Message sent!');">
+        <form id="contact-form-el" onsubmit="event.preventDefault(); handleContactSubmit();" novalidate>
+          <label for="name" class="sr-only" hidden>Your Name</label>
           <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+          <label for="email" class="sr-only" hidden>Your Email</label>
           <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+          <label for="subject" class="sr-only" hidden>Subject</label>
           <input type="text" id="subject" name="subject" placeholder="Subject" required>
+
+          <label for="message" class="sr-only" hidden>Message</label>
           <textarea id="message" name="message" placeholder="Message" rows="5" required></textarea>
-          <button type="submit">Send Message</button>
+
+          <button type="submit" aria-label="Send message">Send Message</button>
         </form>
       </section>
     </section>
-  </div>
+  </main>
 
-<footer>
-  <div class="footer-content">
-    <p>&copy; 2025 Crestpoint | <a href="mailto:info@crestpoint.ug">info@crestpoint.ug</a></p>
-    <div class="social-links">
-      <a href="https://twitter.com/crestpointug" target="_blank" aria-label="Crestpoint on X">
-        <img src="images/icon-x.svg" alt="X logo" />
-      </a>
-      <a href="https://www.linkedin.com/company/crestpoint" target="_blank" aria-label="Crestpoint on LinkedIn">
-        <img src="images/icon-linkedin.svg" alt="LinkedIn logo" />
-      </a>
-      <a href="https://www.facebook.com/crestpointug" target="_blank" aria-label="Crestpoint on Facebook">
-        <img src="images/icon-facebook.svg" alt="Facebook logo" />
-      </a>
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Crestpoint | <a href="mailto:info@crestpoint.ug">info@crestpoint.ug</a></p>
+      <div class="social-links" role="navigation" aria-label="Crestpoint social links">
+        <a href="https://twitter.com/crestpointug" target="_blank" rel="noopener noreferrer" aria-label="Crestpoint on X">
+          <img src="images/icon-x.svg" alt="X logo">
+        </a>
+        <a href="https://www.linkedin.com/company/crestpoint" target="_blank" rel="noopener noreferrer" aria-label="Crestpoint on LinkedIn">
+          <img src="images/icon-linkedin.svg" alt="LinkedIn logo">
+        </a>
+        <a href="https://www.facebook.com/crestpointug" target="_blank" rel="noopener noreferrer" aria-label="Crestpoint on Facebook">
+          <img src="images/icon-facebook.svg" alt="Facebook logo">
+        </a>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-
-  
   <script>
-    const toggle = document.getElementById("menu-toggle");
-    const nav = document.getElementById("nav-links");
-    toggle.addEventListener("click", () => {
-      nav.classList.toggle("show");
-    });
+    // Simple nav toggle (keeps existing behavior)
+    (function(){
+      const toggle = document.getElementById('menu-toggle');
+      const nav = document.getElementById('nav-links');
+      const backdrop = document.getElementById('nav-backdrop');
+
+      function toggleNav(){
+        nav.classList.toggle('show');
+        const shown = nav.classList.contains('show');
+        backdrop.hidden = !shown;
+      }
+
+      toggle && toggle.addEventListener('click', toggleNav);
+      backdrop && backdrop.addEventListener('click', toggleNav);
+
+      // Contact form handler: replace with real submission logic
+      window.handleContactSubmit = function(){
+        const form = document.getElementById('contact-form-el');
+        if(!form) return;
+        // Simple client-side validation
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const subject = form.subject.value.trim();
+        const message = form.message.value.trim();
+        if(!name || !email || !subject || !message){
+          alert('Please complete all fields.');
+          return;
+        }
+        // TODO: integrate with real endpoint or email service
+        alert('Message sent. Thank you, ' + (name || '') + '!');
+        form.reset();
+      };
+    })();
   </script>
 
   <script src="siteData.js"></script>
-<script src="data.js"></script>
-<script src="main.js"></script>
-
+  <script src="data.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
