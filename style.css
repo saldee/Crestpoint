@@ -380,3 +380,20 @@ footer {
     font-size: 1rem;
   }
 }
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+    order: 2;
+  }
+
+  header h1 {
+    order: 1;
+  }
+}
