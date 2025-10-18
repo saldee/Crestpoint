@@ -30,6 +30,7 @@ function renderAboutSection() {
 function renderVMV() {
   const vmvContainer = document.getElementById("vmv-section");
   if (vmvContainer) {
+    vmvContainer.innerHTML = ""; // ✅ Clear previous content
     siteData.visionMissionValues.forEach(item => {
       const card = document.createElement("div");
       card.className = "vmv-card";
@@ -48,6 +49,7 @@ function renderVMV() {
 function renderServices() {
   const servicesContainer = document.getElementById("services-cards");
   if (servicesContainer) {
+    servicesContainer.innerHTML = ""; // ✅ Clear previous content
     siteData.services.forEach(service => {
       const card = document.createElement("div");
       card.className = "card";
@@ -65,6 +67,7 @@ function renderServices() {
 function renderProjects() {
   const projectsContainer = document.getElementById("projects-cards") || document.getElementById("projects-grid");
   if (projectsContainer) {
+    projectsContainer.innerHTML = ""; // ✅ Clear previous content
     siteData.projects.forEach(project => {
       const card = document.createElement("div");
       card.className = "card project-card";
@@ -82,6 +85,7 @@ function renderProjects() {
 function renderTeam() {
   const teamContainer = document.getElementById("team-cards") || document.getElementById("team-grid");
   if (teamContainer) {
+    teamContainer.innerHTML = ""; // ✅ Clear previous content
     siteData.team.forEach(member => {
       const card = document.createElement("div");
       card.className = "card team-member";
@@ -99,6 +103,7 @@ function renderTeam() {
 function renderTestimonials() {
   const testimonialsContainer = document.getElementById("testimonials-cards");
   if (testimonialsContainer) {
+    testimonialsContainer.innerHTML = ""; // ✅ Clear previous content
     siteData.testimonials.forEach(t => {
       const card = document.createElement("div");
       card.className = "card testimonial-card";
@@ -112,6 +117,7 @@ function renderTestimonials() {
 function renderBlog() {
   const blogContainer = document.getElementById("blog-cards");
   if (blogContainer) {
+    blogContainer.innerHTML = ""; // ✅ Clear previous content
     siteData.blogPosts.forEach(b => {
       const card = document.createElement("div");
       card.className = "card blog-card";
@@ -142,6 +148,7 @@ function renderContactInfo() {
 function renderGoogleMap() {
   const mapContainer = document.getElementById("google-map");
   if (mapContainer && siteData.contact.googleMapKey) {
+    mapContainer.innerHTML = ""; // ✅ Clear previous content
     const iframe = document.createElement("iframe");
     iframe.width = "100%";
     iframe.height = "350";
@@ -152,16 +159,3 @@ function renderGoogleMap() {
     mapContainer.appendChild(iframe);
   }
 }
-
-// ---------- Initialize All ----------
-renderCommonElements();
-renderHeroSection();
-renderAboutSection();
-renderVMV();
-renderServices();
-renderProjects();
-renderTeam();
-renderTestimonials();
-renderBlog();
-renderContactInfo();
-renderGoogleMap();
