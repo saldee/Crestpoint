@@ -1,22 +1,22 @@
 // ---------- Common Elements ----------
-(() => {
+function renderCommonElements() {
   const siteTitleEl = document.getElementById("site-title");
   if (siteTitleEl) siteTitleEl.textContent = siteData.siteTitle;
 
   const contactEmailEl = document.getElementById("contact-email");
   if (contactEmailEl) contactEmailEl.textContent = siteData.contact.email;
-})();
+}
 
 // ---------- Hero Section ----------
-(() => {
+function renderHeroSection() {
   const heroTitle = document.querySelector(".hero-content h2");
   const heroText = document.querySelector(".hero-content p");
   if (heroTitle) heroTitle.textContent = siteData.tagline;
   if (heroText) heroText.textContent = "Delivering safe, timely and high-quality construction projects across sectors.";
-})();
+}
 
 // ---------- About Section ----------
-(() => {
+function renderAboutSection() {
   const aboutSection = document.getElementById("about-section");
   if (aboutSection) {
     aboutSection.innerHTML = `
@@ -24,10 +24,10 @@
       <p>${siteData.about.content}</p>
     `;
   }
-})();
+}
 
 // ---------- Vision, Mission, Values ----------
-(() => {
+function renderVMV() {
   const vmvContainer = document.getElementById("vmv-section");
   if (vmvContainer) {
     siteData.visionMissionValues.forEach(item => {
@@ -42,10 +42,10 @@
       vmvContainer.appendChild(card);
     });
   }
-})();
+}
 
 // ---------- Services ----------
-(() => {
+function renderServices() {
   const servicesContainer = document.getElementById("services-cards");
   if (servicesContainer) {
     siteData.services.forEach(service => {
@@ -59,10 +59,10 @@
       servicesContainer.appendChild(card);
     });
   }
-})();
+}
 
 // ---------- Projects ----------
-(() => {
+function renderProjects() {
   const projectsContainer = document.getElementById("projects-cards") || document.getElementById("projects-grid");
   if (projectsContainer) {
     siteData.projects.forEach(project => {
@@ -76,10 +76,10 @@
       projectsContainer.appendChild(card);
     });
   }
-})();
+}
 
 // ---------- Team ----------
-(() => {
+function renderTeam() {
   const teamContainer = document.getElementById("team-cards") || document.getElementById("team-grid");
   if (teamContainer) {
     siteData.team.forEach(member => {
@@ -93,10 +93,10 @@
       teamContainer.appendChild(card);
     });
   }
-})();
+}
 
 // ---------- Testimonials ----------
-(() => {
+function renderTestimonials() {
   const testimonialsContainer = document.getElementById("testimonials-cards");
   if (testimonialsContainer) {
     siteData.testimonials.forEach(t => {
@@ -106,10 +106,10 @@
       testimonialsContainer.appendChild(card);
     });
   }
-})();
+}
 
 // ---------- Blog ----------
-(() => {
+function renderBlog() {
   const blogContainer = document.getElementById("blog-cards");
   if (blogContainer) {
     siteData.blogPosts.forEach(b => {
@@ -124,10 +124,10 @@
       blogContainer.appendChild(card);
     });
   }
-})();
+}
 
 // ---------- Contact ----------
-(() => {
+function renderContactInfo() {
   const contactInfo = document.getElementById("contact-info");
   if (contactInfo) {
     contactInfo.innerHTML = `
@@ -136,10 +136,10 @@
       <p>Address: ${siteData.contact.address}</p>
     `;
   }
-})();
+}
 
 // ---------- Google Map ----------
-(() => {
+function renderGoogleMap() {
   const mapContainer = document.getElementById("google-map");
   if (mapContainer && siteData.contact.googleMapKey) {
     const iframe = document.createElement("iframe");
@@ -151,4 +151,17 @@
     iframe.src = `https://www.google.com/maps/embed/v1/place?key=${siteData.contact.googleMapKey}&q=${encodeURIComponent(siteData.contact.address)}`;
     mapContainer.appendChild(iframe);
   }
-})();
+}
+
+// ---------- Initialize All ----------
+renderCommonElements();
+renderHeroSection();
+renderAboutSection();
+renderVMV();
+renderServices();
+renderProjects();
+renderTeam();
+renderTestimonials();
+renderBlog();
+renderContactInfo();
+renderGoogleMap();
