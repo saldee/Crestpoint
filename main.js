@@ -57,3 +57,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("Main.js loaded");
+
+  const toggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("nav-links");
+
+  if (toggle && nav) {
+    console.log("Toggle and nav found");
+    toggle.addEventListener("click", () => {
+      console.log("Hamburger clicked");
+      nav.classList.toggle("show");
+    });
+  } else {
+    console.warn("Toggle or nav not found");
+  }
+});
