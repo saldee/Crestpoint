@@ -14,77 +14,190 @@
 
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="images/favicon.png">
-
-  <!-- Global fonts and main stylesheet (shared with other pages) -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
-  <!-- Scoped contact page styles -->
   <style>
-    /* Layout for header: logo left, nav center (desktop), hamburger right */
+    /* Scoped styles for contact page */
+    body.contact-page {
+      font-family: Roboto, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(180deg, #f8fafc, #ffffff);
+      color: #162029;
+      margin: 0;
+    }
+
     .header-inner {
       display: grid;
       grid-template-columns: auto 1fr auto;
       align-items: center;
       gap: 16px;
+      padding: 16px 24px;
+      background: linear-gradient(180deg, #f8fafc, #ffffff);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+
+    .brand img { height: 48px; }
+
+    .nav { display: flex; gap: 18px; align-items: center; justify-self: center; }
+    .nav a { text-decoration: none; color: inherit; font-weight: 500; }
+
+    .menu-toggle {
+      font-size: 22px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      justify-self: end;
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .nav { display: none; }
+      .nav.show {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 64px;
+        right: 24px;
+        background: #fff;
+        padding: 16px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        z-index: 1000;
+      }
+      .menu-toggle { display: inline-flex; }
+    }
+
+    .page-hero {
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    .hero-title {
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .hero-sub {
+      margin-top: 8px;
+      color: #51606a;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin: 28px 0;
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+
+    .contact-card {
+      background: #fff;
+      padding: 24px;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(8,24,48,0.04);
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      margin-top: 0;
+      margin-bottom: 16px;
+      color: #0b2336;
+    }
+
+    .form-control {
       width: 100%;
-    }
-    .brand { grid-column: 1; display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit; }
-    .nav { grid-column: 2; justify-self: center; display:flex; gap:18px; align-items:center; }
-    .menu-toggle { grid-column: 3; justify-self: end; background:transparent;border:0;cursor:pointer;font-size:20px;padding:8px;display:none; }
-
-    /* Contact page scoped visuals */
-    body.contact-page { font-family: Roboto, system-ui, -apple-system, "Segoe UI", Arial, sans-serif; color:#162029; margin:0; }
-    .container { max-width:1100px; margin:0 auto; padding:24px; }
-    header.site-header { background:#fff; position:sticky; top:0; z-index:1000; box-shadow:0 1px 4px rgba(0,0,0,0.04); }
-    .site-logo { display:block; height:48px; }
-
-    .page-hero { padding:28px 0; text-align:center; background:linear-gradient(180deg, rgba(0,0,0,0.02), transparent); }
-    .hero-title { margin:0; font-size:clamp(1.6rem,3.5vw,2.2rem); font-weight:700; color:#0f1720; }
-    .hero-sub { margin:8px 0 0; color:#51606a; }
-
-    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; margin:28px 0; align-items:start; }
-    @media (max-width:900px) { .contact-grid { grid-template-columns:1fr } }
-
-    .contact-card { padding:20px; border-radius:10px; background:#fff; box-shadow:0 6px 20px rgba(8,24,48,0.04); }
-    .card-title { margin-top:0; margin-bottom:12px; font-size:1.125rem; color:#0b2336; }
-    .responsive-iframe { width:100%; height:280px; border:0; border-radius:8px; box-shadow:0 6px 18px rgba(8,24,48,0.06); }
-
-    .form-control { width:100%; padding:12px; border:1px solid #e6e9eb; border-radius:8px; margin-bottom:12px; font-size:15px; }
-    .btn-primary { display:inline-block; padding:12px 18px; background:linear-gradient(135deg,#005b96,#002b5c); color:#fff; border-radius:8px; text-decoration:none; border:none; cursor:pointer; font-weight:600; box-shadow:0 6px 18px rgba(0,43,92,0.14); }
-    .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 22px rgba(0,43,92,0.18); }
-
-    .directions-btn { display:inline-block; padding:10px 14px; background:#f5a623; color:#fff; border-radius:8px; text-decoration:none; font-weight:500; }
-    .directions-btn:hover { background:#e59400; }
-
-    /* Footer social tweak scoped */
-    footer.site-footer { background:#f7f9fb; padding:20px 24px; text-align:center; border-top:1px solid #eef2f5; margin-top:40px; }
-    .social-icon { width:24px; height:24px; transition:transform .18s ease; }
-    .social-links a:hover .social-icon { transform:scale(1.08); }
-
-    /* Responsive behaviors */
-    @media (max-width:900px) {
-      .nav { display:none; }
-      .menu-toggle { display:inline-flex; }
+      padding: 12px;
+      border: 1px solid #e6e9eb;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      font-size: 15px;
     }
 
-    /* visually hidden utility */
-    .visually-hidden { position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap;border:0;padding:0;margin:-1px; }
+    .btn-primary {
+      padding: 12px 18px;
+      background: linear-gradient(135deg,#005b96,#002b5c);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0,43,92,0.14);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(0,43,92,0.18);
+    }
+
+    .responsive-iframe {
+      width: 100%;
+      height: 280px;
+      border: 0;
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(8,24,48,0.06);
+    }
+
+    .directions-btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 14px;
+      background: #f5a623;
+      color: #fff;
+      border-radius: 8px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .directions-btn:hover {
+      background: #e59400;
+    }
+
+    footer.site-footer {
+      background: #f7f9fb;
+      padding: 20px 24px;
+      text-align: center;
+      border-top: 1px solid #eef2f5;
+      margin-top: 40px;
+    }
+
+    .social-links {
+      margin-top: 12px;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .social-icon {
+      width: 24px;
+      height: 24px;
+      transition: transform 0.2s ease;
+    }
+
+    .social-links a:hover .social-icon {
+      transform: scale(1.08);
+    }
+
+    .visually-hidden {
+      position: absolute !important;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+      clip: rect(1px,1px,1px,1px);
+      white-space: nowrap;
+      border: 0;
+      padding: 0;
+      margin: -1px;
+    }
   </style>
-
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="Crestpoint - Contact Us">
-  <meta property="og:description" content="Reach out to Crestpoint for construction project inquiries and consultations.">
-  <meta property="og:image" content="https://saldee.github.io/Crestpoint/images/logo.png">
-  <meta property="og:url" content="https://saldee.github.io/Crestpoint/contact.html">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
 </head>
 <body class="contact-page">
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="Crestpoint home">
-        <img src="images/logo.png" alt="Crestpoint Logo" class="site-logo">
+        <img src="images/logo.png" alt="Crestpoint Logo">
       </a>
 
       <nav id="nav-links" class="nav" aria-label="Main navigation">
@@ -97,7 +210,7 @@
       </nav>
 
       <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
-        <span class="hamburger">☰</span>
+        ☰
       </button>
     </div>
   </header>
@@ -108,35 +221,25 @@
       <p class="hero-sub">Reach out to Crestpoint for project inquiries, quotes, and consultations.</p>
     </section>
 
-    <section class="contact-grid" aria-labelledby="contact-heading">
-      <div class="contact-card contact-info card">
-        <h2 id="contact-heading" class="card-title">Contact Information</h2>
+    <section class="contact-grid">
+      <div class="contact-card">
+        <h2 class="card-title">Contact Information</h2>
         <p><strong>Address:</strong> Plot 12, Kampala Road, Kampala, Uganda</p>
         <p><strong>Phone:</strong> <a href="tel:+256700123456">+256 700 123 456</a></p>
         <p><strong>Email:</strong> <a href="mailto:info@crestpoint.co.ug">info@crestpoint.co.ug</a></p>
         <p><strong>Hours:</strong> Mon–Fri, 8:00 AM – 5:00 PM</p>
-
-        <div class="map-wrap" style="margin-top:16px;">
-          <iframe
-            class="responsive-iframe"
-            src="https://www.google.com/maps?q=Plot+12+Kampala+Road,+Kampala,+Uganda&output=embed"
-            title="Crestpoint location on map"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-
-        <a class="directions-btn" href="https://www.google.com/maps/dir/?api=1&destination=Plot+12+Kampala+Road,+Kampala,+Uganda"
-           target="_blank" rel="noopener noreferrer">Get Directions</a>
+        <iframe class="responsive-iframe" src="https://www.google.com/maps?q=Plot+12+Kampala+Road,+Kampala,+Uganda&output=embed" title="Crestpoint location on map" loading="lazy"></iframe>
+        <a class="directions-btn" href="https://www.google.com/maps/dir/?api=1&destination=Plot+12+Kampala+Road,+Kampala,+Uganda" target="_blank" rel="noopener noreferrer">Get Directions</a>
       </div>
 
-      <div class="contact-card contact-form card">
+      <div class="contact-card">
         <h2 class="card-title">Send Us a Message</h2>
-        <form id="contact-form-el" action="https://formspree.io/f/your-id" method="POST" class="form" novalidate>
-          <label for="name" class="visually-hidden">Your name</label>
+        
+<form id="contact-form-el" action="https://formspree.io/f/YOUR_ID" method="POST" novalidate>
+          <label for="name" class="visually-hidden">Your Name</label>
           <input id="name" name="name" type="text" class="form-control" placeholder="Your Name" required>
 
-          <label for="email" class="visually-hidden">Your email</label>
+          <label for="email" class="visually-hidden">Your Email</label>
           <input id="email" name="email" type="email" class="form-control" placeholder="Your Email" required>
 
           <label for="subject" class="visually-hidden">Subject</label>
@@ -152,7 +255,7 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
+    <div class="container">
       <p>&copy; 2025 Crestpoint | <a href="mailto:info@crestpoint.ug">info@crestpoint.ug</a></p>
       <div class="social-links" role="navigation" aria-label="Crestpoint social links">
         <a href="https://twitter.com/crestpointug" target="_blank" rel="noopener noreferrer" aria-label="Crestpoint on X">
@@ -172,52 +275,11 @@
     (function () {
       const toggle = document.getElementById('menu-toggle');
       const nav = document.getElementById('nav-links');
-      const headerInner = document.querySelector('.header-inner');
 
-      function setNavState(open) {
-        if (!nav || !toggle) return;
-        nav.classList.toggle('show', open);
-        toggle.setAttribute('aria-expanded', String(Boolean(open)));
-      }
-
-      toggle && toggle.addEventListener('click', () => {
+      toggle.addEventListener('click', () => {
         const isOpen = nav.classList.toggle('show');
         toggle.setAttribute('aria-expanded', String(isOpen));
       });
-
-      // Close nav when clicking outside on small screens
-      document.addEventListener('click', (e) => {
-        if (!nav.classList.contains('show')) return;
-        const insideHeader = headerInner && headerInner.contains(e.target);
-        if (!insideHeader) {
-          setNavState(false);
-        }
-      });
-
-      // keyboard accessibility: ESC closes mobile nav
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') setNavState(false);
-      });
-
-      // Contact form placeholder handler (replace with real endpoint logic)
-      window.handleContactSubmit = function(e) {
-        e && e.preventDefault && e.preventDefault();
-        const form = document.getElementById('contact-form-el');
-        if (!form) return;
-        const name = form.name.value.trim();
-        const email = form.email.value.trim();
-        const subject = form.subject.value.trim();
-        const message = form.message.value.trim();
-        if (!name || !email || !subject || !message) {
-          alert('Please complete all fields.');
-          return;
-        }
-        alert('Message sent. Thank you, ' + (name || '') + '!');
-        form.reset();
-      };
-
-      // If you want JS submit handling instead of action, uncomment:
-      // document.getElementById('contact-form-el').addEventListener('submit', handleContactSubmit);
     })();
   </script>
 
@@ -226,4 +288,3 @@
   <script src="main.js"></script>
 </body>
 </html>
-```
