@@ -323,3 +323,39 @@ footer {
     cursor: pointer;
   }
 }
+/* Always show toggle icon */
+.menu-toggle {
+  display: block;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 1000;
+}
+
+/* Hide nav by default on mobile */
+#nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+/* Slide-in effect */
+@media (max-width: 768px) {
+  #nav-links {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #fff;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  #nav-links.show {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
