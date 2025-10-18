@@ -48,7 +48,7 @@ header h1 {
 
 /* ----------- Navigation ----------- */
 .menu-toggle {
-  display: none;
+  display: none; /* Hidden by default */
 }
 
 #nav-links {
