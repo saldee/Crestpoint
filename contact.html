@@ -30,21 +30,43 @@
   </header>
 
   <!-- CONTACT SECTION -->
-  <section class="contact container">
-    <h2 class="section-title">Get in Touch</h2>
-    <p>We’d love to hear from you. Whether you’re planning a project or just have a question, reach out and we’ll respond promptly.</p>
+  <section class="contact">
+    <div class="container contact-grid">
 
-    <form class="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn-primary">Send Message</button>
-    </form>
+      <!-- Contact Details -->
+      <div class="contact-details">
+        <h2>Get in Touch</h2>
+        <p>We’d love to hear from you. Whether you’re planning a project or just have a question, reach out and we’ll respond promptly.</p>
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:info@crestpoint.ug">info@crestpoint.ug</a></li>
+          <li><strong>Phone:</strong> <a href="tel:+256700000000">+256 700 000 000</a></li>
+          <li><strong>Location:</strong> Kampala, Uganda</li>
+        </ul>
 
-    <div class="contact-details">
-      <p><strong>Email:</strong> <a href="mailto:info@crestpoint.ug">info@crestpoint.ug</a></p>
-      <p><strong>Phone:</strong> +256 700 000 000</p>
-      <p><strong>Location:</strong> Kampala, Uganda</p>
+        <!-- Embedded Map -->
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.03160488566!2d32.5825!3d0.3476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177db7d7c4e6e0a3%3A0x3a6f5c9f1d9f1f6e!2sKampala%2C%20Uganda!5e0!3m2!1sen!2sug!4v1660000000000"
+            width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <form class="contact-form" action="https://formspree.io/f/your-id" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" autocomplete="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="_replyto" autocomplete="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <input type="hidden" name="_next" value="thank-you.html">
+        <button type="submit" class="btn-primary" aria-label="Send your message">Send Message</button>
+      </form>
+
     </div>
   </section>
 
