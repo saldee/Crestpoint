@@ -39,3 +39,8 @@ header {
 #nav-links a:hover {
   color: var(--accent-color);
 }
+nav a.active {
+  color: var(--primary-color);
+  font-weight: bold;
+  border-bottom: 2px solid var(--primary-color);
+}
