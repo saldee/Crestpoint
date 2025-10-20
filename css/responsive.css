@@ -157,3 +157,13 @@
     font-size: 1rem;
   }
 }
+@media screen and (max-width: 600px) {
+  .team .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .team-card img {
+    width: 100px;
+    height: 100px;
+  }
+}
