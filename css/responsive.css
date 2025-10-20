@@ -76,3 +76,8 @@
     margin-top: 10px;
   }
 }
+@media screen and (max-width: 600px) {
+  .responsive-iframe {
+    height: 250px;
+  }
+}
