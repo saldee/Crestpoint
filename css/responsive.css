@@ -167,3 +167,16 @@
     height: 100px;
   }
 }
+@media screen and (max-width: 600px) {
+  .testimonial-card {
+    padding: 20px;
+  }
+
+  .testimonial-card p {
+    font-size: 1rem;
+  }
+
+  .testimonial-card span {
+    font-size: 0.875rem;
+  }
+}
