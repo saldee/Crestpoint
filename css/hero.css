@@ -62,3 +62,16 @@
 .hero-content .btn-primary:hover {
   background-color: #f9a825;
 }
+.hero {
+  background: linear-gradient(to right, #f4f4f4, #fff);
+  padding: 6rem 2rem;
+  text-align: center;
+}
+.hero h1 {
+  font-size: var(--font-size-xl);
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: var(--font-size-md);
+  margin-bottom: 2rem;
+}
