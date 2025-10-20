@@ -1,0 +1,47 @@
+/* ====== Contact Form ====== */
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  padding: 12px;
+  font-size: 1rem;
+  font-family: var(--font-family);
+  background-color: #fff;
+  color: var(--text-color);
+  transition: border-color 0.3s ease;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  border-color: var(--secondary-color);
+  outline: none;
+}
+
+#contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+#contact-form button {
+  background-color: var(--secondary-color);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#contact-form button:hover {
+  background-color: var(--accent-color);
+  transform: scale(1.05);
+}
