@@ -180,3 +180,16 @@
     font-size: 0.875rem;
   }
 }
+@media screen and (max-width: 600px) {
+  .insights .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-card h4 {
+    font-size: 1.125rem;
+  }
+
+  .blog-card p {
+    font-size: 0.95rem;
+  }
+}
