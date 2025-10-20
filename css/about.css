@@ -1,4 +1,3 @@
-/* About Section */
 .about {
   padding: 64px 0;
   background-color: #fff;
@@ -11,11 +10,9 @@
   align-items: center;
 }
 
-/* About Text */
 .about-text h2 {
   font-size: clamp(2rem, 4vw, 2.5rem);
   margin-bottom: 16px;
-  color: var(--text-dark, #111);
 }
 
 .about-text p {
@@ -38,7 +35,6 @@
   background-color: #ccc;
 }
 
-/* About Image */
 .about-image img {
   width: 100%;
   border-radius: 12px;
