@@ -3,22 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta http-equiv="Content-Language" content="en">
-  <link rel="canonical" href="https://saldee.github.io/Crestpoint/contact.html">
-
   <title>Contact - Crestpoint | Construction Experts in Uganda</title>
   <meta name="description" content="Get in touch with Crestpoint for inquiries, quotes, or project consultations.">
   <meta name="keywords" content="contact Crestpoint, construction Uganda, project inquiries, Kampala office">
   <meta name="author" content="Crestpoint">
   <meta name="robots" content="index, follow">
-
+  <link rel="canonical" href="https://saldee.github.io/Crestpoint/contact.html">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="images/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* Scoped styles for contact page */
     body.contact-page {
       font-family: Roboto, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
       background: linear-gradient(180deg, #f8fafc, #ffffff);
@@ -26,44 +22,71 @@
       margin: 0;
     }
 
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
     .header-inner {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 16px;
       padding: 16px 24px;
       background: linear-gradient(180deg, #f8fafc, #ffffff);
       box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     }
 
-    .brand img { height: 48px; }
+    .brand img {
+      max-height: 48px;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+    }
 
-    .nav { display: flex; gap: 18px; align-items: center; justify-self: center; }
-    .nav a { text-decoration: none; color: inherit; font-weight: 500; }
+    .nav {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: 500;
+    }
 
     .menu-toggle {
       font-size: 22px;
       background: none;
       border: none;
       cursor: pointer;
-      justify-self: end;
       display: none;
+      z-index: 1100;
     }
 
     @media (max-width: 900px) {
-      .nav { display: none; }
+      .nav {
+        display: none;
+      }
+
       .nav.show {
         display: flex;
         flex-direction: column;
         position: absolute;
         top: 64px;
-        right: 24px;
+        right: 0;
+        left: 0;
         background: #fff;
         padding: 16px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         z-index: 1000;
+        align-items: center;
       }
-      .menu-toggle { display: inline-flex; }
+
+      .menu-toggle {
+        display: block;
+      }
     }
 
     .page-hero {
@@ -90,7 +113,9 @@
     }
 
     @media (max-width: 900px) {
-      .contact-grid { grid-template-columns: 1fr; }
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .contact-card {
