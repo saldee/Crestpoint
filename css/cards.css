@@ -81,3 +81,12 @@
   object-fit: contain;
   margin-bottom: 12px;
 }
+.service-card h4 {
+  font-size: 1.125rem;
+  margin-top: 0;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
