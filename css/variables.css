@@ -1,0 +1,15 @@
+/* ====== Design Tokens ====== */
+:root {
+  --primary-color: #002b5c;
+  --secondary-color: #005b96;
+  --accent-color: #f5a623;
+  --text-color: #333;
+  --bg-color: #fff;
+
+  --font-family: 'Roboto', sans-serif;
+  --border-radius: 8px;
+  --card-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+  --breakpoint-md: 900px;
+  --breakpoint-sm: 768px;
+}
