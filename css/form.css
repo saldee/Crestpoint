@@ -45,3 +45,7 @@
   background-color: var(--accent-color);
   transform: scale(1.05);
 }
+.form-control:focus {
+  border-color: var(--secondary-color);
+  outline: none;
+}
