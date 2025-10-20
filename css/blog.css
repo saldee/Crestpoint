@@ -1,25 +1,16 @@
+/* Insights / Blog Section */
 .insights {
   padding: 64px 0;
   background-color: #f9f9f9;
 }
 
-.insights .section-title {
-  text-align: center;
-  font-size: clamp(2rem, 4vw, 2.5rem);
-  margin-bottom: 48px;
-}
-
-.insights .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 32px;
-}
-
+/* Blog Card Specifics */
 .blog-card {
-  background: #fff;
-  padding: 24px;
+  background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 24px;
+  text-align: center;
   transition: transform 0.3s ease;
 }
 
@@ -31,6 +22,7 @@
 .blog-card h4 {
   font-size: 1.25rem;
   margin-bottom: 12px;
+  color: var(--text-dark, #111);
 }
 
 .blog-card p {
