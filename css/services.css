@@ -1,45 +1,33 @@
+/* Services Section */
 .services {
   padding: 64px 0;
   background-color: #f9f9f9;
 }
 
-.services .section-title {
-  text-align: center;
-  font-size: clamp(2rem, 4vw, 2.5rem);
-  margin-bottom: 48px;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 32px;
-}
-
+/* Service Card Specifics */
 .service-card {
-  background: #fff;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   padding: 24px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   text-align: center;
   transition: transform 0.3s ease;
 }
 
 .service-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
 }
 
 .service-card img {
-  width: 100%;
-  max-width: 320px;
-  height: 240px;
-  object-fit: cover;
+  max-width: 100%;
+  height: auto;
   margin-bottom: 16px;
 }
 
 .service-card h4 {
   font-size: 1.25rem;
   margin-bottom: 8px;
+  color: var(--text-dark, #111);
 }
 
 .service-card p {
