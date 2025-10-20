@@ -1,0 +1,41 @@
+/* ====== Header & Navigation ====== */
+header {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 100;
+}
+
+.brand img {
+  height: 48px;
+  width: auto;
+  max-width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+ cursor: pointer;
+  color: #fff;
+  z-index: 1000;
+}
+
+#nav-links {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#nav-links a {
+  color: #fff;
+  font-weight: 500;
+}
+
+#nav-links a:hover {
+  color: var(--accent-color);
+}
