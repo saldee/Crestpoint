@@ -110,3 +110,16 @@
     font-size: 1rem;
   }
 }
+@media screen and (min-width: 1200px) {
+  .service-card img {
+    max-width: 400px;
+  }
+
+  .service-card p {
+    font-size: 1rem;
+  }
+
+  .service-card h4 {
+    font-size: 1.25rem;
+  }
+}
