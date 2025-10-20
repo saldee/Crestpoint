@@ -106,3 +106,6 @@
   object-fit: contain;
   flex-shrink: 0;
 }
+.service-card {
+  flex-direction: column-reverse;
+}
