@@ -13,3 +13,13 @@
   --breakpoint-md: 900px;
   --breakpoint-sm: 768px;
 }
+:root {
+  --font-heading: 'Inter', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+  --font-size-xl: clamp(2.5rem, 5vw, 4rem);
+  --font-size-md: 1.125rem;
+}
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
