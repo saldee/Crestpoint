@@ -193,3 +193,14 @@
     font-size: 0.95rem;
   }
 }
+@media screen and (max-width: 800px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-image img {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+}
