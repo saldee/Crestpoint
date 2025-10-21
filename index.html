@@ -3,9 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Language" content="en">
+  <link rel="canonical" href="https://saldee.github.io/Crestpoint/index.html">
+
   <title>Home - Crestpoint | Construction Experts in Uganda</title>
-  <meta name="description" content="Crestpoint delivers safe, timely, and high-quality construction projects across Uganda.">
+  <meta name="description" content="Crestpoint delivers safe, timely, and high-quality construction projects across Uganda. Explore our services, team, and featured projects.">
+  <meta name="keywords" content="construction Uganda, infrastructure, building services, Crestpoint, project delivery, EHS, renovation">
+  <meta name="author" content="Crestpoint">
+  <meta name="robots" content="index, follow">
+
+  <!-- Favicon -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+
+  <!-- Fonts & Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/utils.css">
@@ -20,15 +32,48 @@
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/buttons.css">
   <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Crestpoint - Building with Precision">
+  <meta property="og:description" content="Delivering safe, timely, and high-quality construction projects across Uganda.">
+  <meta property="og:image" content="https://saldee.github.io/Crestpoint/images/logo.png">
+  <meta property="og:url" content="https://saldee.github.io/Crestpoint/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Crestpoint - Building with Precision">
+  <meta name="twitter:description" content="Delivering safe, timely, and high-quality construction projects across Uganda.">
+  <meta name="twitter:image" content="https://saldee.github.io/Crestpoint/images/logo.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Crestpoint",
+    "url": "https://saldee.github.io/Crestpoint/",
+    "logo": "https://saldee.github.io/Crestpoint/images/logo.png",
+    "description": "Crestpoint delivers safe, timely, and high-quality construction projects across Uganda.",
+    "sameAs": [
+      "https://www.linkedin.com/company/crestpoint",
+      "https://twitter.com/crestpointug",
+      "https://www.facebook.com/crestpointug"
+    ]
+  }
+  </script>
 </head>
+
 <body>
 
-<!-- HEADER -->
 <header>
-  <a href="index.html"><img src="images/logo.png" alt="Crestpoint Logo" style="height:48px;"></a>
+  <a href="index.html">
+    <img src="images/logo.png" alt="Crestpoint Logo" style="height:48px;">
+  </a>
+  <div id="nav-backdrop"></div>
   <div class="menu-toggle" id="menu-toggle">&#9776;</div>
   <nav id="nav-links">
-    <a href="index.html">Home</a>
+    <a href="index.html" class="active">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
     <a href="projects.html">Projects</a>
@@ -37,9 +82,9 @@
   </nav>
 </header>
 
-<!-- HERO -->
+<!-- HERO SECTION -->
 <section class="hero">
-  <video autoplay muted loop playsinline poster="images/hero-poster.png">
+  <video autoplay muted loop playsinline poster="images/hero-poster.png" preload="none">
     <source src="videos/hero.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay">
@@ -51,23 +96,11 @@
   </div>
 </section>
 
-  <!-- ABOUT -->
+<!-- ABOUT SECTION -->
 <section class="about container">
-  <div class="about-grid">
-    <div class="about-text">
-      <h2>Who We Are</h2>
-      <p>
-        <strong>Crestpoint</strong> was founded to bridge the gap between design ambition and construction reality.  
-        We provide <strong>end-to-end consultancy services</strong> — from feasibility studies and design management to on-site supervision and project delivery.  
-        Our mission is to deliver <em>safe, sustainable, and high-quality projects</em> on time and within budget.  
-        With extensive experience across Uganda’s public and private sectors, Crestpoint stands out for its <strong>precision, transparency, and safety-first culture</strong>.
-      </p>
-      <a href="about.html" class="btn-secondary">Our Story</a>
-    </div>
-    <div class="about-image">
-      <img src="images/about.jpg" alt="About Crestpoint">
-    </div>
-  </div>
+  <h2>Who We Are</h2>
+  <p><strong>Crestpoint</strong> blends innovation with craftsmanship to shape Uganda’s infrastructure future.</p>
+  <a href="about.html" class="btn-secondary">Our Story</a>
 </section>
 
 <!-- SERVICES -->
@@ -75,28 +108,19 @@
   <h2 class="section-title">Our Core Services</h2>
   <div class="cards">
     <div class="service-card">
-      <img src="images/design.png" alt="Design & Planning">
+      <img src="images/design.png" alt="Design & Planning" loading="lazy">
       <h4>Design & Planning</h4>
-      <p>
-        We turn concepts into buildable plans. From feasibility studies and architectural design to structural reviews and budgeting,  
-        Crestpoint ensures every detail is optimized before construction begins.
-      </p>
+      <p>Architectural and structural design tailored to your needs.</p>
     </div>
     <div class="service-card">
-      <img src="images/construction.png" alt="Construction">
+      <img src="images/construction.png" alt="Construction" loading="lazy">
       <h4>Construction</h4>
-      <p>
-        On-site management guarantees quality, compliance, and safety.  
-        We coordinate contractors, track progress, and ensure your project is delivered seamlessly.
-      </p>
+      <p>Residential, commercial, and industrial building services.</p>
     </div>
     <div class="service-card">
-      <img src="images/renovation.png" alt="Renovation">
+      <img src="images/renovation.png" alt="Renovation" loading="lazy">
       <h4>Renovation</h4>
-      <p>
-        Modernizing and upgrading existing structures with precision and care.  
-        We handle interior fit-outs, extensions, and refurbishments while minimizing downtime and maximizing efficiency.
-      </p>
+      <p>Modernizing and upgrading existing structures with precision.</p>
     </div>
   </div>
   <a href="services.html" class="btn-primary">Explore All Services</a>
@@ -107,20 +131,14 @@
   <h2 class="section-title">Featured Projects</h2>
   <div class="cards">
     <div class="project-card">
-      <img src="images/project1.jpg" alt="Skyline Tower">
+      <img src="images/project1.jpg" alt="Skyline Tower" loading="lazy">
       <h4>Skyline Tower</h4>
-      <p>
-        20-story commercial complex in central Kampala.  
-        Crestpoint managed design supervision, contracts, and quality assurance to deliver the project on schedule.
-      </p>
+      <p>A 20-story commercial complex in central Kampala.</p>
     </div>
     <div class="project-card">
-      <img src="images/project2.jpg" alt="Green Estate">
+      <img src="images/project2.jpg" alt="Green Estate" loading="lazy">
       <h4>Green Estate</h4>
-      <p>
-        Eco-friendly residential development featuring smart home technology.  
-        We oversaw construction supervision and environmental compliance throughout the project.
-      </p>
+      <p>Eco-friendly residential development with smart homes.</p>
     </div>
   </div>
   <a href="projects.html" class="btn-primary">View All Projects</a>
@@ -131,84 +149,53 @@
   <h2 class="section-title">Meet Our Team</h2>
   <div class="cards">
     <div class="team-card">
-      <img src="images/jane.jpg" alt="Jane Doe">
+      <img src="images/jane.jpg" alt="Jane Doe" loading="lazy">
       <h4>Jane Doe</h4>
       <p>Chief Executive Officer</p>
-      <p>Civil Engineer with 15+ years of experience managing infrastructure and high-rise projects across East Africa. Member of UIPE.</p>
     </div>
     <div class="team-card">
-      <img src="images/john.jpg" alt="John Smith">
+      <img src="images/john.jpg" alt="John Smith" loading="lazy">
       <h4>John Smith</h4>
       <p>Lead Structural Engineer</p>
-      <p>Expert in reinforced concrete design and value engineering, leading innovative structural solutions on all projects.</p>
     </div>
     <div class="team-card">
-      <img src="images/mary.jpg" alt="Mary Atwine">
+      <img src="images/mary.jpg" alt="Mary Atwine" loading="lazy">
       <h4>Mary Atwine</h4>
       <p>Project Manager</p>
-      <p>Specializes in construction supervision and project coordination, ensuring timely delivery and strict safety compliance.</p>
     </div>
   </div>
   <a href="team.html" class="btn-primary">View Full Team</a>
 </section>
-
-<!-- TESTIMONIALS -->
-<section class="testimonials container">
-  <h2 class="section-title">Client Testimonials</h2>
-  <div class="testimonial-card">
-    <p>"Crestpoint exceeded our expectations with professionalism and quality. Their attention to detail was unmatched."</p>
-    <span>- Sarah K., Commercial Developer</span>
-  </div>
-  <div class="testimonial-card">
-    <p>"Timely delivery and excellent communication throughout the project. We highly recommend Crestpoint for any construction project."</p>
-    <span>- David M., Real Estate Investor</span>
-  </div>
-  <div class="testimonial-card">
-    <p>"Their project management expertise saved us time and reduced costs without compromising quality."</p>
-    <span>- Michael T., Private Client</span>
-  </div>
-</section>
-
-<!-- BLOG / INSIGHTS -->
-<section class="insights container">
-  <h2 class="section-title">Latest Insights</h2>
-  <div class="cards">
-    <div class="blog-card">
-      <h4>Why Safety Matters in Construction</h4>
-      <p>Safety is the backbone of every successful project. Discover how we implement rigorous safety protocols to protect people and assets.</p>
-    </div>
-    <div class="blog-card">
-      <h4>Smart Building Trends in Uganda</h4>
-      <p>Technology is reshaping the construction landscape. Learn how smart buildings are changing efficiency, sustainability, and comfort.</p>
-    </div>
-    <div class="blog-card">
-      <h4>Project Management Best Practices</h4>
-      <p>Explore proven techniques for planning, executing, and delivering construction projects on time and within budget.</p>
-    </div>
-  </div>
-  <a href="blog.html" class="btn-primary">Read More Insights</a>
-</section>
-  
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-content">
     <p>&copy; 2025 Crestpoint | <a href="mailto:info@crestpoint.ug">info@crestpoint.ug</a></p>
     <div class="social-links">
-      <a href="https://twitter.com/crestpointug" target="_blank"><img src="images/icon-x.svg" alt="X logo" /></a>
-      <a href="https://www.linkedin.com/company/crestpoint" target="_blank"><img src="images/icon-linkedin.svg" alt="LinkedIn logo" /></a>
-      <a href="https://www.facebook.com/crestpointug" target="_blank"><img src="images/icon-facebook.svg" alt="Facebook logo" /></a>
+      <a href="https://twitter.com/crestpointug" target="_blank" aria-label="Crestpoint on X">
+        <img src="images/icon-x.svg" alt="X logo" />
+      </a>
+      <a href="https://www.linkedin.com/company/crestpoint" target="_blank" aria-label="Crestpoint on LinkedIn">
+        <img src="images/icon-linkedin.svg" alt="LinkedIn logo" />
+      </a>
+      <a href="https://www.facebook.com/crestpointug" target="_blank" aria-label="Crestpoint on Facebook">
+        <img src="images/icon-facebook.svg" alt="Facebook logo" />
+      </a>
     </div>
   </div>
 </footer>
 
+<!-- SCRIPTS -->
 <script>
-  document.getElementById("menu-toggle").addEventListener("click", () => {
-    document.getElementById("nav-links").classList.toggle("show");
+  const toggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("nav-links");
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("show");
   });
 </script>
-<script src="siteData.js"></script>
-<script src="data.js"></script>
-<script src="main.js"></script>
+<script src="siteData.js" defer></script>
+<script src="data.js" defer></script>
+<script src="main.js" defer></script>
+
 </body>
 </html>
