@@ -187,3 +187,53 @@
     font-size: 1.125rem;
   }
 }
+/* ====== Mobile Navigation ====== */
+@media screen and (max-width: 768px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  #nav-links {
+    position: absolute;
+    top: 60px;
+    right: 16px;
+    background-color: #fff;
+    flex-direction: column;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    border-radius: var(--border-radius);
+    z-index: 999;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  #nav-links.show {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  #nav-links a {
+    padding: 10px 0;
+    font-size: 1rem;
+    color: var(--primary-color);
+    display: block;
+  }
+
+  /* Ensure all cards stack vertically */
+  .cards {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+}
