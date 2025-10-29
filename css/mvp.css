@@ -1,0 +1,31 @@
+.mv-container {
+  background-color: #f5f5f5;
+  padding: 60px 20px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+.mv-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.mv-card {
+  flex: 1 1 45%;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.mv-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.mv-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
