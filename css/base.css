@@ -51,3 +51,13 @@ section {
   margin: 0 auto;
   padding: 0 24px;
 }
+/* Add spacing below the call-to-action section */
+.cta {
+  margin-bottom: 80px; /* creates space before the footer */
+}
+
+/* Optional: center-align and give breathing room */
+.cta.container {
+  text-align: center;
+  padding: 40px 0;
+}
