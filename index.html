@@ -7,7 +7,7 @@
   <link rel="canonical" href="https://saldee.github.io/Crestpoint/index.html">
 
   <title>Home - Crestpoint | Construction Experts in Uganda</title>
-  <meta name="description" content="Crestpoint delivers safe, timely, and high-quality construction projects across Uganda. Explore our services, team, and featured projects.">
+  <meta name="description" content="Crestpoint delivers safe, timely, and high-quality construction projects across Uganda. Explore our services, team, projects, blog insights, and more.">
   <meta name="keywords" content="construction Uganda, infrastructure, building services, Crestpoint, project delivery, EHS, renovation">
   <meta name="author" content="Crestpoint">
   <meta name="robots" content="index, follow">
@@ -18,20 +18,7 @@
 
   <!-- Fonts & Styles -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/utils.css">
-  <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/hero.css">
-  <link rel="stylesheet" href="css/about.css">
-  <link rel="stylesheet" href="css/services.css">
-  <link rel="stylesheet" href="css/projects.css">
-  <link rel="stylesheet" href="css/team.css">
-  <link rel="stylesheet" href="css/testimonials.css">
-  <link rel="stylesheet" href="css/blog.css">
-  <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/buttons.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/base.min.css">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Crestpoint - Building with Precision">
@@ -63,7 +50,6 @@
   }
   </script>
 </head>
-
 <body>
 
 <header>
@@ -71,20 +57,21 @@
     <img src="images/logo.png" alt="Crestpoint Logo" style="height:48px;">
   </a>
   <div id="nav-backdrop"></div>
-  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+  <div class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">&#9776;</div>
   <nav id="nav-links">
-    <a href="index.html" class="active">Home</a>
+    <a href="index.html" class="active" aria-current="page">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
     <a href="projects.html">Projects</a>
     <a href="team.html">Team</a>
+    <a href="blog.html">Blog</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
 
 <!-- HERO SECTION -->
 <section class="hero">
-  <video autoplay muted loop playsinline poster="images/hero-poster.png" preload="none">
+  <video autoplay muted loop playsinline poster="images/hero-poster.png" preload="metadata">
     <source src="videos/hero.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay">
@@ -103,59 +90,57 @@
   <a href="about.html" class="btn-secondary">Our Story</a>
 </section>
 
-<!-- SERVICES -->
-
-  <section class="services container">
+<!-- SERVICES SECTION -->
+<section class="services container">
   <h2 class="section-title">Our Core Services</h2>
   <div class="cards">
-    <div class="service-card">
+    <div class="service-card" itemscope itemtype="https://schema.org/Service">
       <img src="images/design.png" alt="Design & Planning" loading="lazy">
-      <h4>Design & Planning</h4>
-      <p>Architectural and structural design tailored to your needs.</p>
+      <h4 itemprop="name">Design & Planning</h4>
+      <p itemprop="description">Architectural and structural design tailored to your needs.</p>
     </div>
-    <div class="service-card">
+    <div class="service-card" itemscope itemtype="https://schema.org/Service">
       <img src="images/construction.png" alt="Construction" loading="lazy">
-      <h4>Construction</h4>
-      <p>Residential, commercial, and industrial building services.</p>
+      <h4 itemprop="name">Construction</h4>
+      <p itemprop="description">Residential, commercial, and industrial building services.</p>
     </div>
-    <div class="service-card">
+    <div class="service-card" itemscope itemtype="https://schema.org/Service">
       <img src="images/renovation.png" alt="Renovation" loading="lazy">
-      <h4>Renovation</h4>
-      <p>Modernizing and upgrading existing structures with precision.</p>
+      <h4 itemprop="name">Renovation</h4>
+      <p itemprop="description">Modernizing and upgrading existing structures with precision.</p>
     </div>
-    <div class="service-card">
+    <div class="service-card" itemscope itemtype="https://schema.org/Service">
       <img src="images/project.webp" alt="Project Management" loading="lazy">
-      <h4>Project Management</h4>
-      <p>End-to-end project planning, scheduling, and execution for timely delivery.</p>
+      <h4 itemprop="name">Project Management</h4>
+      <p itemprop="description">End-to-end project planning, scheduling, and execution for timely delivery.</p>
     </div>
-    <div class="service-card">
+    <div class="service-card" itemscope itemtype="https://schema.org/Service">
       <img src="images/contract.jpg" alt="Contracts Management" loading="lazy">
-      <h4>Contracts Management</h4>
-      <p>Ensuring transparent, compliant, and efficient contract handling for all projects.</p>
+      <h4 itemprop="name">Contracts Management</h4>
+      <p itemprop="description">Ensuring transparent, compliant, and efficient contract handling for all projects.</p>
     </div>
-    <div class="service-card">
+    <div class="service-card" itemscope itemtype="https://schema.org/Service">
       <img src="images/safety.jpg" alt="Environmental Health & Safety" loading="lazy">
-      <h4>Environmental Health & Safety</h4>
-      <p>Maintaining safe, compliant, and sustainable construction environments.</p>
+      <h4 itemprop="name">Environmental Health & Safety</h4>
+      <p itemprop="description">Maintaining safe, compliant, and sustainable construction environments.</p>
     </div>
   </div>
   <a href="services.html" class="btn-primary">Explore All Services</a>
 </section>
 
-  
-<!-- PROJECTS -->
+<!-- PROJECTS SECTION -->
 <section class="projects container">
   <h2 class="section-title">Featured Projects</h2>
   <div class="cards">
-    <div class="project-card">
+    <div class="project-card" itemscope itemtype="https://schema.org/Project">
       <img src="images/project1.jpg" alt="Skyline Tower" loading="lazy">
-      <h4>Skyline Tower</h4>
-      <p>A 20-story commercial complex in central Kampala.</p>
+      <h4 itemprop="name">Skyline Tower</h4>
+      <p itemprop="description">A 20-story commercial complex in central Kampala.</p>
     </div>
-    <div class="project-card">
+    <div class="project-card" itemscope itemtype="https://schema.org/Project">
       <img src="images/project2.jpg" alt="Green Estate" loading="lazy">
-      <h4>Green Estate</h4>
-      <p>Eco-friendly residential development with smart homes.</p>
+      <h4 itemprop="name">Green Estate</h4>
+      <p itemprop="description">Eco-friendly residential development with smart homes.</p>
     </div>
   </div>
   <a href="projects.html" class="btn-primary">View All Projects</a>
@@ -183,66 +168,69 @@
   </div>
 </section>
 
-<!-- TEAM -->
+<!-- TEAM SECTION -->
 <section class="team container">
   <h2 class="section-title">Meet Our Team</h2>
   <div class="cards">
-    <div class="team-card">
+    <div class="team-card" itemscope itemtype="https://schema.org/Person">
       <img src="images/king.jpg" alt="Rabiu Saleh Deen" loading="lazy">
-      <h4>Rabiu Saleh Deen</h4>
-      <p>Chief Executive Officer</p>
+      <h4 itemprop="name">Rabiu Saleh Deen</h4>
+      <p itemprop="jobTitle">Chief Executive Officer</p>
     </div>
-    <div class="team-card">
+    <div class="team-card" itemscope itemtype="https://schema.org/Person">
       <img src="images/john.jpg" alt="Elijah Ebongu" loading="lazy">
-      <h4>Elija Ebongu</h4>
-      <p>Lead Structural Engineer</p>
+      <h4 itemprop="name">Elijah Ebongu</h4>
+      <p itemprop="jobTitle">Lead Structural Engineer</p>
     </div>
-    <div class="team-card">
+    <div class="team-card" itemscope itemtype="https://schema.org/Person">
       <img src="images/mary.jpg" alt="Lamunu Noel" loading="lazy">
-      <h4>Lamunu Noel</h4>
-      <p>Project Manager</p>
+      <h4 itemprop="name">Lamunu Noel</h4>
+      <p itemprop="jobTitle">Project Manager</p>
     </div>
   </div>
   <a href="team.html" class="btn-primary">View Full Team</a>
 </section>
-  
+
+<!-- BLOG SECTION -->
+<section class="blog container">
+  <h2 class="section-title">Insights & News</h2>
+  <div class="cards">
+    <div class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+      <img src="images/blog1.jpg" alt="Sustainable Construction in Uganda" loading="lazy">
+      <h4 itemprop="headline">Sustainable Construction in Uganda</h4>
+      <p itemprop="description">Discover how sustainable practices are transforming the Ugandan construction industry.</p>
+      <a href="blog/sustainable-construction.html" itemprop="url" class="btn-secondary">Read More</a>
+    </div>
+    <div class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+      <img src="images/blog2.jpg" alt="Project Management Tips" loading="lazy">
+      <h4 itemprop="headline">5 Project Management Tips</h4>
+      <p itemprop="description">Learn key strategies to keep your construction projects on time and within budget.</p>
+      <a href="blog/project-management-tips.html" itemprop="url" class="btn-secondary">Read More</a>
+    </div>
+  </div>
+  <a href="blog.html" class="btn-primary">View All Articles</a>
+</section>
+
 <!-- FOOTER -->
 <footer>
-  <div class="footer-content">
+  <div class="footer-content container">
     <p>&copy; 2025 Crestpoint | <a href="mailto:info@crestpoint.ug">info@crestpoint.ug</a></p>
-
     <div class="social-links">
-      <!-- X / Twitter -->
-      <a href="https://twitter.com/crestpointug" target="_blank" aria-label="Crestpoint on X">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
-          <path fill="#FFFFFF" d="M18.244 2H21.5l-7.5 8.5L22 22h-6.266l-4.905-6.412L5.298 22H2.043l7.905-8.97L2 2h6.408l4.442 5.82L18.244 2zM17.1 20h1.676L7.037 4H5.29L17.1 20z"/>
-        </svg>
+      <a href="https://twitter.com/crestpointug" target="_blank" aria-label="Crestpoint on X" rel="noopener noreferrer">
+        <img src="images/twitter.svg" alt="Twitter">
       </a>
-
-      <!-- LinkedIn -->
-      <a href="https://www.linkedin.com/company/crestpoint" target="_blank" aria-label="Crestpoint on LinkedIn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
-          <path fill="#FFFFFF" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.94v5.666H9.35V9h3.414v1.561h.049c.477-.9 1.637-1.852 3.37-1.852 3.601 0 4.267 2.372 4.267 5.456v6.287zM5.337 7.433A2.062 2.062 0 1 1 5.338 3.31a2.062 2.062 0 0 1-.001 4.122zM3.554 20.452h3.554V9H3.554v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.228.792 24 1.771 24h20.451C23.2 24 24 23.228 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
-        </svg>
+      <a href="https://www.linkedin.com/company/crestpoint" target="_blank" aria-label="Crestpoint on LinkedIn" rel="noopener noreferrer">
+        <img src="images/linkedin.svg" alt="LinkedIn">
       </a>
-
-      <!-- Facebook -->
-      <a href="https://www.facebook.com/crestpointug" target="_blank" aria-label="Crestpoint on Facebook">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
-          <path fill="#FFFFFF" d="M22.675 0H1.325A1.325 1.325 0 000 1.325v21.351C0 23.4.6 24 1.325 24H12.82v-9.294H9.692V11.07h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.464.099 2.796.143v3.24l-1.92.001c-1.504 0-1.794.715-1.794 1.763v2.308h3.587l-.467 3.636h-3.12V24h6.117A1.325 1.325 0 0024 22.676V1.325A1.325 1.325 0 0022.675 0z"/>
-        </svg>
+      <a href="https://www.facebook.com/crestpointug" target="_blank" aria-label="Crestpoint on Facebook" rel="noopener noreferrer">
+        <img src="images/facebook.svg" alt="Facebook">
       </a>
-
-      <!-- WhatsApp -->
-      <a href="https://wa.me/256773265486" target="_blank" aria-label="Chat on WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
-          <path fill="#FFFFFF" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.149-.67.15-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.474-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.496.099-.198.05-.372-.025-.521-.074-.149-.669-1.612-.916-2.206-.242-.58-.487-.502-.67-.51l-.57-.01c-.198 0-.52.074-.793.372-.273.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.875 1.213 3.074.149.198 2.097 3.2 5.077 4.487.709.306 1.262.489 1.693.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.288.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.514-5.27c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.896a9.825 9.825 0 012.893 6.994c-.002 5.45-4.437 9.884-9.882 9.884M20.52 3.449A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.158 11.892c0 2.096.547 4.142 1.588 5.94L0 24l6.305-1.654a11.88 11.88 0 005.73 1.463h.005c6.554 0 11.889-5.335 11.892-11.893a11.821 11.821 0 00-3.412-8.467z"/>
-        </svg>
+      <a href="https://wa.me/256773265486" target="_blank" aria-label="Chat on WhatsApp" rel="noopener noreferrer">
+        <img src="images/whatsapp.svg" alt="WhatsApp">
       </a>
     </div>
   </div>
 </footer>
-
 
 <!-- SCRIPTS -->
 <script>
@@ -258,3 +246,4 @@
 
 </body>
 </html>
+  
