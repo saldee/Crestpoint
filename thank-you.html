@@ -4,40 +4,189 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Thank You - Crestpoint</title>
-  <meta name="description" content="Thank you for contacting Crestpoint. We'll be in touch soon.">
+  <meta name="description" content="Thank you for contacting Crestpoint. We’ve received your message and will respond shortly.">
+  <meta name="author" content="Crestpoint Company">
+
+  <!-- SEO & Social Sharing -->
+  <meta property="og:title" content="Thank You - Crestpoint">
+  <meta property="og:description" content="We’ve received your message and will respond shortly.">
+  <meta property="og:image" content="https://saldee.github.io/Crestpoint/images/og-image.jpg">
+  <meta property="og:url" content="https://saldee.github.io/Crestpoint/thank-you.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/utils.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/responsive.css">
-</head>
-<body>
 
+  <style>
+    .thank-you {
+      min-height: 65vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 1rem;
+      background-color: var(--light-bg, #f9f9f9);
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .checkmark {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: inline-block;
+      stroke-width: 3;
+      stroke: #fff;
+      stroke-miterlimit: 10;
+      margin-bottom: 20px;
+      box-shadow: 0 0 0 4px var(--primary-color, #004aad);
+      background-color: var(--primary-color, #004aad);
+      position: relative;
+      animation: scaleIn 0.4s ease-in-out;
+    }
+
+    @keyframes scaleIn {
+      0% { transform: scale(0); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .checkmark::after {
+      content: '';
+      position: absolute;
+      left: 26px;
+      top: 40px;
+      width: 12px;
+      height: 24px;
+      border-right: 3px solid #fff;
+      border-bottom: 3px solid #fff;
+      transform: rotate(45deg);
+      opacity: 0;
+      animation: drawCheck 0.6s ease forwards 0.4s;
+    }
+
+    @keyframes drawCheck {
+      0% { opacity: 0; transform: scale(0.8) rotate(45deg); }
+      100% { opacity: 1; transform: scale(1) rotate(45deg); }
+    }
+
+    .thank-you h1 {
+      font-size: 2rem;
+      color: var(--primary-color, #004aad);
+      margin-bottom: 0.5rem;
+      animation: fadeInUp 0.6s ease forwards 0.6s;
+      opacity: 0;
+    }
+
+    .thank-you p {
+      max-width: 600px;
+      color: var(--text-color, #333);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+      animation: fadeInUp 0.6s ease forwards 0.8s;
+      opacity: 0;
+    }
+
+    .thank-you a.btn-primary {
+      display: inline-block;
+      padding: 0.8rem 1.6rem;
+      background: var(--primary-color, #004aad);
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s;
+      animation: fadeInUp 0.6s ease forwards 1s;
+      opacity: 0;
+    }
+
+    .thank-you a.btn-primary:hover {
+      background: var(--primary-dark, #003580);
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
   <!-- HEADER -->
   <header>
-    <a href="index.html"><img src="images/logo.png" alt="Crestpoint Logo" style="height:48px;"></a>
-    <nav>
+    <a href="index.html">
+      <img src="images/logo.png" alt="Crestpoint Logo" style="height:48px;">
+    </a>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <nav id="nav-links">
       <a href="index.html">Home</a>
+      <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="projects.html">Projects</a>
+      <a href="team.html">Team</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <!-- THANK YOU SECTION -->
-  <main class="thank-you">
-    <div class="container" style="text-align:center; padding:80px 20px;">
-      <h1>Thank You!</h1>
-      <p>Your message has been sent successfully. We’ll get back to you shortly.</p>
-      <a href="index.html" class="btn-primary">Return to Homepage</a>
-    </div>
-  </main>
+  <section class="thank-you">
+    <div class="checkmark"></div>
+    <h1>Thank You!</h1>
+    <p>Your message has been successfully sent.<br>
+    A member of our team will get back to you shortly.</p>
+    <a href="index.html" class="btn-primary">Return to Home</a>
+  </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Crestpoint | <a href="mailto:info@crestpoint.ug">info@crestpoint.ug</a></p>
+    <div class="footer-content">
+      <p>&copy; 2025 Crestpoint | <a href="mailto:info@crestpoint.ug">info@crestpoint.ug</a></p>
+
+      <div class="social-links">
+        <a href="https://twitter.com/crestpointug" target="_blank" aria-label="Crestpoint on X">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
+            <path fill="#FFFFFF" d="M18.244 2H21.5l-7.5 8.5L22 22h-6.266l-4.905-6.412L5.298 22H2.043l7.905-8.97L2 2h6.408l4.442 5.82L18.244 2zM17.1 20h1.676L7.037 4H5.29L17.1 20z"/>
+          </svg>
+        </a>
+
+        <a href="https://www.linkedin.com/company/crestpoint" target="_blank" aria-label="Crestpoint on LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
+            <path fill="#FFFFFF" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.94v5.666H9.35V9h3.414v1.561h.049c.477-.9 1.637-1.852 3.37-1.852 3.601 0 4.267 2.372 4.267 5.456v6.287zM5.337 7.433A2.062 2.062 0 1 1 5.338 3.31a2.062 2.062 0 0 1-.001 4.122zM3.554 20.452h3.554V9H3.554v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.228.792 24 1.771 24h20.451C23.2 24 24 23.228 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+          </svg>
+        </a>
+
+        <a href="https://www.facebook.com/crestpointug" target="_blank" aria-label="Crestpoint on Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
+            <path fill="#FFFFFF" d="M22.675 0H1.325A1.325 1.325 0 000 1.325v21.351C0 23.4.6 24 1.325 24H12.82v-9.294H9.692V11.07h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.464.099 2.796.143v3.24l-1.92.001c-1.504 0-1.794.715-1.794 1.763v2.308h3.587l-.467 3.636h-3.12V24h6.117A1.325 1.325 0 0024 22.676V1.325A1.325 1.325 0 0022.675 0z"/>
+          </svg>
+        </a>
+
+        <a href="https://wa.me/256700000000" target="_blank" aria-label="Chat on WhatsApp">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
+            <path fill="#FFFFFF" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.149-.67.15-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.474-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.496.099-.198.05-.372-.025-.521-.074-.149-.669-1.612-.916-2.206-.242-.58-.487-.502-.67-.51l-.57-.01c-.198 0-.52.074-.793.372-.273.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.875 1.213 3.074.149.198 2.097 3.2 5.077 4.487.709.306 1.262.489 1.693.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.288.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.514-5.27c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.896a9.825 9.825 0 012.893 6.994c-.002 5.45-4.437 9.884-9.882 9.884M20.52 3.449A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.158 11.892c0 2.096.547 4.142 1.588 5.94L0 24l6.305-1.654a11.88 11.88 0 005.73 1.463h.005c6.554 0 11.889-5.335 11.892-11.893a11.821 11.821 0 00-3.412-8.467z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
   </footer>
 
+  <!-- Scripts -->
+  <script src="main.js" defer></script>
+  <script>
+    document.getElementById("menu-toggle").addEventListener("click", () => {
+      document.getElementById("nav-links").classList.toggle("show");
+    });
+  </script>
 </body>
 </html>
