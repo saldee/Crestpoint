@@ -45,32 +45,3 @@ footer {
 .social-links img:hover {
   transform: scale(1.1);
 }
-footer {
-  background-color: #004aad;
-  color: white;
-  padding: 2rem 1rem;
-  margin-top: 4rem;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.footer-content p {
-  margin-bottom: 1rem;
-}
-
-.footer-content a {
-  color: #ffffff;
-  text-decoration: underline;
-}
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
