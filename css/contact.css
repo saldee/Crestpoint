@@ -143,3 +143,23 @@
 .contact-form button:hover {
   background-color: #003a8c;
 }
+footer {
+  background-color: #004aad;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+footer .social-links {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
