@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Post Title | Crestpoint Blog</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/blog.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <a href="../index.html"><img src="../images/logo.png" alt="Crestpoint Logo" style="height:48px;"></a>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <nav id="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <a href="../services.html">Services</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../team.html">Team</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../blog.html" class="active">Blog</a>
+    </nav>
+  </header>
+
+  <!-- BLOG POST -->
+  <section class="blog-post container">
+    <h1>Sustainable Construction in Uganda</h1>
+    <p class="meta">By Rabiu Saleh Deen | 2025-11-01</p>
+    <img src="../images/blog1.jpg" alt="Sustainable Construction in Uganda" loading="lazy">
+    <article>
+      <p>Full blog content goes here. You can add multiple paragraphs, images, quotes, and lists to make the post engaging.</p>
+      <p>Explain the sustainable practices, benefits, and case studies from the Ugandan construction industry.</p>
+    </article>
+    <a href="../blog.html" class="btn-primary">Back to Blog</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Crestpoint | <a href="mailto:info@crestpoint.ug">info@crestpoint.ug</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav-links");
+    toggle.addEventListener("click", () => nav.classList.toggle("show"));
+  </script>
+</body>
+</html>
