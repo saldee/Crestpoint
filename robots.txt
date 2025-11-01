@@ -1,0 +1,11 @@
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Specify the location of the sitemap
+Sitemap: https://saldee.github.io/Crestpoint/sitemap.xml
+
+# Optional: Disallow any folders you don’t want indexed
+# Disallow: /css/
+# Disallow: /js/
+# Disallow: /images/
