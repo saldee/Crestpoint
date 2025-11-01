@@ -1,4 +1,4 @@
-// blogData.js
+// blog.js
 
 const blogPosts = [
   {
@@ -27,13 +27,11 @@ const blogPosts = [
   }
 ];
 
-// Function to render blog cards in any container
 function renderBlogCards(containerId, limit = null) {
   const container = document.getElementById(containerId);
   if (!container) return;
 
-  let postsToShow = blogPosts;
-  if (limit) postsToShow = blogPosts.slice(0, limit);
+  const postsToShow = limit ? blogPosts.slice(0, limit) : blogPosts;
 
   postsToShow.forEach(post => {
     const card = document.createElement("div");
@@ -49,11 +47,7 @@ function renderBlogCards(containerId, limit = null) {
   });
 }
 
-// Automatically render cards if container exists
+// Render homepage preview (latest 3 posts)
 document.addEventListener("DOMContentLoaded", () => {
-  // For homepage preview (limit to 3 posts)
   renderBlogCards("homepage-blog-container", 3);
-
-  // For main blog page (show all)
-  renderBlogCards("blog-container");
 });
