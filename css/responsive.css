@@ -237,3 +237,8 @@
     gap: 20px;
   }
 }
+/* Space below the “View All Articles” button in blog section on homepage */
+.blog.container .btn-primary {
+  margin-top: 3rem;   /* you can adjust 3rem to your preferred spacing */
+  margin-bottom: 3rem; /* ensures space before the footer */
+}
