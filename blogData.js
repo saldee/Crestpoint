@@ -15,7 +15,7 @@ const blogPosts = [
     date: "2025-10-25",
     summary: "Learn key strategies to keep your construction projects on time and within budget.",
     image: "images/blog2.jpg",
-    link: "blogs/project-management-tips.html"
+    link: "blogs/project-management.html"
   },
   {
     title: "EHS Management Tips",
