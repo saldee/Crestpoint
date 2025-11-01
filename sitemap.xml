@@ -1,54 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-  
   <!-- Main pages -->
   <url>
     <loc>https://saldee.github.io/Crestpoint/</loc>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  
   <url>
     <loc>https://saldee.github.io/Crestpoint/about.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
   <url>
     <loc>https://saldee.github.io/Crestpoint/services.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
   <url>
     <loc>https://saldee.github.io/Crestpoint/projects.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
   <url>
     <loc>https://saldee.github.io/Crestpoint/team.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
-  
   <url>
     <loc>https://saldee.github.io/Crestpoint/contact.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Blog pages -->
-  <url>
-    <loc>https://saldee.github.io/Crestpoint/blogs/sustainable-construction.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>https://saldee.github.io/Crestpoint/blogs/innovative-construction-materials.html</loc>
-    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog posts -->
+  <url>
+    <loc>https://saldee.github.io/Crestpoint/blogs/sustainable-construction.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://saldee.github.io/Crestpoint/blogs/innovative-construction-materials.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>
