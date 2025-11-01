@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Crestpoint Blog</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/blog.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <a href="index.html"><img src="images/logo.png" alt="Crestpoint Logo" style="height:48px;"></a>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <nav id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="team.html">Team</a>
+      <a href="contact.html">Contact</a>
+      <a href="blog.html" class="active">Blog</a>
+    </nav>
+  </header>
+
+  <!-- BLOG LIST -->
+  <section class="blog-list container">
+    <h1>Insights & News</h1>
+    <div id="blog-container" class="blog-posts"></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Crestpoint | <a href="mailto:info@crestpoint.ug">info@crestpoint.ug</a></p>
+    </div>
+  </footer>
+
+  <script src="js/blogData.js" defer></script>
+  <script>
+    const container = document.getElementById('blog-container');
+
+    blogPosts.forEach(post => {
+      const card = document.createElement('div');
+      card.className = 'blog-card';
+      card.innerHTML = `
+        <img src="${post.image}" alt="${post.title}" loading="lazy">
+        <h2>${post.title}</h2>
+        <p class="meta">By ${post.author} | ${post.date}</p>
+        <p>${post.summary}</p>
+        <a href="${post.link}" class="btn-secondary">Read More</a>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>
